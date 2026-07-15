@@ -4,25 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>3P Business Optimization — People. Process. Product.</title>
+<link rel="icon" type="image/svg+xml" href="assets/logo/3P_circular_logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy-deep:#08111F;
-    --navy-mid:#0D1D30;
+    --navy-raised:#132A42;
     --navy-panel:#13253B;
+    --navy-card:#0D1D30;
     --gold:#D4A017;
     --gold-bright:#F7D76A;
     --gold-champagne:#FFF1A8;
     --gold-deep:#8B5E00;
-    --paper:#F3EFE4;
-    --paper-ink:#14202B;
     --ink:#E7ECF2;
     --ink-soft:rgba(231,236,242,0.62);
     --ink-faint:rgba(231,236,242,0.38);
-    --line:rgba(212,160,23,0.24);
-    --line-soft:rgba(231,236,242,0.09);
+    --line:rgba(212,160,23,0.26);
+    --line-soft:rgba(231,236,242,0.1);
     --radius:2px;
     --max:1120px;
   }
@@ -55,6 +55,7 @@
   :focus-visible{ outline:2px solid var(--gold-bright); outline-offset:3px; }
 
   .wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
+  @media(max-width:600px){ .wrap{ padding:0 20px; } }
 
   .eyebrow{
     font-family:'IBM Plex Mono', monospace;
@@ -67,18 +68,19 @@
   }
   .eyebrow::before{ content:''; width:24px; height:1px; background:var(--gold); display:inline-block; }
 
-  .grid-bg{ position:relative; }
-  .grid-bg::before{
-    content:'';
-    position:absolute; inset:0;
-    background-image:
-      linear-gradient(var(--line-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
-    background-size:64px 64px;
-    pointer-events:none;
-    opacity:0.6;
-    mask-image:linear-gradient(to bottom, black, transparent 92%);
-  }
+  /* ---------- section rhythm: real contrast + hairline dividers, no texture ---------- */
+  section{ padding:96px 0; position:relative; }
+  @media(max-width:700px){ section{ padding:64px 0; } }
+  section + section{ border-top:1px solid var(--line); }
+  .tier-raised{ background:var(--navy-raised); }
+
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size:clamp(26px,3.4vw,38px); }
+  .section-head p{ margin-top:18px; color:var(--ink-soft); font-size:16px; max-width:540px; }
+  .section-cta{ margin-top:48px; text-align:center; }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
 
   /* ---------- sticky CTA ---------- */
   .sticky-cta{
@@ -94,32 +96,28 @@
   }
   .sticky-cta.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
   .sticky-cta:hover{ background:var(--gold-bright); }
+  @media(max-width:600px){ .sticky-cta{ right:16px; bottom:16px; padding:12px 18px; font-size:12px; } }
 
   /* ---------- header ---------- */
-  header{ position:absolute; top:0; left:0; right:0; z-index:10; padding:28px 0; }
-  .header-row{ display:flex; align-items:center; justify-content:space-between; }
-  .wordmark{ display:flex; align-items:baseline; gap:10px; }
-  .wordmark .mark{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:20px; letter-spacing:0.02em; }
-  .wordmark .mark .p{ color:var(--gold-bright); }
-  .wordmark .tagline{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em;
-    text-transform:uppercase; color:var(--ink-faint); display:none;
-  }
-  @media(min-width:700px){ .wordmark .tagline{ display:inline; } }
+  header{ position:absolute; top:0; left:0; right:0; z-index:10; padding:24px 0; }
+  .header-row{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .wordmark{ display:flex; align-items:center; }
+  .wordmark img{ height:38px; width:auto; display:block; }
+  @media(max-width:500px){ .wordmark img{ height:30px; } }
   .header-cta{
     font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.05em;
     border:1px solid var(--line); padding:9px 18px; border-radius:var(--radius);
     transition:border-color .2s ease, background .2s ease;
+    white-space:nowrap;
   }
   .header-cta:hover{ border-color:var(--gold); background:rgba(212,160,23,0.08); }
 
   /* ---------- HERO (video + slim text split) ---------- */
   .hero{
     position:relative;
-    min-height:100svh;
-    display:flex; align-items:center;
-    padding:120px 0 60px;
+    padding:128px 0 64px;
   }
+  @media(max-width:700px){ .hero{ padding:104px 0 48px; } }
   .hero-grid{
     display:grid;
     grid-template-columns:1fr 3fr;
@@ -128,18 +126,16 @@
     width:100%;
   }
   @media(max-width:900px){
-    .hero-grid{ grid-template-columns:1fr; }
+    .hero-grid{ grid-template-columns:1fr; gap:28px; }
     .hero-text{ order:2; }
     .hero-video-wrap{ order:1; }
   }
 
-  .hero-text h1{
-    font-size:clamp(24px, 2.6vw, 30px);
-  }
+  .hero-text h1{ font-size:clamp(22px, 2.4vw, 28px); }
   .hero-text .stat-line{
-    margin-top:20px;
+    margin-top:18px;
     font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
+    font-size:12.5px;
     color:var(--gold-bright);
     line-height:1.6;
     letter-spacing:0.01em;
@@ -154,19 +150,14 @@
     border-radius:3px;
     background:#000;
   }
-  .hero-video-wrap video{
-    width:100%; height:100%; object-fit:cover; display:block;
-  }
+  .hero-video-wrap video{ width:100%; height:100%; object-fit:cover; display:block; }
   .video-cta-overlay{
     position:absolute;
     left:37%; top:46%; width:27%; height:13%;
     cursor:pointer;
     border-radius:40px;
   }
-  .video-cta-overlay:focus-visible{
-    outline:2px solid var(--gold-bright);
-    outline-offset:4px;
-  }
+  .video-cta-overlay:focus-visible{ outline:2px solid var(--gold-bright); outline-offset:4px; }
 
   .btn-primary{
     background:var(--gold); color:var(--navy-deep);
@@ -177,139 +168,120 @@
   }
   .btn-primary:hover{ background:var(--gold-bright); transform:translateY(-1px); }
   .btn-primary:disabled{ opacity:0.5; cursor:not-allowed; transform:none; }
+  @media(max-width:500px){ .btn-primary{ width:100%; justify-content:center; } }
 
-  .btn-ghost{
-    font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--ink-soft);
-    padding:16px 6px; border-bottom:1px solid var(--line);
-    transition:color .2s ease, border-color .2s ease;
+  /* ---------- control chart signature element (hero only) ---------- */
+  .chart-band{
+    position:relative;
+    margin-top:52px;
+    padding-top:22px;
+    border-top:1px solid var(--line-soft);
   }
-  .btn-ghost:hover{ color:var(--ink); border-color:var(--gold); }
-
-  /* ---------- section shell ---------- */
-  section{ padding:110px 0; position:relative; }
-  .section-head{ max-width:640px; margin-bottom:64px; }
-  .section-head h2{ font-size:clamp(26px,3.4vw,38px); }
-  .section-head p{ margin-top:18px; color:var(--ink-soft); font-size:16px; max-width:540px; }
-  .section-cta{ margin-top:52px; text-align:center; }
-
-  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
-  .reveal.in{ opacity:1; transform:translateY(0); }
+  .chart-band .chart-caption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint);
+    display:flex; justify-content:space-between; margin-bottom:10px; gap:12px; flex-wrap:wrap;
+  }
+  .chart-svg{ width:100%; height:auto; display:block; }
+  .chart-path{
+    stroke:var(--gold-bright); stroke-width:2; fill:none;
+    stroke-dasharray:900; stroke-dashoffset:900;
+    animation:draw 2.6s ease forwards 0.4s;
+  }
+  .chart-limit{ stroke:var(--line); stroke-width:1; stroke-dasharray:4 5; }
+  .chart-dot{ fill:var(--gold-bright); opacity:0; animation:pop .4s ease forwards; }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @keyframes pop{ to{ opacity:1; } }
 
   /* ---------- THESIS headline section ---------- */
-  .thesis-section{ text-align:center; padding:130px 0; }
+  .thesis-section{ text-align:center; padding-top:96px; padding-bottom:96px; }
   .thesis-section .eyebrow{ justify-content:center; }
-  .thesis-section h1{
-    font-size:clamp(32px, 5vw, 56px);
-    max-width:820px;
-    margin:0 auto;
-  }
+  .thesis-section h1{ font-size:clamp(30px, 4.6vw, 52px); max-width:820px; margin:0 auto; }
   .thesis-section h1 em{ font-style:normal; color:var(--gold-bright); }
-  .thesis-section p.lede{
-    margin:26px auto 0;
-    max-width:560px;
-    font-size:clamp(16px,1.6vw,18px);
-    color:var(--ink-soft);
-  }
+  .thesis-section p.lede{ margin:24px auto 0; max-width:560px; font-size:clamp(15.5px,1.6vw,18px); color:var(--ink-soft); }
 
   /* ---------- stat cards (national) ---------- */
-  .stat-grid{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
-    gap:1px; background:var(--line-soft); border:1px solid var(--line-soft);
-  }
-  .stat-card{ background:var(--navy-deep); padding:32px 28px; position:relative; transition:background .25s ease; }
+  .stat-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); }
+  .stat-card{ background:var(--navy-deep); padding:30px 26px; position:relative; transition:background .25s ease; }
   .stat-card:hover{ background:var(--navy-panel); }
-  .stat-card .num{
-    font-family:'IBM Plex Mono', monospace; font-size:clamp(32px,4vw,44px);
-    font-weight:600; color:var(--gold-bright); line-height:1;
-  }
+  .stat-card .num{ font-family:'IBM Plex Mono', monospace; font-size:clamp(30px,4vw,42px); font-weight:600; color:var(--gold-bright); line-height:1; }
   .stat-card .label{ margin-top:14px; font-size:14.5px; color:var(--ink-soft); }
   .stat-card .src{
-    margin-top:16px; font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    color:var(--ink-faint); letter-spacing:0.03em;
-    opacity:0; max-height:0; overflow:hidden;
-    transition:opacity .25s ease, max-height .25s ease;
+    margin-top:16px; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--ink-faint); letter-spacing:0.03em;
+    opacity:0; max-height:0; overflow:hidden; transition:opacity .25s ease, max-height .25s ease;
   }
   .stat-card:hover .src{ opacity:1; max-height:60px; }
 
   /* ---------- AI trap compare ---------- */
   .compare{ display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line-soft); }
   @media(max-width:760px){ .compare{ grid-template-columns:1fr; } }
-  .compare-col{ padding:40px 34px; }
-  .compare-col:first-child{ border-right:1px solid var(--line-soft); background:rgba(255,255,255,0.015); }
+  .compare-col{ padding:36px 30px; }
+  .compare-col:first-child{ border-right:1px solid var(--line-soft); background:rgba(255,255,255,0.02); }
   @media(max-width:760px){ .compare-col:first-child{ border-right:none; border-bottom:1px solid var(--line-soft);} }
   .compare-col .tag{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em;
-    text-transform:uppercase; padding:5px 10px; border-radius:var(--radius); display:inline-block; margin-bottom:22px;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+    padding:5px 10px; border-radius:var(--radius); display:inline-block; margin-bottom:20px;
   }
   .compare-col.bad .tag{ color:#E29B7A; background:rgba(226,155,122,0.1); }
   .compare-col.good .tag{ color:var(--gold-bright); background:rgba(212,160,23,0.12); }
-  .compare-col h3{ font-size:21px; margin-bottom:14px; }
-  .compare-col ul{ list-style:none; margin-top:18px; }
-  .compare-col li{
-    font-size:14.5px; color:var(--ink-soft); padding:10px 0 10px 22px;
-    border-top:1px solid var(--line-soft); position:relative;
-  }
+  .compare-col h3{ font-size:20px; margin-bottom:14px; }
+  .compare-col ul{ list-style:none; margin-top:16px; }
+  .compare-col li{ font-size:14.5px; color:var(--ink-soft); padding:10px 0 10px 22px; border-top:1px solid var(--line-soft); position:relative; }
   .compare-col li:first-child{ border-top:none; }
   .compare-col.bad li::before{ content:'×'; position:absolute; left:0; color:#E29B7A; font-weight:600; }
   .compare-col.good li::before{ content:'✓'; position:absolute; left:0; color:var(--gold-bright); font-weight:600; }
 
   /* ---------- local section ---------- */
-  .local-section{ background:var(--navy-mid); }
   .local-flag{
     display:inline-flex; align-items:center; gap:8px;
     font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
-    color:var(--gold-bright); border:1px solid var(--line); padding:6px 12px; border-radius:var(--radius); margin-bottom:24px;
+    color:var(--gold-bright); border:1px solid var(--line); padding:6px 12px; border-radius:var(--radius); margin-bottom:22px;
   }
   .local-flag .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold-bright); }
-  .local-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:start; }
-  @media(max-width:860px){ .local-grid{ grid-template-columns:1fr; } }
-  .local-stats{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
-  .local-stat .num{ font-family:'IBM Plex Mono', monospace; font-size:clamp(28px,3.2vw,36px); color:var(--ink); font-weight:600; }
+  .local-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:52px; align-items:start; }
+  @media(max-width:860px){ .local-grid{ grid-template-columns:1fr; gap:36px; } }
+  .local-stats{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  @media(max-width:480px){ .local-stats{ grid-template-columns:1fr; } }
+  .local-stat .num{ font-family:'IBM Plex Mono', monospace; font-size:clamp(26px,3.2vw,34px); color:var(--ink); font-weight:600; }
   .local-stat .label{ margin-top:8px; font-size:13.5px; color:var(--ink-soft); }
-  .local-copy p{ color:var(--ink-soft); margin-bottom:16px; font-size:15.5px; }
+  .local-copy p{ color:var(--ink-soft); margin-bottom:15px; font-size:15.5px; }
   .local-copy strong{ color:var(--ink); font-weight:600; }
 
-  /* ---------- 3P framework ---------- */
-  .framework-section{ background:var(--paper); color:var(--paper-ink); }
-  .framework-section .eyebrow{ color:var(--gold-deep); }
-  .framework-section .eyebrow::before{ background:var(--gold-deep); }
-  .framework-section .section-head p{ color:rgba(20,32,43,0.62); }
-  .framework-grid{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
-    background:rgba(20,32,43,0.12); border:1px solid rgba(20,32,43,0.12);
+  /* ---------- 3P framework — Option B: navy + gold divider band ---------- */
+  .framework-divider{
+    height:3px;
+    background:linear-gradient(90deg, transparent, var(--gold) 15%, var(--gold-bright) 50%, var(--gold) 85%, transparent);
   }
+  .framework-section{ padding-top:80px; }
+  .framework-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); margin-top:8px; }
   @media(max-width:760px){ .framework-grid{ grid-template-columns:1fr; } }
-  .framework-card{ background:var(--paper); padding:40px 30px; }
-  .framework-card .icon{ width:40px; height:40px; margin-bottom:26px; }
+  .framework-card{ background:var(--navy-card); padding:36px 28px; }
+  .framework-card .icon{ width:38px; height:38px; margin-bottom:24px; }
   .framework-card h3{
     font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
-    font-family:'IBM Plex Mono', monospace; color:var(--gold-deep); margin-bottom:12px;
+    font-family:'IBM Plex Mono', monospace; color:var(--gold-bright); margin-bottom:12px;
   }
-  .framework-card p{ font-size:15px; color:rgba(20,32,43,0.72); line-height:1.55; }
+  .framework-card p{ font-size:15px; color:var(--ink-soft); line-height:1.55; }
 
   /* ---------- assessment (merged calculator + form) ---------- */
-  .assessment-section{ background:var(--navy-deep); }
-  .assessment-panel{
-    border:1px solid var(--line); background:var(--navy-panel); padding:48px;
-  }
-  @media(max-width:700px){ .assessment-panel{ padding:32px 24px; } }
+  .assessment-panel{ border:1px solid var(--line); background:var(--navy-panel); padding:44px; }
+  @media(max-width:700px){ .assessment-panel{ padding:28px 22px; } }
 
   .step-label{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.1em;
-    text-transform:uppercase; color:var(--gold-bright); margin-bottom:28px;
-    display:flex; align-items:center; gap:10px;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--gold-bright); margin-bottom:26px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;
   }
   .step-label .time{ color:var(--ink-faint); }
 
   .assess-step{ display:none; }
   .assess-step.active{ display:block; }
 
-  .step1-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
-  @media(max-width:800px){ .step1-grid{ grid-template-columns:1fr; } }
+  .step1-grid{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; }
+  @media(max-width:800px){ .step1-grid{ grid-template-columns:1fr; gap:32px; } }
 
   .calc-input label{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em;
-    text-transform:uppercase; color:var(--ink-soft); display:block; margin-bottom:12px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--ink-soft); display:block; margin-bottom:12px;
   }
   .calc-input .field{
     display:flex; align-items:center; border:1px solid var(--line); border-radius:var(--radius);
@@ -320,54 +292,44 @@
     background:none; border:none; outline:none; color:var(--ink);
     font-family:'IBM Plex Mono', monospace; font-size:18px; width:100%;
   }
-  .calc-input input[type="range"]{ width:100%; margin-top:18px; accent-color:var(--gold); }
+  .calc-input input[type="range"]{ width:100%; margin-top:18px; accent-color:var(--gold); height:28px; }
   .calc-note{ margin-top:16px; font-size:12px; color:var(--ink-faint); line-height:1.5; }
 
-  .calc-output .out-label{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em;
-    text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px;
-  }
-  .calc-output .range{
-    font-family:'IBM Plex Mono', monospace; font-size:clamp(26px,3.4vw,38px);
-    color:var(--gold-bright); font-weight:600; line-height:1.1;
-  }
+  .calc-output .out-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px; }
+  .calc-output .range{ font-family:'IBM Plex Mono', monospace; font-size:clamp(24px,3.4vw,36px); color:var(--gold-bright); font-weight:600; line-height:1.1; }
   .calc-output .sub{ margin-top:10px; font-size:13.5px; color:var(--ink-soft); }
-  .calc-output .btn-primary{ margin-top:26px; }
+  .calc-output .btn-primary{ margin-top:24px; }
 
-  .step2-intro{ margin-bottom:30px; }
-  .step2-intro .num-recap{
-    font-family:'IBM Plex Mono', monospace; color:var(--gold-bright); font-size:22px; font-weight:600;
-  }
+  .step2-intro{ margin-bottom:28px; }
+  .step2-intro .num-recap{ font-family:'IBM Plex Mono', monospace; color:var(--gold-bright); font-size:21px; font-weight:600; }
   .step2-intro p{ margin-top:10px; color:var(--ink-soft); font-size:15px; max-width:520px; }
 
-  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
   @media(max-width:600px){ .form-grid{ grid-template-columns:1fr; } }
   .form-field{ display:flex; flex-direction:column; gap:8px; }
   .form-field.full{ grid-column:1 / -1; }
-  .form-field label{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.06em;
-    text-transform:uppercase; color:var(--ink-soft);
-  }
+  .form-field label{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); }
   .form-field input{
     background:rgba(0,0,0,0.2); border:1px solid var(--line); border-radius:var(--radius);
-    padding:13px 16px; color:var(--ink); font-family:'Inter', sans-serif; font-size:15px; outline:none;
-    transition:border-color .2s ease;
+    padding:14px 16px; color:var(--ink); font-family:'Inter', sans-serif; font-size:16px; outline:none;
+    transition:border-color .2s ease; min-height:48px;
   }
   .form-field input:focus{ border-color:var(--gold); }
-  .form-actions{ margin-top:30px; display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
-  .form-back{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-faint); cursor:pointer; background:none; border:none; }
+  .form-actions{ margin-top:28px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  .form-back{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-faint); cursor:pointer; background:none; border:none; padding:10px 4px; }
   .form-back:hover{ color:var(--ink-soft); }
   .form-status{ margin-top:16px; font-size:13.5px; color:var(--ink-soft); }
   .form-status.success{ color:var(--gold-bright); }
 
   /* ---------- contact / final CTA ---------- */
-  .contact-section{ background:var(--navy-mid); text-align:center; padding:130px 0; }
-  .contact-section h2{ font-size:clamp(28px,4vw,46px); max-width:700px; margin:0 auto; }
-  .contact-section p{ margin:22px auto 0; color:var(--ink-soft); max-width:480px; font-size:16px; }
-  .contact-actions{ margin-top:40px; display:flex; justify-content:center; flex-wrap:wrap; gap:16px; }
-  .contact-detail{ margin-top:36px; font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-faint); }
+  .contact-section{ text-align:center; padding:104px 0; }
+  @media(max-width:700px){ .contact-section{ padding:72px 0; } }
+  .contact-section h2{ font-size:clamp(26px,4vw,44px); max-width:700px; margin:0 auto; }
+  .contact-section p{ margin:20px auto 0; color:var(--ink-soft); max-width:480px; font-size:16px; }
+  .contact-actions{ margin-top:36px; display:flex; justify-content:center; flex-wrap:wrap; gap:16px; }
+  .contact-detail{ margin-top:32px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-faint); }
 
-  footer{ padding:36px 0; border-top:1px solid var(--line-soft); }
+  footer{ padding:32px 0; }
   .footer-row{
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
     font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ink-faint);
@@ -380,16 +342,15 @@
 
   <header>
     <div class="wrap header-row">
-      <div class="wordmark">
-        <span class="mark"><span class="p">3</span>P Business Optimization</span>
-        <span class="tagline">People · Process · Product</span>
-      </div>
+      <a href="#" class="wordmark" aria-label="3P Business Optimization — home">
+        <img src="assets/logo/3P_Rectangular_Logo.svg" alt="3P Business Optimization">
+      </a>
       <a href="#contact" class="header-cta mono">CONTACT →</a>
     </div>
   </header>
 
   <!-- HERO: video (75%) + slim text (25%) -->
-  <section class="hero grid-bg">
+  <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-text">
         <div class="eyebrow">PEOPLE · PROCESS · PRODUCT</div>
@@ -398,20 +359,34 @@
       </div>
       <div class="hero-video-wrap">
         <video autoplay muted loop playsinline preload="auto">
-          <source src="3p-hero.mp4" type="video/mp4">
+          <source src="assets/video/3p-hero.mp4" type="video/mp4">
         </video>
         <div class="video-cta-overlay" id="videoCta" role="button" tabindex="0" aria-label="Get your free assessment"></div>
       </div>
     </div>
+
+    <div class="wrap chart-band">
+      <div class="chart-caption">
+        <span>OPERATIONAL VARIATION — UNMANAGED PROCESS</span>
+        <span>SOURCE: NATIONAL SMB OPERATIONS DATA, 2026</span>
+      </div>
+      <svg class="chart-svg" viewBox="0 0 1000 140" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="0" y1="30" x2="1000" y2="30" class="chart-limit"/>
+        <line x1="0" y1="110" x2="1000" y2="110" class="chart-limit"/>
+        <path class="chart-path" d="M0,70 C60,55 90,95 140,80 C200,60 230,110 290,90 C350,70 380,25 440,45 C500,65 540,100 600,85 C660,70 700,30 760,50 C820,70 860,95 920,75 C960,62 980,68 1000,60"/>
+        <circle class="chart-dot" cx="440" cy="45" r="4" style="animation-delay:1.6s"/>
+        <circle class="chart-dot" cx="760" cy="50" r="4" style="animation-delay:2s"/>
+      </svg>
+    </div>
   </section>
 
   <!-- LOCAL (section A) -->
-  <section id="local" class="local-section grid-bg">
+  <section id="local" class="tier-raised">
     <div class="wrap">
       <div class="local-flag"><span class="dot"></span> GILCHRIST COUNTY, FL — SITE DATA</div>
       <div class="local-grid">
         <div class="local-copy reveal">
-          <h2 style="font-size:clamp(24px,3vw,32px); margin-bottom:22px;">Here's what the data shows.</h2>
+          <h2 style="font-size:clamp(22px,3vw,30px); margin-bottom:20px;">Here's what the data shows.</h2>
           <p>Of the roughly 1,530 registered business establishments in Gilchrist County, <strong>1,235 have no employees</strong> — just an owner, doing every job, every day. Only <strong>295</strong> have grown enough to hire.</p>
           <p>If that's your business, you don't have a spare afternoon to build a new process from scratch. That's the whole reason to bring in someone who's already built it — and knows this county isn't Gainesville or Jacksonville.</p>
           <p><strong>13.3%</strong> of local households still have no broadband subscription — a real, structural head start most "just add AI" consultants never account for. We plan around it, not past it.</p>
@@ -427,7 +402,7 @@
   </section>
 
   <!-- THESIS (section B) -->
-  <section class="thesis-section grid-bg">
+  <section class="thesis-section">
     <div class="wrap">
       <div class="eyebrow">THE 3P THESIS</div>
       <h1>Nothing's broken. There's <em>profit hiding</em> in your process.</h1>
@@ -436,7 +411,7 @@
   </section>
 
   <!-- ASSESSMENT (section C) — merged calculator + form -->
-  <section id="assessment" class="assessment-section grid-bg">
+  <section id="assessment" class="tier-raised">
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">RUN THE NUMBERS</div>
@@ -446,7 +421,6 @@
 
       <div class="assessment-panel reveal">
 
-        <!-- STEP 1 -->
         <div class="assess-step active" id="step1">
           <div class="step-label"><span>STEP 1 OF 2</span><span class="time">~60 SECONDS TOTAL</span></div>
           <div class="step1-grid">
@@ -465,7 +439,6 @@
           </div>
         </div>
 
-        <!-- STEP 2 -->
         <div class="assess-step" id="step2">
           <div class="step-label"><span>STEP 2 OF 2</span><span class="time">~30 SECONDS MORE</span></div>
           <div class="step2-intro">
@@ -474,7 +447,6 @@
           </div>
 
           <form id="assessForm" class="mono" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <!-- Brooklyn: replace YOUR_FORM_ID above with your real Formspree endpoint -->
             <input type="hidden" name="estimated_monthly_revenue" id="hiddenRevenue">
             <input type="hidden" name="estimated_annual_waste_range" id="hiddenRange">
             <div class="form-grid">
@@ -495,7 +467,7 @@
   </section>
 
   <!-- NATIONAL READOUT (section D) -->
-  <section id="diagnostic" class="grid-bg">
+  <section id="diagnostic">
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">THE NATIONAL READOUT</div>
@@ -533,7 +505,7 @@
   </section>
 
   <!-- AUTOMATION TRAP (section E) -->
-  <section id="ai-trap">
+  <section id="ai-trap" class="tier-raised">
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">THE AUTOMATION TRAP</div>
@@ -570,9 +542,10 @@
     </div>
   </section>
 
-  <!-- 3P FRAMEWORK (section F) -->
+  <!-- 3P FRAMEWORK (section F) — Option B: navy + gold divider band -->
   <section id="framework" class="framework-section">
-    <div class="wrap">
+    <div class="framework-divider"></div>
+    <div class="wrap" style="margin-top:64px;">
       <div class="section-head reveal">
         <div class="eyebrow">HOW WE WORK</div>
         <h2>Three parts. One order. No shortcuts.</h2>
@@ -581,7 +554,7 @@
 
       <div class="framework-grid reveal">
         <div class="framework-card">
-          <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#8B5E00" stroke-width="1.4">
+          <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#F7D76A" stroke-width="1.4">
             <circle cx="20" cy="12" r="6"/>
             <path d="M8 34c0-7 5.5-12 12-12s12 5 12 12"/>
           </svg>
@@ -589,7 +562,7 @@
           <p>Clear roles, real accountability, and training that matches how the work actually gets done — not an org chart nobody follows.</p>
         </div>
         <div class="framework-card">
-          <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#8B5E00" stroke-width="1.4">
+          <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#F7D76A" stroke-width="1.4">
             <path d="M6 20h9M25 20h9M15 20a5 5 0 0 1 10 0"/>
             <circle cx="15" cy="10" r="3"/>
             <circle cx="25" cy="30" r="3"/>
@@ -599,7 +572,7 @@
           <p>Map the workflow, measure where it breaks, remove the waste. Lean Six Sigma, applied to a business your size — not a factory floor.</p>
         </div>
         <div class="framework-card">
-          <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#8B5E00" stroke-width="1.4">
+          <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#F7D76A" stroke-width="1.4">
             <rect x="8" y="8" width="24" height="24" rx="2"/>
             <path d="M14 20l4 4 8-9"/>
           </svg>
@@ -611,7 +584,7 @@
   </section>
 
   <!-- CONTACT / START HERE (section G) -->
-  <section id="contact" class="contact-section grid-bg">
+  <section id="contact" class="tier-raised contact-section">
     <div class="wrap">
       <div class="eyebrow" style="justify-content:center;">START HERE</div>
       <h2>Let's find out where it's leaking.</h2>
@@ -631,7 +604,6 @@
   </footer>
 
 <script>
-  // Sticky CTA visibility
   const stickyCta = document.getElementById('stickyCta');
   const hero = document.querySelector('.hero');
   const contact = document.getElementById('contact');
@@ -645,26 +617,19 @@
   }, {threshold:0.3});
   stopObserver.observe(contact);
 
-  stickyCta.addEventListener('click', ()=>{
-    document.getElementById('assessment').scrollIntoView({behavior:'smooth'});
-  });
+  stickyCta.addEventListener('click', ()=>{ document.getElementById('assessment').scrollIntoView({behavior:'smooth'}); });
 
-  // Video CTA overlay -> scroll to assessment
   const videoCta = document.getElementById('videoCta');
-  function goToAssessment(){
-    document.getElementById('assessment').scrollIntoView({behavior:'smooth'});
-  }
+  function goToAssessment(){ document.getElementById('assessment').scrollIntoView({behavior:'smooth'}); }
   videoCta.addEventListener('click', goToAssessment);
   videoCta.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); goToAssessment(); } });
 
-  // Scroll reveals
   const revealEls = document.querySelectorAll('.reveal');
   const revealIO = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target); } });
   }, {threshold:0.15});
   revealEls.forEach(el=>revealIO.observe(el));
 
-  // Calculator (step 1)
   const revenueInput = document.getElementById('revenue');
   const revenueRange = document.getElementById('revenueRange');
   const calcRange = document.getElementById('calcRange');
@@ -690,19 +655,11 @@
   revenueRange.addEventListener('input', (e)=>{ revenueInput.value = e.target.value; updateCalc(e.target.value); });
   updateCalc(revenueInput.value);
 
-  // Step navigation
   const step1 = document.getElementById('step1');
   const step2 = document.getElementById('step2');
-  document.getElementById('toStep2').addEventListener('click', ()=>{
-    step1.classList.remove('active');
-    step2.classList.add('active');
-  });
-  document.getElementById('backStep1').addEventListener('click', ()=>{
-    step2.classList.remove('active');
-    step1.classList.add('active');
-  });
+  document.getElementById('toStep2').addEventListener('click', ()=>{ step1.classList.remove('active'); step2.classList.add('active'); });
+  document.getElementById('backStep1').addEventListener('click', ()=>{ step2.classList.remove('active'); step1.classList.add('active'); });
 
-  // Form submit (AJAX to Formspree, graceful fallback)
   const assessForm = document.getElementById('assessForm');
   const formStatus = document.getElementById('formStatus');
   const submitBtn = document.getElementById('submitBtn');
@@ -725,9 +682,7 @@
         assessForm.reset();
         submitBtn.textContent = 'Unlock My 3 Leak Points →';
         submitBtn.disabled = false;
-      } else {
-        throw new Error('submit failed');
-      }
+      } else { throw new Error('submit failed'); }
     }).catch(() => {
       formStatus.textContent = "Something didn't go through — email us directly at hello@3pbusinessoptimization.com and we'll get right back to you.";
       submitBtn.textContent = 'Unlock My 3 Leak Points →';
