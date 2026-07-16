@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 5-Minute Waste Check — 3P Business Optimization</title>
+<link rel="icon" type="image/svg+xml" href="../assets/logo/3P_circular_logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-deep:#08111F;
+  --navy-raised:#132A42;
+  --navy-panel:#13253B;
+  --navy-card:#0D1D30;
+  --gold:#D4A017;
+  --gold-bright:#F7D76A;
+  --gold-champagne:#FFF1A8;
+  --ink:#E7ECF2;
+  --ink-soft:rgba(231,236,242,.68);
+  --ink-faint:rgba(231,236,242,.42);
+  --line:rgba(212,160,23,.30);
+  --line-soft:rgba(231,236,242,.11);
+  --max:1120px;
+  --radius:3px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--navy-deep);
+  color:var(--ink);
+  font-family:Inter,sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.08;letter-spacing:-.015em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+.eyebrow{
+  color:var(--gold-bright);
+  font:600 11px "IBM Plex Mono",monospace;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:20px;
+}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--gold)}
+header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:rgba(11,27,46,.97);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 12px 30px rgba(0,0,0,.28);
+  backdrop-filter:blur(12px);
+}
+.header-row{
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.logo img{width:clamp(235px,27vw,325px);display:block}
+.site-nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  font:600 11px "IBM Plex Mono",monospace;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.site-nav a{color:var(--ink-soft)}
+.site-nav a:hover{color:var(--gold-bright)}
+.site-nav .nav-cta{
+  color:var(--navy-deep);
+  background:var(--gold);
+  border:1px solid var(--gold);
+  padding:11px 15px;
+  border-radius:var(--radius);
+}
+.site-nav .nav-cta:hover{background:var(--gold-bright);color:var(--navy-deep)}
+.menu-toggle{
+  display:none;
+  width:44px;height:42px;
+  border:1px solid var(--line);
+  background:rgba(8,17,31,.42);
+  color:var(--gold-bright);
+  border-radius:var(--radius);
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+}
+.menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{
+  content:"";display:block;width:20px;height:2px;background:currentColor;position:relative;
+}
+.menu-toggle span::before{position:absolute;top:-6px}
+.menu-toggle span::after{position:absolute;top:6px}
+.menu-toggle[aria-expanded="true"] span{background:transparent}
+.menu-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+section{padding:84px 0;border-top:1px solid var(--line)}
+.hero{
+  border-top:none;
+  background:
+    radial-gradient(circle at 88% 0%,rgba(212,160,23,.14),transparent 34%),
+    linear-gradient(180deg,#0B1828 0%,#08111F 100%);
+}
+.button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:13px 20px;
+  background:var(--gold);
+  color:var(--navy-deep);
+  border:1px solid var(--gold);
+  border-radius:var(--radius);
+  font:600 12px "IBM Plex Mono",monospace;
+  letter-spacing:.04em;
+}
+.button:hover{background:var(--gold-bright)}
+.button.secondary{background:transparent;color:var(--gold-bright);border-color:var(--line)}
+.button.secondary:hover{border-color:var(--gold-bright);background:rgba(247,215,106,.07)}
+footer{padding:30px 0;border-top:1px solid var(--line)}
+.footer-row{
+  display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  color:var(--ink-faint);font:500 11px "IBM Plex Mono",monospace;
+}
+@media(max-width:860px){
+  .header-row{min-height:74px}
+  .logo img{width:min(220px,62vw)}
+  .menu-toggle{display:flex}
+  .site-nav{
+    position:absolute;left:0;right:0;top:100%;
+    display:none;flex-direction:column;align-items:stretch;gap:0;
+    padding:12px 20px 20px;background:#0B1B2E;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 18px 30px rgba(0,0,0,.34);
+  }
+  .site-nav.open{display:flex}
+  .site-nav a{padding:14px 2px;border-bottom:1px solid var(--line-soft)}
+  .site-nav .nav-cta{margin-top:12px;padding:13px 15px;text-align:center;border-bottom:none}
+}
+@media(max-width:600px){
+  .wrap{padding:0 20px}
+  section{padding:64px 0}
+}
+.article-hero{padding:74px 0 60px}
+.article-hero .back{
+  display:inline-block;margin-bottom:28px;color:var(--gold-bright);
+  font:600 11px "IBM Plex Mono",monospace;letter-spacing:.05em
+}
+.article-hero h1{font-size:clamp(38px,6vw,68px);max-width:860px}
+.article-hero .lede{margin-top:24px;max-width:760px;color:var(--ink-soft);font-size:19px}
+.article-shell{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:58px;align-items:start}
+.article-body h2{font-size:32px;margin-top:48px}
+.article-body h2:first-child{margin-top:0}
+.article-body h3{font-size:22px;margin-top:30px}
+.article-body p{margin-top:16px;color:var(--ink-soft);font-size:16px;line-height:1.72}
+.article-body strong{color:var(--ink)}
+.article-body ul,.article-body ol{margin:18px 0 0 22px;color:var(--ink-soft)}
+.article-body li{padding:7px 0 7px 4px;line-height:1.62}
+.numbered-list{list-style:none;margin-left:0!important;counter-reset:item}
+.numbered-list li{counter-increment:item;position:relative;padding:22px 0 22px 54px;border-top:1px solid var(--line-soft)}
+.numbered-list li::before{content:counter(item,decimal-leading-zero);position:absolute;left:0;top:24px;color:var(--gold-bright);font:600 11px "IBM Plex Mono",monospace}
+.numbered-list li:first-child{border-top:none}
+.numbered-list strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:21px;margin-bottom:7px}
+.callout{margin-top:34px;padding:22px 24px;border-left:3px solid var(--gold);background:rgba(212,160,23,.08);color:var(--ink-soft)}
+.sidebar{position:sticky;top:118px;border:1px solid var(--line);background:var(--navy-card);padding:26px}
+.sidebar .label{font:600 10.5px "IBM Plex Mono",monospace;color:var(--gold-bright);letter-spacing:.12em;text-transform:uppercase}
+.sidebar h3{font-size:22px;margin-top:14px}
+.sidebar p{margin-top:13px;color:var(--ink-soft);font-size:14px}
+.sidebar .button{width:100%;margin-top:22px}
+.checklist{margin-top:26px;border-top:1px solid var(--line)}
+.checklist label{display:grid;grid-template-columns:26px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line-soft);color:var(--ink-soft);cursor:pointer}
+.checklist input{accent-color:var(--gold);width:18px;height:18px;margin-top:3px}
+.checklist strong{color:var(--ink)}
+.related{background:var(--navy-raised)}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+.related-card{display:block;background:var(--navy-card);padding:28px;transition:background .2s ease}
+.related-card:hover{background:var(--navy-panel)}
+.related-card .label{color:var(--gold-bright);font:600 10.5px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
+.related-card h3{font-size:22px;margin-top:15px}
+.related-card p{margin-top:12px;color:var(--ink-soft)}
+@media(max-width:880px){
+  .article-shell{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .related-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap header-row">
+    <a class="logo" href="../index.html" aria-label="3P Business Optimization home">
+      <img src="../assets/logo/3P_Rectangular_Logo.svg" alt="3P Business Optimization">
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation"><span></span></button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#framework">How 3P Works</a>
+      <a href="../operational-insights.html">Operational Insights</a>
+      <a class="nav-cta" href="../index.html#assessment">Start Here →</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero article-hero">
+  <div class="wrap">
+    <a class="back" href="../operational-insights.html">← ALL OPERATIONAL INSIGHTS</a>
+    <div class="eyebrow">Owner Exercise</div>
+    <h1>The 5-Minute Waste Check</h1>
+    <p class="lede">Examine one recurring task and quickly identify waiting, rework, bottlenecks, unclear ownership, and unnecessary handoffs.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap article-shell">
+    <article class="article-body">
+      <h2>Choose one recurring task.</h2>
+<p>Use scheduling, quoting, ordering, invoicing, production, customer follow-up, or approvals. Do not assess the entire business at once. One process is enough to reveal the pattern.</p>
+
+<div class="checklist">
+  <label><input type="checkbox"><span><strong>Ownership:</strong> More than one person believes someone else owns the next step.</span></label>
+  <label><input type="checkbox"><span><strong>Waiting:</strong> Work regularly sits untouched while someone waits for information or approval.</span></label>
+  <label><input type="checkbox"><span><strong>Rework:</strong> The task frequently comes back because something was missing, wrong, or unclear.</span></label>
+  <label><input type="checkbox"><span><strong>Handoffs:</strong> The work moves between people or systems more times than the customer would expect.</span></label>
+  <label><input type="checkbox"><span><strong>Workarounds:</strong> Employees rely on personal notes, side spreadsheets, texts, or memory to finish the job.</span></label>
+  <label><input type="checkbox"><span><strong>Owner dependence:</strong> The process slows down or stops when the owner is unavailable.</span></label>
+</div>
+
+<div class="callout"><strong>Three or more checked boxes:</strong> The process is probably depending on memory, workarounds, or owner intervention instead of a reliable system.</div>
+
+<h2>Turn the check into action</h2>
+<p>Write down the current steps exactly as they happen—not how the procedure says they should happen. Mark every delay, correction, handoff, and approval. That is your starting map.</p>
+    </article>
+    <aside class="sidebar">
+      <div class="label">60-Second Assessment</div>
+      <h3>What is unmanaged waste costing you?</h3>
+      <p>Estimate the annual cost, then identify where the loss may be coming from.</p>
+      <a class="button" href="../index.html#assessment">Run the Numbers →</a>
+    </aside>
+  </div>
+</section>
+
+<section class="related">
+  <div class="wrap">
+    <div class="eyebrow">Keep Reading</div>
+    <div class="related-grid">
+      <a class="related-card" href="process-cost-warning-signs.html">
+        <div class="label">Process Diagnostic</div>
+        <h3>5 Signs Your Process Is Costing You</h3>
+        <p>Learn how everyday frustrations reveal structural process waste.</p>
+      </a>
+<a class="related-card" href="automation-readiness.html">
+        <div class="label">Automation Readiness</div>
+        <h3>Before You Automate Anything</h3>
+        <p>Decide whether technology will remove work or automate the waste.</p>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 3P BUSINESS OPTIMIZATION</span>
+    <span>PEOPLE · PROCESS · PRODUCT</span>
+  </div>
+</footer>
+<script>
+const menuToggle=document.getElementById('menuToggle');
+const siteNav=document.getElementById('siteNav');
+if(menuToggle&&siteNav){
+  menuToggle.addEventListener('click',()=>{
+    const open=siteNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded',String(open));
+    menuToggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');
+  });
+  siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    siteNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+  }));
+}
+</script>
+</body>
+</html>
