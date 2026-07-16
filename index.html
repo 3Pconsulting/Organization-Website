@@ -98,26 +98,126 @@
   .sticky-cta:hover{ background:var(--gold-bright); }
   @media(max-width:600px){ .sticky-cta{ right:16px; bottom:16px; padding:12px 18px; font-size:12px; } }
 
-  /* ---------- header ---------- */
-  header{ position:absolute; top:0; left:0; right:0; z-index:10; padding:24px 0; }
-  .header-row{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-  .wordmark{ display:flex; align-items:center; }
-  .wordmark img{ height:38px; width:auto; display:block; }
-  @media(max-width:500px){ .wordmark img{ height:30px; } }
-  .header-cta{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.05em;
-    border:1px solid var(--line); padding:9px 18px; border-radius:var(--radius);
-    transition:border-color .2s ease, background .2s ease;
-    white-space:nowrap;
-  }
-  .header-cta:hover{ border-color:var(--gold); background:rgba(212,160,23,0.08); }
+  /* ---------- distinct branded header + responsive navigation ---------- */
+header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  padding:14px 0;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(212,160,23,0.13), transparent 34%),
+    linear-gradient(180deg, rgba(22,50,79,0.98) 0%, rgba(11,27,46,0.98) 100%);
+  border-bottom:1px solid rgba(247,215,106,0.48);
+  box-shadow:0 12px 30px rgba(0,0,0,0.28);
+  backdrop-filter:blur(12px);
+}
+.header-row{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.wordmark{ display:flex; align-items:center; flex:0 1 auto; }
+.wordmark img{
+  width:clamp(235px, 27vw, 325px);
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 5px 16px rgba(0,0,0,0.24));
+}
+.site-nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+}
+.site-nav a{
+  color:var(--ink-soft);
+  transition:color .2s ease, border-color .2s ease, background .2s ease;
+}
+.site-nav a:hover{ color:var(--gold-bright); }
+.site-nav .nav-cta{
+  color:var(--navy-deep);
+  background:var(--gold);
+  border:1px solid var(--gold);
+  padding:11px 15px;
+  border-radius:var(--radius);
+}
+.site-nav .nav-cta:hover{
+  color:var(--navy-deep);
+  background:var(--gold-bright);
+  border-color:var(--gold-bright);
+}
+.menu-toggle{
+  display:none;
+  width:44px;
+  height:42px;
+  border:1px solid var(--line);
+  background:rgba(8,17,31,0.42);
+  color:var(--gold-bright);
+  border-radius:var(--radius);
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+}
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after{
+  content:'';
+  display:block;
+  width:20px;
+  height:2px;
+  background:currentColor;
+  position:relative;
+  transition:transform .2s ease, opacity .2s ease;
+}
+.menu-toggle span::before{ position:absolute; top:-6px; }
+.menu-toggle span::after{ position:absolute; top:6px; }
+.menu-toggle[aria-expanded="true"] span{ background:transparent; }
+.menu-toggle[aria-expanded="true"] span::before{ top:0; transform:rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span::after{ top:0; transform:rotate(-45deg); }
 
+@media(max-width:860px){
+  header{ padding:10px 0; }
+  .header-row{ min-height:68px; gap:14px; }
+  .wordmark img{ width:min(220px, 62vw); }
+  .menu-toggle{ display:flex; }
+  .site-nav{
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:12px 20px 20px;
+    background:#0B1B2E;
+    border-bottom:1px solid var(--line);
+    box-shadow:0 18px 30px rgba(0,0,0,.34);
+  }
+  .site-nav.open{ display:flex; }
+  .site-nav a{
+    padding:14px 2px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .site-nav .nav-cta{
+    margin-top:12px;
+    padding:13px 15px;
+    text-align:center;
+    border-bottom:none;
+  }
+}
   /* ---------- HERO (video + slim text split) ---------- */
   .hero{
     position:relative;
-    padding:128px 0 64px;
+    padding:72px 0 64px;
   }
-  @media(max-width:700px){ .hero{ padding:104px 0 48px; } }
+  @media(max-width:700px){ .hero{ padding:48px 0 44px; } }
   .hero-grid{
     display:grid;
     grid-template-columns:1fr 3fr;
@@ -170,28 +270,6 @@
   .btn-primary:disabled{ opacity:0.5; cursor:not-allowed; transform:none; }
   @media(max-width:500px){ .btn-primary{ width:100%; justify-content:center; } }
 
-  /* ---------- control chart signature element (hero only) ---------- */
-  .chart-band{
-    position:relative;
-    margin-top:52px;
-    padding-top:22px;
-    border-top:1px solid var(--line-soft);
-  }
-  .chart-band .chart-caption{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint);
-    display:flex; justify-content:space-between; margin-bottom:10px; gap:12px; flex-wrap:wrap;
-  }
-  .chart-svg{ width:100%; height:auto; display:block; }
-  .chart-path{
-    stroke:var(--gold-bright); stroke-width:2; fill:none;
-    stroke-dasharray:900; stroke-dashoffset:900;
-    animation:draw 2.6s ease forwards 0.4s;
-  }
-  .chart-limit{ stroke:var(--line); stroke-width:1; stroke-dasharray:4 5; }
-  .chart-dot{ fill:var(--gold-bright); opacity:0; animation:pop .4s ease forwards; }
-  @keyframes draw{ to{ stroke-dashoffset:0; } }
-  @keyframes pop{ to{ opacity:1; } }
 
   /* ---------- THESIS headline section ---------- */
   .thesis-section{ text-align:center; padding-top:96px; padding-bottom:96px; }
@@ -206,6 +284,15 @@
   .stat-card:hover{ background:var(--navy-panel); }
   .stat-card .num{ font-family:'IBM Plex Mono', monospace; font-size:clamp(30px,4vw,42px); font-weight:600; color:var(--gold-bright); line-height:1; }
   .stat-card .label{ margin-top:14px; font-size:14.5px; color:var(--ink-soft); }
+  .stat-card .label .emphasis{
+    color:var(--gold-champagne);
+    font-style:normal;
+    font-weight:700;
+    text-decoration:underline;
+    text-decoration-color:rgba(247,215,106,0.42);
+    text-decoration-thickness:1px;
+    text-underline-offset:4px;
+  }
   .stat-card .src{
     margin-top:16px; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--ink-faint); letter-spacing:0.03em;
     opacity:0; max-height:0; overflow:hidden; transition:opacity .25s ease, max-height .25s ease;
@@ -261,7 +348,15 @@
     font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
     font-family:'IBM Plex Mono', monospace; color:var(--gold-bright); margin-bottom:12px;
   }
-  .framework-card p{ font-size:15px; color:var(--ink-soft); line-height:1.55; }
+  .framework-subhead{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:18px;
+    font-weight:600;
+    line-height:1.25;
+    color:var(--ink);
+    margin-bottom:16px;
+  }
+  .framework-card p{ font-size:15px; color:var(--ink-soft); line-height:1.6; }
 
   /* ---------- assessment (merged calculator + form) ---------- */
   .assessment-panel{ border:1px solid var(--line); background:var(--navy-panel); padding:44px; }
@@ -321,13 +416,76 @@
   .form-status{ margin-top:16px; font-size:13.5px; color:var(--ink-soft); }
   .form-status.success{ color:var(--gold-bright); }
 
+/* ---------- operational insights homepage preview ---------- */
+.insights-preview{ background:var(--navy-deep); }
+.insights-preview .section-head{ max-width:720px; }
+.insights-preview-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1px;
+  background:var(--line-soft);
+  border:1px solid var(--line-soft);
+}
+.insight-link-card{
+  display:block;
+  min-height:250px;
+  padding:32px 28px;
+  background:var(--navy-card);
+  transition:background .22s ease, transform .22s ease;
+}
+.insight-link-card:hover{
+  background:var(--navy-panel);
+  transform:translateY(-2px);
+}
+.insight-link-card .insight-number{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
+  color:var(--gold-bright);
+}
+.insight-link-card h3{ margin-top:22px; font-size:22px; }
+.insight-link-card p{
+  margin-top:15px;
+  color:var(--ink-soft);
+  font-size:15px;
+  line-height:1.58;
+}
+.insight-link-card .insight-action{
+  display:block;
+  margin-top:24px;
+  color:var(--gold-bright);
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.05em;
+}
+.insights-all{
+  margin-top:34px;
+  display:flex;
+  justify-content:center;
+}
+@media(max-width:820px){
+  .insights-preview-grid{ grid-template-columns:1fr; }
+  .insight-link-card{ min-height:auto; }
+}
+
   /* ---------- contact / final CTA ---------- */
   .contact-section{ text-align:center; padding:104px 0; }
   @media(max-width:700px){ .contact-section{ padding:72px 0; } }
   .contact-section h2{ font-size:clamp(26px,4vw,44px); max-width:700px; margin:0 auto; }
   .contact-section p{ margin:20px auto 0; color:var(--ink-soft); max-width:480px; font-size:16px; }
   .contact-actions{ margin-top:36px; display:flex; justify-content:center; flex-wrap:wrap; gap:16px; }
-  .contact-detail{ margin-top:32px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-faint); }
+  .contact-detail{
+    margin-top:32px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-faint);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+  }
 
   footer{ padding:32px 0; }
   .footer-row{
@@ -341,19 +499,29 @@
   <button class="sticky-cta mono" id="stickyCta">GET MY FREE SNAPSHOT →</button>
 
   <header>
-    <div class="wrap header-row">
-      <a href="#" class="wordmark" aria-label="3P Business Optimization — home">
-        <img src="assets/logo/3P_Rectangular_Logo.svg" alt="3P Business Optimization">
-      </a>
-      <a href="#contact" class="header-cta mono">CONTACT →</a>
-    </div>
-  </header>
+  <div class="wrap header-row">
+    <a href="index.html" class="wordmark" aria-label="3P Business Optimization — home">
+      <img src="assets/logo/3P_Rectangular_Logo.svg" alt="3P Business Optimization">
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation">
+      <span></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="#framework">How 3P Works</a>
+      <a href="operational-insights.html">Operational Insights</a>
+      <a href="#assessment" class="nav-cta">Start Here →</a>
+    </nav>
+  </div>
+</header>
 
   <!-- HERO: video (75%) + slim text (25%) -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-text">
-        <div class="eyebrow">PEOPLE · PROCESS · PRODUCT</div>
+        <div class="eyebrow">CONTINUOUS IMPROVEMENT &amp; COST SAVINGS</div>
         <h1>Lean Six Sigma, built for businesses your size.</h1>
         <div class="stat-line">47% OF SMALL BUSINESSES SAY OPERATIONS GOT WORSE OR STAYED FLAT LAST YEAR. 42% ARE CUTTING COSTS JUST TO PROTECT MARGIN.</div>
       </div>
@@ -364,19 +532,14 @@
         <div class="video-cta-overlay" id="videoCta" role="button" tabindex="0" aria-label="Get your free assessment"></div>
       </div>
     </div>
+  </section>
 
-    <div class="wrap chart-band">
-      <div class="chart-caption">
-        <span>OPERATIONAL VARIATION — UNMANAGED PROCESS</span>
-        <span>SOURCE: NATIONAL SMB OPERATIONS DATA, 2026</span>
-      </div>
-      <svg class="chart-svg" viewBox="0 0 1000 140" preserveAspectRatio="none" aria-hidden="true">
-        <line x1="0" y1="30" x2="1000" y2="30" class="chart-limit"/>
-        <line x1="0" y1="110" x2="1000" y2="110" class="chart-limit"/>
-        <path class="chart-path" d="M0,70 C60,55 90,95 140,80 C200,60 230,110 290,90 C350,70 380,25 440,45 C500,65 540,100 600,85 C660,70 700,30 760,50 C820,70 860,95 920,75 C960,62 980,68 1000,60"/>
-        <circle class="chart-dot" cx="440" cy="45" r="4" style="animation-delay:1.6s"/>
-        <circle class="chart-dot" cx="760" cy="50" r="4" style="animation-delay:2s"/>
-      </svg>
+  <!-- THESIS — moved directly beneath hero -->
+  <section class="thesis-section">
+    <div class="wrap">
+      <div class="eyebrow">STOP LOSING MONEY</div>
+      <h1>Nothing's broken. There's <em>profit hiding</em> in your process.</h1>
+      <p class="lede">3P Business Optimization applies certified Lean Six Sigma methodology to find exactly where your operation is losing time and money — and fixes it before you spend another dollar on tools or automation that won't stick.</p>
     </div>
   </section>
 
@@ -401,21 +564,12 @@
     </div>
   </section>
 
-  <!-- THESIS (section B) -->
-  <section class="thesis-section">
-    <div class="wrap">
-      <div class="eyebrow">THE 3P THESIS</div>
-      <h1>Nothing's broken. There's <em>profit hiding</em> in your process.</h1>
-      <p class="lede">3P Business Optimization applies certified Lean Six Sigma methodology to find exactly where your operation is losing time and money — and fixes it before you spend another dollar on tools or automation that won't stick.</p>
-    </div>
-  </section>
-
   <!-- ASSESSMENT (section C) — merged calculator + form -->
   <section id="assessment" class="tier-raised">
     <div class="wrap">
       <div class="section-head reveal">
         <div class="eyebrow">RUN THE NUMBERS</div>
-        <h2>What is unmanaged process waste costing you?</h2>
+        <h2>The Cost of Waste, Inefficiency, and Ineffective Processes</h2>
         <p>A widely used Six Sigma benchmark: unmanaged waste and rework — the "cost of poor quality" — typically runs 15–20% of revenue for service and small operational businesses. Here's what that looks like at your size.</p>
       </div>
 
@@ -446,7 +600,7 @@
             <p>That's your estimate. Tell us where to send the specific breakdown — the 3 leak points we typically find in businesses your size — and we'll follow up personally, no automated sales sequence.</p>
           </div>
 
-          <form id="assessForm" class="mono" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form id="assessForm" class="mono" action="https://formspree.io/f/mvzezlzz" method="POST">
             <input type="hidden" name="estimated_monthly_revenue" id="hiddenRevenue">
             <input type="hidden" name="estimated_annual_waste_range" id="hiddenRange">
             <div class="form-grid">
@@ -470,30 +624,30 @@
   <section id="diagnostic">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">THE NATIONAL READOUT</div>
-        <h2>The data on small business operations isn't subtle.</h2>
-        <p>Across industries, the pattern is the same: owners are working harder inside the business, not on it — and it's showing up directly in cash flow and margin.</p>
+        <div class="eyebrow">IT’S NOT JUST IN OUR COUNTY</div>
+        <h2>Across All Industries Nationwide</h2>
+        <p>Across America, the pattern is the same: owners are working harder inside the business, but they are not seeing the reward. It’s showing up directly in cash flow and margin.</p>
       </div>
 
       <div class="stat-grid reveal">
         <div class="stat-card">
           <div class="num">47%</div>
-          <div class="label">of small businesses report operations stayed flat or got <em>less</em> efficient over the past year.</div>
+          <div class="label">of small businesses report operations stayed flat or got <span class="emphasis">less efficient</span> over the past year.</div>
           <div class="src">2026 Small Business Resiliency Study, 1,155 owners nationwide</div>
         </div>
         <div class="stat-card">
           <div class="num">42%</div>
-          <div class="label">say their top priority this year is cutting costs to protect margin — not growth.</div>
+          <div class="label">say their top priority this year is <span class="emphasis">cutting costs</span> to protect margin — not growth.</div>
           <div class="src">SoFi State of Small Business, 2026</div>
         </div>
         <div class="stat-card">
           <div class="num">78%</div>
-          <div class="label">of owners with back-office friction say it creates direct personal financial stress.</div>
+          <div class="label">of owners with <span class="emphasis">back-office friction</span> say it creates direct personal financial stress.</div>
           <div class="src">2026 Small Business Resiliency Study</div>
         </div>
         <div class="stat-card">
           <div class="num">72%</div>
-          <div class="label">say internal operational issues make cash flow harder to predict, month to month.</div>
+          <div class="label">say <span class="emphasis">internal operational issues</span> make cash flow harder to predict, month to month.</div>
           <div class="src">2026 Small Business Resiliency Study</div>
         </div>
       </div>
@@ -508,8 +662,8 @@
   <section id="ai-trap" class="tier-raised">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">THE AUTOMATION TRAP</div>
-        <h2>Automation doesn't fix a broken process. It just breaks it faster.</h2>
+        <div class="eyebrow">AI CAN’T SAVE YOU</div>
+        <h2>Automation doesn’t fix a broken process. It drastically increases the damage.</h2>
         <p>Most consultants will sell you software first. That's backwards — and the data backs it up.</p>
       </div>
 
@@ -529,9 +683,9 @@
           <h3>Streamline, then automate</h3>
           <ul>
             <li>Map the process first — find where time, money, and quality actually leak</li>
-            <li>Remove the waste with Lean Six Sigma tools before touching a single tool</li>
-            <li>Automate what's left — now it compounds instead of amplifying the mess</li>
-            <li>The result holds because the fix is structural, not cosmetic</li>
+            <li>Remove the waste with Lean Six Sigma methods before touching a single tool</li>
+            <li>Automate what remains—so technology compounds productivity instead of waste and cost</li>
+            <li>Create lasting efficiency because the fix is structural, not cosmetic</li>
           </ul>
         </div>
       </div>
@@ -549,7 +703,7 @@
       <div class="section-head reveal">
         <div class="eyebrow">HOW WE WORK</div>
         <h2>Three parts. One order. No shortcuts.</h2>
-        <p>People, Process, Product isn't a slogan — it's the sequence. Skip a step and the fix doesn't hold.</p>
+        <p>Real improvement takes all three. 3P aligns your people, rebuilds your processes, and strengthens your output—then adds automation only where it saves time, money, or effort.</p>
       </div>
 
       <div class="framework-grid reveal">
@@ -559,7 +713,8 @@
             <path d="M8 34c0-7 5.5-12 12-12s12 5 12 12"/>
           </svg>
           <h3>01 — People</h3>
-          <p>Clear roles, real accountability, and training that matches how the work actually gets done — not an org chart nobody follows.</p>
+          <div class="framework-subhead">Right People. Clear Roles. Real Accountability.</div>
+          <p>Put the wrong player in the wrong position and the whole team slows down. 3P aligns roles, accountability, and training so your team executes the process your business needs—not personal preference.</p>
         </div>
         <div class="framework-card">
           <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#F7D76A" stroke-width="1.4">
@@ -569,7 +724,8 @@
             <path d="M15 13v14M25 13v14"/>
           </svg>
           <h3>02 — Process</h3>
-          <p>Map the workflow, measure where it breaks, remove the waste. Lean Six Sigma, applied to a business your size — not a factory floor.</p>
+          <div class="framework-subhead">Waste Drains Time, Money, and Morale.</div>
+          <p>We walk the work, map the flow, expose bottlenecks, measure the loss, and rebuild the process for speed, consistency, and control. Lean Six Sigma, customized to your operation—not a generic software rollout.</p>
         </div>
         <div class="framework-card">
           <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="#F7D76A" stroke-width="1.4">
@@ -577,22 +733,61 @@
             <path d="M14 20l4 4 8-9"/>
           </svg>
           <h3>03 — Product</h3>
-          <p>What comes out the other side: consistent output, fewer errors, and a business that's actually ready for the tools you wanted in the first place.</p>
+          <div class="framework-subhead">Consistent Output. Fewer Errors. Ready to Grow.</div>
+          <p>The result is reliable output, fewer mistakes, happier customers, and fewer lost opportunities. 3P builds operations that run smoothly, repeatably, and with automation only where it adds value.</p>
         </div>
       </div>
     </div>
   </section>
 
+<!-- OPERATIONAL INSIGHTS — compact homepage preview -->
+<section id="insights-preview" class="insights-preview">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">OPERATIONAL INSIGHTS</div>
+      <h2>Practical answers for expensive business problems.</h2>
+      <p>Understand where waste hides, why common fixes fail, and what to examine before spending more money on software, staffing, or automation.</p>
+    </div>
+
+    <div class="insights-preview-grid reveal">
+      <a class="insight-link-card" href="insights/process-cost-warning-signs.html">
+        <span class="insight-number">01</span>
+        <h3>5 Signs Your Process Is Costing You</h3>
+        <p>Constant questions, repeated mistakes, approval delays, and owner dependence are not just frustrations. They are operational warning signs.</p>
+        <span class="insight-action">READ THE SIGNS →</span>
+      </a>
+
+      <a class="insight-link-card" href="insights/automation-readiness.html">
+        <span class="insight-number">02</span>
+        <h3>Before You Automate Anything</h3>
+        <p>Four questions that reveal whether technology will remove work—or make an inefficient process more expensive.</p>
+        <span class="insight-action">CHECK AUTOMATION READINESS →</span>
+      </a>
+
+      <a class="insight-link-card" href="insights/five-minute-waste-check.html">
+        <span class="insight-number">03</span>
+        <h3>The 5-Minute Waste Check</h3>
+        <p>Examine one recurring task and quickly identify waiting, rework, bottlenecks, unclear ownership, and unnecessary handoffs.</p>
+        <span class="insight-action">RUN THE CHECK →</span>
+      </a>
+    </div>
+
+    <div class="insights-all reveal">
+      <a href="operational-insights.html" class="btn-primary">Explore All Operational Insights →</a>
+    </div>
+  </div>
+</section>
+
   <!-- CONTACT / START HERE (section G) -->
   <section id="contact" class="tier-raised contact-section">
     <div class="wrap">
       <div class="eyebrow" style="justify-content:center;">START HERE</div>
-      <h2>Let's find out where it's leaking.</h2>
-      <p>One conversation, no pitch deck. We'll walk through your operation and tell you plainly where the waste is — before you spend a dollar fixing it.</p>
+      <h2>Let’s Identify Where We Can Help</h2>
+      <p>60 seconds, no pitch deck. We’ll walk through your operation and tell you plainly where the waste is—before you spend a dollar fixing it.</p>
       <div class="contact-actions">
         <a href="#assessment" class="btn-primary">Start My 60-Second Audit →</a>
       </div>
-      <div class="contact-detail">GILCHRIST COUNTY, FL · SERVING RURAL &amp; SMALL-TEAM BUSINESSES NATIONWIDE</div>
+      <div class="contact-detail"><span>GILCHRIST COUNTY, FL</span><span>SERVING RURAL &amp; SMALL-TEAM BUSINESSES NATIONWIDE</span></div>
     </div>
   </section>
 
@@ -603,7 +798,27 @@
     </div>
   </footer>
 
+
 <script>
+  const menuToggle = document.getElementById('menuToggle');
+  const siteNav = document.getElementById('siteNav');
+
+  if(menuToggle && siteNav){
+    menuToggle.addEventListener('click', ()=>{
+      const isOpen = siteNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+
+    siteNav.querySelectorAll('a').forEach(link=>{
+      link.addEventListener('click', ()=>{
+        siteNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation');
+      });
+    });
+  }
+
   const stickyCta = document.getElementById('stickyCta');
   const hero = document.querySelector('.hero');
   const contact = document.getElementById('contact');
