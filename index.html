@@ -103,7 +103,7 @@ header{
   position:sticky;
   top:0;
   z-index:40;
-  padding:14px 0;
+  padding:8px 0;
   background:
     radial-gradient(circle at 14% 0%, rgba(212,160,23,0.13), transparent 34%),
     linear-gradient(180deg, rgba(22,50,79,0.98) 0%, rgba(11,27,46,0.98) 100%);
@@ -112,7 +112,7 @@ header{
   backdrop-filter:blur(12px);
 }
 .header-row{
-  min-height:76px;
+  min-height:56px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -120,7 +120,7 @@ header{
 }
 .wordmark{ display:flex; align-items:center; flex:0 1 auto; }
 .wordmark img{
-  width:clamp(235px, 27vw, 325px);
+  width:clamp(165px, 18vw, 210px);
   height:auto;
   display:block;
   filter:drop-shadow(0 5px 16px rgba(0,0,0,0.24));
@@ -182,9 +182,9 @@ header{
 .menu-toggle[aria-expanded="true"] span::after{ top:0; transform:rotate(-45deg); }
 
 @media(max-width:860px){
-  header{ padding:10px 0; }
-  .header-row{ min-height:68px; gap:14px; }
-  .wordmark img{ width:min(220px, 62vw); }
+  header{ padding:7px 0; }
+  .header-row{ min-height:52px; gap:14px; }
+  .wordmark img{ width:min(165px, 52vw); }
   .menu-toggle{ display:flex; }
   .site-nav{
     position:absolute;
@@ -416,6 +416,21 @@ header{
   .form-status{ margin-top:16px; font-size:13.5px; color:var(--ink-soft); }
   .form-status.success{ color:var(--gold-bright); }
 
+
+  /* ---------- operational snapshot launch ---------- */
+  .snapshot-launch-grid{ display:grid; grid-template-columns:1.08fr .92fr; gap:36px; align-items:center; }
+  .snapshot-launch-copy h3{ font-size:clamp(24px,3.2vw,34px); }
+  .snapshot-launch-copy p{ margin-top:16px; color:var(--ink-soft); font-size:15px; max-width:590px; }
+  .snapshot-points{ margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .snapshot-point{ border:1px solid var(--line-soft); background:rgba(0,0,0,.16); padding:14px; color:var(--ink-soft); font-size:13px; }
+  .snapshot-point strong{ display:block; color:var(--gold-bright); font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.07em; text-transform:uppercase; margin-bottom:6px; }
+  .snapshot-launch-result{ border:1px solid var(--line); background:rgba(8,17,31,.48); padding:28px; }
+  .snapshot-launch-result .label{ color:var(--gold-bright); font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
+  .snapshot-launch-result h3{ margin-top:13px; font-size:27px; }
+  .snapshot-launch-result p{ margin-top:12px; color:var(--ink-soft); font-size:14px; }
+  .snapshot-launch-result .btn-primary{ margin-top:24px; }
+  @media(max-width:820px){ .snapshot-launch-grid{ grid-template-columns:1fr; } .snapshot-points{ grid-template-columns:1fr; } }
+
 /* ---------- operational insights homepage preview ---------- */
 .insights-preview{ background:var(--navy-deep); }
 .insights-preview .section-head{ max-width:720px; }
@@ -512,7 +527,7 @@ header{
       <a href="index.html">Home</a>
       <a href="#framework">How 3P Works</a>
       <a href="operational-insights.html">Operational Insights</a>
-      <a href="#assessment" class="nav-cta">Start Here →</a>
+      <a href="operational-snapshot.html" class="nav-cta">Start Here →</a>
     </nav>
   </div>
 </header>
@@ -564,58 +579,33 @@ header{
     </div>
   </section>
 
-  <!-- ASSESSMENT (section C) — merged calculator + form -->
+  <!-- 60-SECOND OPERATIONAL SNAPSHOT -->
   <section id="assessment" class="tier-raised">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">RUN THE NUMBERS</div>
-        <h2>The Cost of Waste, Inefficiency, and Ineffective Processes</h2>
-        <p>A widely used Six Sigma benchmark: unmanaged waste and rework — the "cost of poor quality" — typically runs 15–20% of revenue for service and small operational businesses. Here's what that looks like at your size.</p>
+        <div class="eyebrow">60-SECOND OPERATIONAL SNAPSHOT</div>
+        <h2>See Where Your Business Is Losing Time, Money, and Capacity</h2>
+        <p>One adaptive assessment combines the interactive cost demo and lead questionnaire. The questions change based on how your business actually operates, and the dashboard updates as you answer.</p>
       </div>
-
       <div class="assessment-panel reveal">
-
-        <div class="assess-step active" id="step1">
-          <div class="step-label"><span>STEP 1 OF 2</span><span class="time">~60 SECONDS TOTAL</span></div>
-          <div class="step1-grid">
-            <div class="calc-input">
-              <label for="revenue">ESTIMATED MONTHLY REVENUE</label>
-              <div class="field"><span>$</span><input type="number" id="revenue" value="20000" min="0" step="500"></div>
-              <input type="range" id="revenueRange" min="2000" max="200000" step="1000" value="20000">
-              <div class="calc-note">Free, instant, no email required. This is a ballpark — the free assessment on step 2 tells you specifically where it's coming from.</div>
-            </div>
-            <div class="calc-output">
-              <div class="out-label">ESTIMATED ANNUAL COST OF UNADDRESSED WASTE</div>
-              <div class="range mono" id="calcRange">$36,000 – $48,000</div>
-              <div class="sub">That's revenue already moving through your business — just not reaching your bottom line.</div>
-              <button class="btn-primary" id="toStep2">See what's causing it →</button>
+        <div class="snapshot-launch-grid">
+          <div class="snapshot-launch-copy">
+            <h3>Most owners finish the essentials in about a minute.</h3>
+            <p>Start with simple yes-or-no gates. Add more detail only where it applies for a stronger custom opportunity plan.</p>
+            <div class="snapshot-points">
+              <div class="snapshot-point"><strong>Visibility</strong>Leads, calls, quotes, invoices, follow-up, data, and reporting.</div>
+              <div class="snapshot-point"><strong>Workflow</strong>Owner dependence, admin work, travel, routing, inventory, and rework.</div>
+              <div class="snapshot-point"><strong>Marketing</strong>Consistency, scheduling, channels, attribution, and missed demand.</div>
+              <div class="snapshot-point"><strong>Resources</strong>Time, software, marketing spend, and back-office capacity.</div>
             </div>
           </div>
-        </div>
-
-        <div class="assess-step" id="step2">
-          <div class="step-label"><span>STEP 2 OF 2</span><span class="time">~30 SECONDS MORE</span></div>
-          <div class="step2-intro">
-            <div class="num-recap" id="recapRange">$36,000 – $48,000 / year</div>
-            <p>That's your estimate. Tell us where to send the specific breakdown — the 3 leak points we typically find in businesses your size — and we'll follow up personally, no automated sales sequence.</p>
+          <div class="snapshot-launch-result">
+            <div class="label">LIVE RESULTS WHILE YOU ANSWER</div>
+            <h3>Your Operational Opportunity Dashboard</h3>
+            <p>See estimated opportunity exposure, owner capacity, missed opportunity, tracking risk, and likely People, Process, Product, Systems, and Marketing improvements.</p>
+            <a href="operational-snapshot.html" class="btn-primary">Start My Operational Snapshot →</a>
           </div>
-
-          <form id="assessForm" class="mono" action="https://formspree.io/f/mvzezlzz" method="POST">
-            <input type="hidden" name="estimated_monthly_revenue" id="hiddenRevenue">
-            <input type="hidden" name="estimated_annual_waste_range" id="hiddenRange">
-            <div class="form-grid">
-              <div class="form-field"><label for="fname">NAME</label><input type="text" id="fname" name="name" required></div>
-              <div class="form-field"><label for="femail">EMAIL</label><input type="email" id="femail" name="email" required></div>
-              <div class="form-field full"><label for="fphone">PHONE (OPTIONAL)</label><input type="tel" id="fphone" name="phone"></div>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn-primary" id="submitBtn">Unlock My 3 Leak Points →</button>
-              <button type="button" class="form-back" id="backStep1">← back</button>
-            </div>
-            <div class="form-status" id="formStatus"></div>
-          </form>
         </div>
-
       </div>
     </div>
   </section>
@@ -653,7 +643,7 @@ header{
       </div>
 
       <div class="section-cta reveal">
-        <a href="#assessment" class="btn-primary">Show Me Where I'm Losing Money →</a>
+        <a href="operational-snapshot.html" class="btn-primary">Show Me Where I'm Losing Money →</a>
       </div>
     </div>
   </section>
@@ -691,7 +681,7 @@ header{
       </div>
 
       <div class="section-cta reveal">
-        <a href="#assessment" class="btn-primary">Find My Profit Leaks →</a>
+        <a href="operational-snapshot.html" class="btn-primary">Find My Profit Leaks →</a>
       </div>
     </div>
   </section>
@@ -785,7 +775,7 @@ header{
       <h2>Let’s Identify Where We Can Help</h2>
       <p>60 seconds, no pitch deck. We’ll walk through your operation and tell you plainly where the waste is—before you spend a dollar fixing it.</p>
       <div class="contact-actions">
-        <a href="#assessment" class="btn-primary">Start My 60-Second Audit →</a>
+        <a href="operational-snapshot.html" class="btn-primary">Start My Operational Snapshot →</a>
       </div>
       <div class="contact-detail"><span>GILCHRIST COUNTY, FL</span><span>SERVING RURAL &amp; SMALL-TEAM BUSINESSES NATIONWIDE</span></div>
     </div>
@@ -832,10 +822,10 @@ header{
   }, {threshold:0.3});
   stopObserver.observe(contact);
 
-  stickyCta.addEventListener('click', ()=>{ document.getElementById('assessment').scrollIntoView({behavior:'smooth'}); });
+  stickyCta.addEventListener('click', ()=>{ window.location.href='operational-snapshot.html'; });
 
   const videoCta = document.getElementById('videoCta');
-  function goToAssessment(){ document.getElementById('assessment').scrollIntoView({behavior:'smooth'}); }
+  function goToAssessment(){ window.location.href='operational-snapshot.html'; }
   videoCta.addEventListener('click', goToAssessment);
   videoCta.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); goToAssessment(); } });
 
@@ -845,65 +835,6 @@ header{
   }, {threshold:0.15});
   revealEls.forEach(el=>revealIO.observe(el));
 
-  const revenueInput = document.getElementById('revenue');
-  const revenueRange = document.getElementById('revenueRange');
-  const calcRange = document.getElementById('calcRange');
-  const recapRange = document.getElementById('recapRange');
-  const hiddenRevenue = document.getElementById('hiddenRevenue');
-  const hiddenRange = document.getElementById('hiddenRange');
-
-  function formatCurrency(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
-
-  function updateCalc(value){
-    const monthly = Math.max(0, Number(value) || 0);
-    const annual = monthly * 12;
-    const low = annual * 0.15;
-    const high = annual * 0.20;
-    const rangeText = formatCurrency(low) + ' – ' + formatCurrency(high);
-    calcRange.textContent = rangeText;
-    recapRange.textContent = rangeText + ' / year';
-    hiddenRevenue.value = monthly;
-    hiddenRange.value = rangeText;
-  }
-
-  revenueInput.addEventListener('input', (e)=>{ revenueRange.value = e.target.value; updateCalc(e.target.value); });
-  revenueRange.addEventListener('input', (e)=>{ revenueInput.value = e.target.value; updateCalc(e.target.value); });
-  updateCalc(revenueInput.value);
-
-  const step1 = document.getElementById('step1');
-  const step2 = document.getElementById('step2');
-  document.getElementById('toStep2').addEventListener('click', ()=>{ step1.classList.remove('active'); step2.classList.add('active'); });
-  document.getElementById('backStep1').addEventListener('click', ()=>{ step2.classList.remove('active'); step1.classList.add('active'); });
-
-  const assessForm = document.getElementById('assessForm');
-  const formStatus = document.getElementById('formStatus');
-  const submitBtn = document.getElementById('submitBtn');
-
-  assessForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    formStatus.textContent = '';
-    formStatus.className = 'form-status';
-
-    fetch(assessForm.action, {
-      method: 'POST',
-      body: new FormData(assessForm),
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if(response.ok){
-        formStatus.textContent = "Got it — we'll follow up personally within one business day.";
-        formStatus.classList.add('success');
-        assessForm.reset();
-        submitBtn.textContent = 'Unlock My 3 Leak Points →';
-        submitBtn.disabled = false;
-      } else { throw new Error('submit failed'); }
-    }).catch(() => {
-      formStatus.textContent = "Something didn't go through — email us directly at hello@3pbusinessoptimization.com and we'll get right back to you.";
-      submitBtn.textContent = 'Unlock My 3 Leak Points →';
-      submitBtn.disabled = false;
-    });
-  });
 </script>
 
 </body>
