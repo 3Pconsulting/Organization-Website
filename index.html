@@ -7,7 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/logo/3P_circular_logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy-deep:#08111F;
@@ -224,9 +224,11 @@ header{
   .hero-lede{ font-size:17px; line-height:1.55; color:var(--ink-soft); max-width:46ch; margin:0 0 32px; }
   .hero-actions{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
   .hero-microcopy{ font-size:13px; color:var(--ink-faint); }
-  .hero-stats{ display:flex; gap:40px; margin-top:56px; padding-top:28px; border-top:1px solid var(--line); }
+  .hero-stats{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); margin-top:56px; }
+  .hero-stat{ background:var(--navy-deep); padding:22px 24px; }
   .hero-stat .num{ font-family:'IBM Plex Mono', monospace; font-size:30px; font-weight:600; color:var(--gold-bright); }
   .hero-stat .label{ font-size:13px; color:var(--ink-soft); max-width:20ch; margin-top:6px; }
+  .hl{ color:var(--gold-champagne); font-weight:700; text-decoration:underline; text-decoration-color:rgba(247,215,106,0.42); text-decoration-thickness:1px; text-underline-offset:4px; }
 
   .problems-panel{ display:flex; flex-direction:column; min-width:0; }
   .problems-panel-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
@@ -314,8 +316,10 @@ header{
   .local-flag .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold-bright); }
   .local-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:52px; align-items:start; }
   @media(max-width:860px){ .local-grid{ grid-template-columns:1fr; gap:36px; } }
-  .local-stats{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  .local-stats{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); }
   @media(max-width:480px){ .local-stats{ grid-template-columns:1fr; } }
+  .local-stat{ background:var(--navy-deep); padding:24px; transition:background .25s ease; }
+  .local-stat:hover{ background:var(--navy-panel); }
   .local-stat .num{ font-family:'IBM Plex Mono', monospace; font-size:clamp(26px,3.2vw,34px); color:var(--ink); font-weight:600; }
   .local-stat .label{ margin-top:8px; font-size:13.5px; color:var(--ink-soft); }
   .local-copy p{ color:var(--ink-soft); margin-bottom:15px; font-size:15.5px; }
@@ -488,6 +492,104 @@ header{
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
     font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ink-faint);
   }
+
+/* ===== 3P PHASE 1: COMPLETE TOP-OF-HOMEPAGE IMPLEMENTATION ===== */
+body{font-family:'Source Sans 3',sans-serif;}
+h1,h2,h3{font-family:'Source Serif 4',serif;letter-spacing:-.025em;}
+.problems-label,.framework-subhead{font-family:'Source Serif 4',serif;}
+.site-nav{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;letter-spacing:.035em;}
+
+.btn-secondary{
+  display:inline-flex;align-items:center;justify-content:center;min-height:52px;
+  padding:14px 4px;border-bottom:1px solid rgba(247,215,106,.62);
+  color:var(--ink);font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;
+  transition:color .2s ease,border-color .2s ease;
+}
+.btn-secondary:hover{color:var(--gold-bright);border-color:var(--gold-bright);}
+
+.hero-v2{
+  position:relative;min-height:clamp(610px,78vh,820px);display:flex;align-items:center;
+  overflow:hidden;padding:92px 0 82px;isolation:isolate;
+}
+.hero-v2-media,.hero-v2-overlay{position:absolute;inset:0;}
+.hero-v2-media{z-index:-3;background:var(--navy-card);}
+.hero-v2-media img{
+  width:100%;height:100%;display:block;object-fit:cover;object-position:center;
+}
+.hero-v2-overlay{
+  z-index:-2;
+  background:
+    linear-gradient(90deg,rgba(8,17,31,.99) 0%,rgba(8,17,31,.95) 36%,rgba(8,17,31,.60) 67%,rgba(8,17,31,.30) 100%),
+    linear-gradient(180deg,rgba(8,17,31,.10) 0%,rgba(8,17,31,.56) 100%);
+}
+.hero-v2-inner{width:100%;}
+.hero-v2-copy{max-width:690px;}
+.hero-v2-copy .eyebrow{margin-bottom:24px;}
+.hero-v2-copy h1{
+  max-width:760px;font-size:clamp(48px,7.2vw,88px);line-height:.98;margin:0;color:#fff;text-wrap:balance;
+}
+.hero-v2-lede{
+  max-width:630px;margin-top:28px;color:rgba(255,255,255,.84);
+  font-size:clamp(17px,1.8vw,20px);line-height:1.62;
+}
+.hero-v2 .hero-actions{margin-top:34px;}
+.hero-v2-note{margin-top:18px;color:rgba(255,255,255,.58);font-size:14px;}
+
+.service-paths{
+  background:radial-gradient(circle at 50% 0%,rgba(212,160,23,.08),transparent 38%),var(--navy-deep);
+  padding:88px 0 96px;
+}
+.service-paths-intro{max-width:790px;margin-bottom:46px;}
+.service-paths-intro h2{font-size:clamp(31px,4.4vw,50px);line-height:1.08;}
+.service-paths-intro>p{
+  max-width:680px;margin-top:20px;color:var(--ink-soft);font-size:18px;line-height:1.62;
+}
+.service-paths-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+.service-path-card{
+  position:relative;min-height:100%;padding:clamp(30px,4vw,46px);border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(255,255,255,.025),transparent 42%),var(--navy-card);
+  box-shadow:0 22px 48px rgba(0,0,0,.18);
+}
+.service-path-card::before{
+  content:'';position:absolute;left:0;top:0;width:4px;height:100%;
+  background:linear-gradient(180deg,var(--gold-bright),var(--gold-deep));
+}
+.service-path-label{
+  color:var(--gold-bright);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.13em;
+}
+.service-path-card h3{margin-top:17px;font-size:clamp(27px,3.1vw,37px);line-height:1.08;}
+.service-path-card>p{margin-top:20px;color:var(--ink-soft);font-size:16px;line-height:1.65;}
+.service-path-card ul{list-style:none;margin-top:26px;}
+.service-path-card li{
+  position:relative;padding:11px 0 11px 25px;border-top:1px solid var(--line-soft);
+  color:rgba(231,236,242,.78);font-size:15px;
+}
+.service-path-card li::before{content:'✓';position:absolute;left:0;color:var(--gold-bright);font-weight:700;}
+.service-path-link{
+  display:inline-block;margin-top:28px;color:var(--gold-bright);
+  border-bottom:1px solid rgba(247,215,106,.42);padding-bottom:5px;font-weight:700;
+}
+.service-path-link:hover{color:var(--gold-champagne);border-color:var(--gold-champagne);}
+
+@media(max-width:820px){
+  .hero-v2{min-height:660px;}
+  .hero-v2-overlay{
+    background:linear-gradient(90deg,rgba(8,17,31,.97),rgba(8,17,31,.74)),
+               linear-gradient(180deg,transparent 0%,rgba(8,17,31,.78) 100%);
+  }
+  .service-paths-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .hero-v2{min-height:620px;padding:72px 0 66px;}
+  .hero-v2-media img{object-position:62% center;}
+  .hero-v2-copy h1{font-size:clamp(43px,14vw,62px);}
+  .hero-v2-lede{font-size:17px;line-height:1.55;}
+  .hero-v2 .hero-actions{align-items:stretch;flex-direction:column;gap:12px;}
+  .btn-secondary{width:100%;}
+  .service-paths{padding:66px 0 72px;}
+  .service-path-card{padding:30px 24px;}
+}
+
 </style>
 </head>
 <body>
@@ -500,12 +602,15 @@ header{
       <img src="assets/logo/3P_Rectangular_Logo.svg" alt="3P Business Optimization">
     </a>
 
-    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false"
+      aria-controls="siteNav" aria-label="Open navigation">
       <span></span>
     </button>
 
     <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
+      <a href="#how-3p-helps">How 3P Helps</a>
+      <a href="#problems">Problems We Solve</a>
       <a href="#framework">How 3P Works</a>
       <a href="operational-insights.html">Operational Insights</a>
       <a href="operational-snapshot.html" class="nav-cta">Start Here →</a>
@@ -513,57 +618,80 @@ header{
   </div>
 </header>
 
-  <!-- HERO: text + live "Common Problems" panel -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-text">
-        <div class="eyebrow">YOUR BUSINESS STRESSING YOU?</div>
-        <h1>3P is the solution.</h1>
-        <p class="hero-lede">We assess your problems, identify the root cause, and implement a long-term solution — not another temporary fix. We never suggest more applications, software or expenditures without first streamlining operations and providing a cost-effective strategy for the future.</p>
-        <div class="hero-actions">
-          <a href="operational-snapshot.html" class="btn-primary">How much can I save →</a>
-          <span class="hero-microcopy">60 seconds. No pitch deck.</span>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="num">47%</div><div class="label">of small businesses say operations got worse or stayed flat last year</div></div>
-          <div class="hero-stat"><div class="num">42%</div><div class="label">are cutting costs just to protect margin</div></div>
-        </div>
+<section class="hero-v2">
+  <div class="hero-v2-media" aria-hidden="true">
+    <img src="assets/images/3p-owner-overload-hero.png" alt="" width="1536" height="1536">
+  </div>
+  <div class="hero-v2-overlay"></div>
+
+  <div class="wrap hero-v2-inner">
+    <div class="hero-v2-copy">
+      <div class="eyebrow">BUSINESS SHOULD WORK FOR YOU</div>
+      <h1>Work smart, not hard.</h1>
+      <p class="hero-v2-lede">
+        3P finds what is slowing your business down, gets to the root of the problem,
+        and helps put a practical fix in place. We do not start by selling you more
+        software, more applications, or another expense. We start by looking at how
+        the work is actually getting done.
+      </p>
+      <div class="hero-actions">
+        <a href="operational-snapshot.html" class="btn-primary">Find Where I Need Help →</a>
+        <a href="#how-3p-helps" class="btn-secondary">See How 3P Helps</a>
       </div>
-
-      <div class="problems-panel">
-        <div class="problems-panel-head">
-          <div class="problems-tag">3P Is The Solution</div>
-          <button type="button" class="problems-counter mono" id="problemsCounter"><span id="problemsCounterNum">01</span><span class="of08"> / 08</span></button>
-        </div>
-        <div class="problems-kicker">Common Problems</div>
-        <div class="problems-dots" id="problemsDots"></div>
-
-        <div class="problems-card">
-          <div class="problems-card-bgicon" id="problemsBgIcon"></div>
-          <div class="problems-card-top">
-            <div class="problems-icon" id="problemsIcon"></div>
-            <div class="problems-label" id="problemsLabel"></div>
-          </div>
-          <div class="problems-cause" id="problemsCause">
-            <span class="cause-lead">Root cause — </span><span class="cause-text" id="problemsCauseText"></span>
-          </div>
-          <div class="problems-fix" id="problemsFix">
-            <div class="fix-head">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#F7D76A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12l3 3 5-6"></path></svg>
-              <span class="fix-lead">3P Fix</span>
-            </div>
-            <div class="fix-text" id="problemsFixText"></div>
-            <div class="fix-tag" id="problemsFixTag"></div>
-          </div>
-        </div>
-
-        <a href="operational-snapshot.html" class="btn-primary problems-cta">Secure my Free Operational Improvement Assessment →</a>
-      </div>
+      <p class="hero-v2-note">Practical answers. Clear next steps. No pitch deck.</p>
     </div>
-  </section>
+  </div>
+</section>
+
+<section id="how-3p-helps" class="service-paths">
+  <div class="wrap">
+    <div class="service-paths-intro">
+      <div class="eyebrow">TWO WAYS TO GET HELP</div>
+      <h2>You may need more hands. You may need a better system. Sometimes you need both.</h2>
+      <p>
+        3P meets your business where it is. We can help get the work under control now,
+        fix what keeps causing the problem, or build a plan that does both in the right order.
+      </p>
+    </div>
+
+    <div class="service-paths-grid">
+      <article class="service-path-card">
+        <div class="service-path-label">GET SUPPORT NOW</div>
+        <h3>3P On-Demand Operations Support</h3>
+        <p>
+          Professional help for backlogs, setup, cleanup, short-term workload,
+          implementation, and recurring operational needs—without adding another employee.
+        </p>
+        <ul>
+          <li>Defined task support</li>
+          <li>Cleanup and backlog sprints</li>
+          <li>Software setup and implementation help</li>
+          <li>Ongoing operational capacity</li>
+        </ul>
+        <a href="operational-snapshot.html" class="service-path-link">Tell 3P What Needs Support →</a>
+      </article>
+
+      <article class="service-path-card">
+        <div class="service-path-label">FIX THE SYSTEM</div>
+        <h3>3P Systems, Automation &amp; Integration</h3>
+        <p>
+          Process improvement, software integration, automation, AI, training,
+          and implementation designed to stop recurring problems and make the business easier to run.
+        </p>
+        <ul>
+          <li>Operational assessments and workflow redesign</li>
+          <li>Software and system integration</li>
+          <li>Automation and practical AI implementation</li>
+          <li>Training, adoption, and optimization</li>
+        </ul>
+        <a href="operational-snapshot.html" class="service-path-link">Start With the Operational Snapshot →</a>
+      </article>
+    </div>
+  </div>
+</section>
 
   <!-- THESIS -->
-  <section class="thesis-section">
+  <section id="problems" class="thesis-section">
     <div class="wrap">
       <div class="eyebrow">STOP LOSING MONEY</div>
       <h1>Nothing's broken. There's <em>profit hiding</em> in your process.</h1>
@@ -578,7 +706,7 @@ header{
       <div class="local-grid">
         <div class="local-copy reveal">
           <h2 style="font-size:clamp(22px,3vw,30px); margin-bottom:20px;">Here's what the data shows.</h2>
-          <p>Of the roughly 1,530 registered business establishments in Gilchrist County, <strong>1,235 have no employees</strong> — just an owner, doing every job, every day. Only <strong>295</strong> have grown enough to hire.</p>
+          <p>Of the roughly 1,530 registered business establishments in Gilchrist County, <span class="hl">1,235 have no employees</span> — just an owner, doing every job, every day. Only <span class="hl">295</span> have grown enough to hire.</p>
           <p>If that's your business, you don't have a spare afternoon to build a new process from scratch. That's the whole reason to bring in someone who's already built it — and knows this county isn't Gainesville or Jacksonville.</p>
           <p><strong>13.3%</strong> of local households still have no broadband subscription — a real, structural head start most "just add AI" consultants never account for. We plan around it, not past it.</p>
         </div>
@@ -921,15 +1049,15 @@ header{
   }
 
   function pJumpTo(i){
-    clearInterval(pTimer);
     pTick = i * 3 + 2;
     pRender();
+    pStartAuto();
   }
 
   document.getElementById('problemsCounter').addEventListener('click', ()=>{
-    clearInterval(pTimer);
     pTick++;
     pRender();
+    pStartAuto();
   });
 
   pRender();
