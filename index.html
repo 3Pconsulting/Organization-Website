@@ -68,7 +68,6 @@
   }
   .eyebrow::before{ content:''; width:24px; height:1px; background:var(--gold); display:inline-block; }
 
-  /* ---------- section rhythm: real contrast + hairline dividers, no texture ---------- */
   section{ padding:96px 0; position:relative; }
   @media(max-width:700px){ section{ padding:64px 0; } }
   section + section{ border-top:1px solid var(--line); }
@@ -82,7 +81,6 @@
   .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
   .reveal.in{ opacity:1; transform:translateY(0); }
 
-  /* ---------- sticky CTA ---------- */
   .sticky-cta{
     position:fixed; right:24px; bottom:24px; z-index:50;
     background:var(--gold); color:var(--navy-deep);
@@ -98,7 +96,6 @@
   .sticky-cta:hover{ background:var(--gold-bright); }
   @media(max-width:600px){ .sticky-cta{ right:16px; bottom:16px; padding:12px 18px; font-size:12px; } }
 
-  /* ---------- distinct branded header + responsive navigation ---------- */
 header{
   position:sticky;
   top:0;
@@ -212,52 +209,47 @@ header{
     border-bottom:none;
   }
 }
-  /* ---------- HERO (video + slim text split) ---------- */
-  .hero{
-    position:relative;
-    padding:72px 0 64px;
-  }
+
+  /* ---------- HERO: text + live "Common Problems" panel ---------- */
+  .hero{ position:relative; padding:72px 0 64px; }
   @media(max-width:700px){ .hero{ padding:48px 0 44px; } }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1fr 3fr;
-    gap:40px;
-    align-items:center;
-    width:100%;
-  }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:stretch; width:100%; }
   @media(max-width:900px){
-    .hero-grid{ grid-template-columns:1fr; gap:28px; }
-    .hero-text{ order:2; }
-    .hero-video-wrap{ order:1; }
+    .hero-grid{ grid-template-columns:1fr; gap:36px; }
+    .hero-text{ order:1; }
+    .problems-panel{ order:2; }
   }
 
-  .hero-text h1{ font-size:clamp(22px, 2.4vw, 28px); }
-  .hero-text .stat-line{
-    margin-top:18px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    color:var(--gold-bright);
-    line-height:1.6;
-    letter-spacing:0.01em;
-  }
+  .hero-text h1{ font-size:clamp(34px,4.2vw,52px); margin:18px 0; }
+  .hero-lede{ font-size:17px; line-height:1.55; color:var(--ink-soft); max-width:46ch; margin:0 0 32px; }
+  .hero-actions{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  .hero-microcopy{ font-size:13px; color:var(--ink-faint); }
+  .hero-stats{ display:flex; gap:40px; margin-top:56px; padding-top:28px; border-top:1px solid var(--line); }
+  .hero-stat .num{ font-family:'IBM Plex Mono', monospace; font-size:30px; font-weight:600; color:var(--gold-bright); }
+  .hero-stat .label{ font-size:13px; color:var(--ink-soft); max-width:20ch; margin-top:6px; }
 
-  .hero-video-wrap{
-    position:relative;
-    width:100%;
-    aspect-ratio:16/9;
-    border:1px solid var(--line);
-    overflow:hidden;
-    border-radius:3px;
-    background:#000;
-  }
-  .hero-video-wrap video{ width:100%; height:100%; object-fit:cover; display:block; }
-  .video-cta-overlay{
-    position:absolute;
-    left:37%; top:46%; width:27%; height:13%;
-    cursor:pointer;
-    border-radius:40px;
-  }
-  .video-cta-overlay:focus-visible{ outline:2px solid var(--gold-bright); outline-offset:4px; }
+  .problems-panel{ display:flex; flex-direction:column; min-width:0; }
+  .problems-panel-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+  .problems-tag{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-bright); border:1px solid var(--line); padding:6px 12px; border-radius:var(--radius); white-space:nowrap; }
+  .problems-counter{ background:none; border:none; cursor:pointer; font-family:'IBM Plex Mono', monospace; font-size:24px; font-weight:600; color:var(--gold-bright); line-height:1; padding:4px; }
+  .problems-counter .of08{ font-size:13px; color:var(--ink-faint); font-weight:400; }
+  .problems-kicker{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px; }
+  .problems-dots{ display:flex; gap:4px; margin-bottom:20px; }
+  .problems-dots span{ height:4px; border-radius:2px; transition:all .4s ease; cursor:pointer; }
+  .problems-card{ position:relative; overflow:hidden; padding:40px 28px; background:var(--navy-card); border:1px solid var(--line); border-radius:3px; flex:1; display:flex; flex-direction:column; justify-content:center; min-height:220px; }
+  .problems-card-bgicon{ position:absolute; right:-18px; bottom:-26px; width:200px; height:200px; opacity:.05; color:var(--ink); pointer-events:none; }
+  .problems-card-top{ display:flex; align-items:center; gap:18px; margin-bottom:18px; position:relative; }
+  .problems-icon{ width:58px; height:58px; border-radius:3px; background:var(--navy-raised); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:rgba(231,236,242,.5); transition:color .4s ease; }
+  .problems-label{ font-family:'Space Grotesk', sans-serif; font-size:28px; font-weight:600; color:var(--ink); line-height:1.15; }
+  .problems-cause{ padding-left:76px; margin-bottom:14px; position:relative; opacity:0; transform:translateY(8px); transition:all .5s cubic-bezier(.16,1,.3,1); }
+  .problems-cause .cause-lead{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--gold-bright); font-weight:500; }
+  .problems-cause .cause-text{ font-size:14.5px; color:var(--ink-soft); line-height:1.5; }
+  .problems-fix{ position:relative; margin-top:8px; padding:16px 0 0; border-top:1px solid var(--line); opacity:0; transform:translateY(16px) scale(.96); transition:all .55s cubic-bezier(.16,1,.3,1); }
+  .problems-fix .fix-head{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .problems-fix .fix-lead{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--gold-bright); font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+  .problems-fix .fix-text{ font-size:16px; color:var(--ink); line-height:1.5; margin-bottom:10px; }
+  .problems-fix .fix-tag{ display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--gold-bright); border:1px solid rgba(212,160,23,.4); padding:4px 10px; border-radius:var(--radius); }
+  .problems-cta{ margin-top:22px; align-self:flex-start; }
 
   .btn-primary{
     background:var(--gold); color:var(--navy-deep);
@@ -270,15 +262,12 @@ header{
   .btn-primary:disabled{ opacity:0.5; cursor:not-allowed; transform:none; }
   @media(max-width:500px){ .btn-primary{ width:100%; justify-content:center; } }
 
-
-  /* ---------- THESIS headline section ---------- */
   .thesis-section{ text-align:center; padding-top:96px; padding-bottom:96px; }
   .thesis-section .eyebrow{ justify-content:center; }
   .thesis-section h1{ font-size:clamp(30px, 4.6vw, 52px); max-width:820px; margin:0 auto; }
   .thesis-section h1 em{ font-style:normal; color:var(--gold-bright); }
   .thesis-section p.lede{ margin:24px auto 0; max-width:560px; font-size:clamp(15.5px,1.6vw,18px); color:var(--ink-soft); }
 
-  /* ---------- stat cards (national) ---------- */
   .stat-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); }
   .stat-card{ background:var(--navy-deep); padding:30px 26px; position:relative; transition:background .25s ease; }
   .stat-card:hover{ background:var(--navy-panel); }
@@ -299,7 +288,6 @@ header{
   }
   .stat-card:hover .src{ opacity:1; max-height:60px; }
 
-  /* ---------- AI trap compare ---------- */
   .compare{ display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line-soft); }
   @media(max-width:760px){ .compare{ grid-template-columns:1fr; } }
   .compare-col{ padding:36px 30px; }
@@ -318,7 +306,6 @@ header{
   .compare-col.bad li::before{ content:'×'; position:absolute; left:0; color:#E29B7A; font-weight:600; }
   .compare-col.good li::before{ content:'✓'; position:absolute; left:0; color:var(--gold-bright); font-weight:600; }
 
-  /* ---------- local section ---------- */
   .local-flag{
     display:inline-flex; align-items:center; gap:8px;
     font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
@@ -334,7 +321,6 @@ header{
   .local-copy p{ color:var(--ink-soft); margin-bottom:15px; font-size:15.5px; }
   .local-copy strong{ color:var(--ink); font-weight:600; }
 
-  /* ---------- 3P framework — Option B: navy + gold divider band ---------- */
   .framework-divider{
     height:3px;
     background:linear-gradient(90deg, transparent, var(--gold) 15%, var(--gold-bright) 50%, var(--gold) 85%, transparent);
@@ -358,7 +344,6 @@ header{
   }
   .framework-card p{ font-size:15px; color:var(--ink-soft); line-height:1.6; }
 
-  /* ---------- assessment (merged calculator + form) ---------- */
   .assessment-panel{ border:1px solid var(--line); background:var(--navy-panel); padding:44px; }
   @media(max-width:700px){ .assessment-panel{ padding:28px 22px; } }
 
@@ -416,8 +401,6 @@ header{
   .form-status{ margin-top:16px; font-size:13.5px; color:var(--ink-soft); }
   .form-status.success{ color:var(--gold-bright); }
 
-
-  /* ---------- operational snapshot launch ---------- */
   .snapshot-launch-grid{ display:grid; grid-template-columns:1.08fr .92fr; gap:36px; align-items:center; }
   .snapshot-launch-copy h3{ font-size:clamp(24px,3.2vw,34px); }
   .snapshot-launch-copy p{ margin-top:16px; color:var(--ink-soft); font-size:15px; max-width:590px; }
@@ -431,7 +414,6 @@ header{
   .snapshot-launch-result .btn-primary{ margin-top:24px; }
   @media(max-width:820px){ .snapshot-launch-grid{ grid-template-columns:1fr; } .snapshot-points{ grid-template-columns:1fr; } }
 
-/* ---------- operational insights homepage preview ---------- */
 .insights-preview{ background:var(--navy-deep); }
 .insights-preview .section-head{ max-width:720px; }
 .insights-preview-grid{
@@ -485,7 +467,6 @@ header{
   .insight-link-card{ min-height:auto; }
 }
 
-  /* ---------- contact / final CTA ---------- */
   .contact-section{ text-align:center; padding:104px 0; }
   @media(max-width:700px){ .contact-section{ padding:72px 0; } }
   .contact-section h2{ font-size:clamp(26px,4vw,44px); max-width:700px; margin:0 auto; }
@@ -532,24 +513,56 @@ header{
   </div>
 </header>
 
-  <!-- HERO: video (75%) + slim text (25%) -->
+  <!-- HERO: text + live "Common Problems" panel -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-text">
-        <div class="eyebrow">CONTINUOUS IMPROVEMENT &amp; COST SAVINGS</div>
-        <h1>Lean Six Sigma, built for businesses your size.</h1>
-        <div class="stat-line">47% OF SMALL BUSINESSES SAY OPERATIONS GOT WORSE OR STAYED FLAT LAST YEAR. 42% ARE CUTTING COSTS JUST TO PROTECT MARGIN.</div>
+        <div class="eyebrow">YOUR BUSINESS STRESSING YOU?</div>
+        <h1>3P is the solution.</h1>
+        <p class="hero-lede">We assess your problems, identify the root cause, and implement a long-term solution — not another temporary fix. We never suggest more applications, software or expenditures without first streamlining operations and providing a cost-effective strategy for the future.</p>
+        <div class="hero-actions">
+          <a href="operational-snapshot.html" class="btn-primary">How much can I save →</a>
+          <span class="hero-microcopy">60 seconds. No pitch deck.</span>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="num">47%</div><div class="label">of small businesses say operations got worse or stayed flat last year</div></div>
+          <div class="hero-stat"><div class="num">42%</div><div class="label">are cutting costs just to protect margin</div></div>
+        </div>
       </div>
-      <div class="hero-video-wrap">
-        <video autoplay muted loop playsinline preload="auto">
-          <source src="assets/video/3p-hero.mp4" type="video/mp4">
-        </video>
-        <div class="video-cta-overlay" id="videoCta" role="button" tabindex="0" aria-label="Get your free assessment"></div>
+
+      <div class="problems-panel">
+        <div class="problems-panel-head">
+          <div class="problems-tag">3P Is The Solution</div>
+          <button type="button" class="problems-counter mono" id="problemsCounter"><span id="problemsCounterNum">01</span><span class="of08"> / 08</span></button>
+        </div>
+        <div class="problems-kicker">Common Problems</div>
+        <div class="problems-dots" id="problemsDots"></div>
+
+        <div class="problems-card">
+          <div class="problems-card-bgicon" id="problemsBgIcon"></div>
+          <div class="problems-card-top">
+            <div class="problems-icon" id="problemsIcon"></div>
+            <div class="problems-label" id="problemsLabel"></div>
+          </div>
+          <div class="problems-cause" id="problemsCause">
+            <span class="cause-lead">Root cause — </span><span class="cause-text" id="problemsCauseText"></span>
+          </div>
+          <div class="problems-fix" id="problemsFix">
+            <div class="fix-head">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#F7D76A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12l3 3 5-6"></path></svg>
+              <span class="fix-lead">3P Fix</span>
+            </div>
+            <div class="fix-text" id="problemsFixText"></div>
+            <div class="fix-tag" id="problemsFixTag"></div>
+          </div>
+        </div>
+
+        <a href="operational-snapshot.html" class="btn-primary problems-cta">Secure my Free Operational Improvement Assessment →</a>
       </div>
     </div>
   </section>
 
-  <!-- THESIS — moved directly beneath hero -->
+  <!-- THESIS -->
   <section class="thesis-section">
     <div class="wrap">
       <div class="eyebrow">STOP LOSING MONEY</div>
@@ -558,7 +571,7 @@ header{
     </div>
   </section>
 
-  <!-- LOCAL (section A) -->
+  <!-- LOCAL -->
   <section id="local" class="tier-raised">
     <div class="wrap">
       <div class="local-flag"><span class="dot"></span> GILCHRIST COUNTY, FL — SITE DATA</div>
@@ -610,13 +623,13 @@ header{
     </div>
   </section>
 
-  <!-- NATIONAL READOUT (section D) -->
+  <!-- NATIONAL READOUT -->
   <section id="diagnostic">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">IT’S NOT JUST IN OUR COUNTY</div>
+        <div class="eyebrow">IT'S NOT JUST IN OUR COUNTY</div>
         <h2>Across All Industries Nationwide</h2>
-        <p>Across America, the pattern is the same: owners are working harder inside the business, but they are not seeing the reward. It’s showing up directly in cash flow and margin.</p>
+        <p>Across America, the pattern is the same: owners are working harder inside the business, but they are not seeing the reward. It's showing up directly in cash flow and margin.</p>
       </div>
 
       <div class="stat-grid reveal">
@@ -648,12 +661,12 @@ header{
     </div>
   </section>
 
-  <!-- AUTOMATION TRAP (section E) -->
+  <!-- AUTOMATION TRAP -->
   <section id="ai-trap" class="tier-raised">
     <div class="wrap">
       <div class="section-head reveal">
-        <div class="eyebrow">AI CAN’T SAVE YOU</div>
-        <h2>Automation doesn’t fix a broken process. It drastically increases the damage.</h2>
+        <div class="eyebrow">AI CAN'T SAVE YOU</div>
+        <h2>Automation doesn't fix a broken process. It drastically increases the damage.</h2>
         <p>Most consultants will sell you software first. That's backwards — and the data backs it up.</p>
       </div>
 
@@ -686,7 +699,7 @@ header{
     </div>
   </section>
 
-  <!-- 3P FRAMEWORK (section F) — Option B: navy + gold divider band -->
+  <!-- 3P FRAMEWORK -->
   <section id="framework" class="framework-section">
     <div class="framework-divider"></div>
     <div class="wrap" style="margin-top:64px;">
@@ -730,7 +743,7 @@ header{
     </div>
   </section>
 
-<!-- OPERATIONAL INSIGHTS — compact homepage preview -->
+<!-- OPERATIONAL INSIGHTS -->
 <section id="insights-preview" class="insights-preview">
   <div class="wrap">
     <div class="section-head reveal">
@@ -768,12 +781,12 @@ header{
   </div>
 </section>
 
-  <!-- CONTACT / START HERE (section G) -->
+  <!-- CONTACT / START HERE -->
   <section id="contact" class="tier-raised contact-section">
     <div class="wrap">
       <div class="eyebrow" style="justify-content:center;">START HERE</div>
-      <h2>Let’s Identify Where We Can Help</h2>
-      <p>60 seconds, no pitch deck. We’ll walk through your operation and tell you plainly where the waste is—before you spend a dollar fixing it.</p>
+      <h2>Let's Identify Where We Can Help</h2>
+      <p>60 seconds, no pitch deck. We'll walk through your operation and tell you plainly where the waste is—before you spend a dollar fixing it.</p>
       <div class="contact-actions">
         <a href="operational-snapshot.html" class="btn-primary">Start My Operational Snapshot →</a>
       </div>
@@ -787,7 +800,6 @@ header{
       <span>PEOPLE · PROCESS · PRODUCT</span>
     </div>
   </footer>
-
 
 <script>
   const menuToggle = document.getElementById('menuToggle');
@@ -824,17 +836,104 @@ header{
 
   stickyCta.addEventListener('click', ()=>{ window.location.href='operational-snapshot.html'; });
 
-  const videoCta = document.getElementById('videoCta');
-  function goToAssessment(){ window.location.href='operational-snapshot.html'; }
-  videoCta.addEventListener('click', goToAssessment);
-  videoCta.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); goToAssessment(); } });
-
   const revealEls = document.querySelectorAll('.reveal');
   const revealIO = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target); } });
   }, {threshold:0.15});
   revealEls.forEach(el=>revealIO.observe(el));
 
+  /* ---------- HERO problems panel ---------- */
+  const problemIcons = [
+    '<circle cx="12" cy="8" r="3"></circle><path d="M6 19c1.2-3.2 3.4-5 6-5s4.8 1.8 6 5"></path>',
+    '<path d="M4 5c0-1 1-2 2-2l2 3-1 2c1 3 3 5 6 6l2-1 3 2c0 1-1 2-2 2-6 0-12-6-12-12z"></path><path d="M17 4l4 4M21 4l-4 4"></path>',
+    '<circle cx="12" cy="12" r="8"></circle><path d="M12 7v5l4 2"></path>',
+    '<path d="M7 3h7l4 4v14H7z"></path><path d="M10 11h6M10 15h6M10 7h3"></path>',
+    '<path d="M9 4h4a1.5 1.5 0 0 1 0 3 1.5 1.5 0 0 0 0 3h4v4a1.5 1.5 0 0 1-3 0 1.5 1.5 0 0 0-3 0v4H7v-4a1.5 1.5 0 0 1 0-3 1.5 1.5 0 0 0 0-3H4V4h5z"></path>',
+    '<path d="M4 16v-3l2-4h12l2 4v3"></path><path d="M4 16h16v2H4z"></path><circle cx="8" cy="18" r="1.4"></circle><circle cx="16" cy="18" r="1.4"></circle>',
+    '<rect x="5" y="3" width="14" height="18" rx="2"></rect><circle cx="12" cy="10" r="2.2"></circle><path d="M8.5 16c1-2 6-2 7 0"></path>',
+    '<path d="M5 12a7 7 0 0 1 11.5-5.3M19 12a7 7 0 0 1-11.5 5.3"></path><path d="M16 4v3h-3M8 20v-3h3"></path>',
+  ];
+
+  const problemsData = [
+    { label: 'Owner overload', cause: "No staff to delegate to — every back-office task lands on the owner's own hours.", fix: 'Back-office work automated — systems and AI agents stand in as staff.', fixTag: 'BACK OFFICE OFFLOADED' },
+    { label: 'Missed calls', cause: 'No receptionist — every call depends on the owner being free and not mid-job.', fix: 'Call coverage and after-hours follow-up put on autopilot.', fixTag: 'NEVER MISS A CALL' },
+    { label: 'Late quotes', cause: "No time or pricing data to quote right — bids go out late, or low, just to keep the job moving.", fix: "Pricing built on real job data, turnaround set apart from the owner's schedule.", fixTag: 'PRICED RIGHT, SENT FAST' },
+    { label: 'Delayed invoices', cause: 'Invoicing waits on the owner, same as everything else.', fix: 'Invoicing automated at job completion.', fixTag: 'AUTOMATICALLY INVOICED' },
+    { label: 'Software that creates work', cause: 'The tool works — the owner never had time to learn or fully use it.', fix: 'Tools implemented and run for the owner, not handed to them to figure out.', fixTag: 'IMPLEMENTED, NOT JUST INSTALLED' },
+    { label: 'Excessive driving', cause: 'Routes and schedules run on memory — no system doing it for you.', fix: 'Scheduling and routing automated.', fixTag: 'ROUTES AUTOMATED' },
+    { label: 'Disorganized customer info', cause: 'No central record — history lives in texts, notebooks, and memory.', fix: 'Customer data centralized into one system.', fixTag: 'ONE CUSTOMER RECORD' },
+    { label: 'Repeated mistakes', cause: 'No checkpoint catches an error before it repeats.', fix: 'Quality checkpoints built into the process.', fixTag: 'CAUGHT BEFORE IT REPEATS' },
+  ];
+
+  const pEls = {
+    counterNum: document.getElementById('problemsCounterNum'),
+    dots: document.getElementById('problemsDots'),
+    bgIcon: document.getElementById('problemsBgIcon'),
+    icon: document.getElementById('problemsIcon'),
+    label: document.getElementById('problemsLabel'),
+    cause: document.getElementById('problemsCause'),
+    causeText: document.getElementById('problemsCauseText'),
+    fix: document.getElementById('problemsFix'),
+    fixText: document.getElementById('problemsFixText'),
+    fixTag: document.getElementById('problemsFixTag'),
+  };
+
+  let pTick = 0, pTimer = null;
+
+  function pRenderDots(activeIndex){
+    pEls.dots.innerHTML = problemsData.map((_,i)=>
+      `<span data-i="${i}" style="background:${i===activeIndex ? 'var(--gold-bright)' : 'rgba(231,236,242,0.14)'}; flex:${i===activeIndex ? 3 : 1};"></span>`
+    ).join('');
+    pEls.dots.querySelectorAll('span').forEach(s=>{
+      s.addEventListener('click', ()=> pJumpTo(+s.dataset.i));
+    });
+  }
+
+  function pRender(){
+    const seqIndex = Math.floor(pTick / 3) % problemsData.length;
+    const phase = pTick % 3;
+    const cur = problemsData[seqIndex];
+    const showCause = phase >= 1;
+    const showFix = phase >= 2;
+
+    pEls.counterNum.textContent = String(seqIndex + 1).padStart(2,'0');
+    pRenderDots(seqIndex);
+
+    const iconSvg = (size)=> `<svg viewBox="0 0 24 24" width="${size}" height="${size}" fill="none" stroke="currentColor" stroke-width="${size>60?1.2:1.6}" stroke-linecap="round" stroke-linejoin="round">${problemIcons[seqIndex]}</svg>`;
+    pEls.bgIcon.innerHTML = iconSvg(200);
+    pEls.icon.innerHTML = iconSvg(28);
+    pEls.icon.style.color = showFix ? 'var(--gold-bright)' : 'rgba(231,236,242,.5)';
+    pEls.label.textContent = cur.label;
+
+    pEls.causeText.textContent = cur.cause;
+    pEls.cause.style.opacity = showCause ? 1 : 0;
+    pEls.cause.style.transform = showCause ? 'translateY(0)' : 'translateY(8px)';
+
+    pEls.fixText.textContent = cur.fix;
+    pEls.fixTag.textContent = cur.fixTag;
+    pEls.fix.style.opacity = showFix ? 1 : 0;
+    pEls.fix.style.transform = showFix ? 'translateY(0) scale(1)' : 'translateY(16px) scale(0.96)';
+  }
+
+  function pStartAuto(){
+    clearInterval(pTimer);
+    pTimer = setInterval(()=>{ pTick++; pRender(); }, 1500);
+  }
+
+  function pJumpTo(i){
+    clearInterval(pTimer);
+    pTick = i * 3 + 2;
+    pRender();
+  }
+
+  document.getElementById('problemsCounter').addEventListener('click', ()=>{
+    clearInterval(pTimer);
+    pTick++;
+    pRender();
+  });
+
+  pRender();
+  pStartAuto();
 </script>
 
 </body>
