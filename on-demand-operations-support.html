@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>On-Demand Operations Support | 3P Business Optimization</title>
+<meta name="description" content="Professional operational support for backlogs, setup, implementation, cleanup, and recurring work without hiring another employee.">
+<link rel="icon" type="image/svg+xml" href="assets/logo/3P_circular_logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#08111f;--navy2:#0d1d30;--navy3:#132a42;--gold:#d4a017;
+  --gold2:#f7d76a;--cream:#fff1a8;--ink:#e7ecf2;--muted:rgba(231,236,242,.68);
+  --faint:rgba(231,236,242,.42);--line:rgba(212,160,23,.26);--soft:rgba(231,236,242,.1);
+  --max:1120px
+}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--ink);font-family:'Source Sans 3',sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}h1,h2,h3{font-family:'Source Serif 4',serif;line-height:1.08;letter-spacing:-.025em}
+.wrap{max-width:var(--max);margin:auto;padding:0 32px}.mono,.eyebrow,.tag{font-family:'IBM Plex Mono',monospace}
+header{position:sticky;top:0;z-index:50;background:rgba(8,17,31,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.header-row{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo img{width:205px;display:block}.nav{display:flex;align-items:center;gap:21px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.035em}
+.nav a{color:var(--muted)}.nav a:hover,.nav a.active{color:var(--gold2)}.nav .cta{background:var(--gold);color:var(--navy);padding:11px 15px}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--gold2);padding:10px 12px;font-size:18px}
+.hero{padding:100px 0 88px;background:radial-gradient(circle at 78% 20%,rgba(212,160,23,.13),transparent 30%),linear-gradient(145deg,var(--navy),var(--navy2))}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.eyebrow{color:var(--gold2);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px}
+.eyebrow:before{content:'';display:inline-block;width:24px;height:1px;background:var(--gold);margin-right:12px;vertical-align:middle}
+h1{font-size:clamp(43px,6vw,76px)}.hero p{margin-top:25px;color:var(--muted);font-size:19px;max-width:660px}
+.actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 23px;font-weight:700;border:1px solid var(--gold);min-height:52px}
+.btn.primary{background:var(--gold);color:var(--navy)}.btn.primary:hover{background:var(--gold2)}.btn.secondary{color:var(--gold2)}.btn.secondary:hover{background:rgba(212,160,23,.1)}
+.hero-panel{border:1px solid var(--line);background:rgba(13,29,48,.78);padding:30px}.hero-panel .tag{font-size:10px;color:var(--gold2);letter-spacing:.13em}.hero-panel h3{font-size:27px;margin:14px 0 13px}.hero-panel p{font-size:15px;margin:0}.checklist{list-style:none;margin-top:20px}.checklist li{padding:11px 0 11px 25px;border-top:1px solid var(--soft);color:var(--muted);position:relative}.checklist li:before{content:'✓';position:absolute;left:0;color:var(--gold2)}
+section{padding:88px 0;border-top:1px solid var(--line)}.raised{background:var(--navy3)}.section-head{max-width:760px;margin-bottom:45px}.section-head h2{font-size:clamp(31px,4vw,49px)}.section-head p{margin-top:18px;color:var(--muted);font-size:17px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--navy2);border:1px solid var(--line);padding:31px}.card .num,.card .tag{color:var(--gold2);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.11em}.card h3{font-size:26px;margin:14px 0}.card p{color:var(--muted)}.card ul{list-style:none;margin-top:18px}.card li{position:relative;padding:9px 0 9px 22px;border-top:1px solid var(--soft);color:var(--muted)}.card li:before{content:'—';position:absolute;left:0;color:var(--gold2)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}.copy h2{font-size:clamp(31px,4vw,48px)}.copy p{color:var(--muted);margin-top:18px;font-size:17px}.callout{border-left:4px solid var(--gold);background:var(--navy2);padding:28px}.callout h3{font-size:27px}.callout p{color:var(--muted);margin-top:12px}
+.steps{counter-reset:step}.step{display:grid;grid-template-columns:74px 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--soft)}.step:before{counter-increment:step;content:"0" counter(step);font-family:'IBM Plex Mono';font-size:25px;color:var(--gold2)}.step h3{font-size:25px}.step p{color:var(--muted);margin-top:8px}
+.problem{padding:30px;border:1px solid var(--line);background:var(--navy2)}.problem h3{font-size:25px}.problem p{color:var(--muted);margin-top:12px}.problem .fix{margin-top:18px;padding-top:16px;border-top:1px solid var(--soft);color:var(--ink)}.problem .fix strong{color:var(--gold2)}
+.pricing-note{max-width:850px;background:var(--navy2);border:1px solid var(--line);padding:34px}.pricing-note h3{font-size:30px}.pricing-note p{color:var(--muted);margin-top:13px}
+.faq details{border-top:1px solid var(--line);padding:21px 0}.faq summary{cursor:pointer;font-weight:700;font-size:18px}.faq p{color:var(--muted);padding-top:12px;max-width:800px}
+.final{text-align:center;background:radial-gradient(circle at center,rgba(212,160,23,.12),transparent 38%),var(--navy2)}.final h2{font-size:clamp(34px,5vw,58px);max-width:800px;margin:auto}.final p{max-width:650px;margin:20px auto 0;color:var(--muted);font-size:18px}.final .actions{justify-content:center}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-size:13px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:880px){.menu{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--navy2);padding:16px 22px;flex-direction:column;align-items:stretch}.nav.open{display:flex}.hero-grid,.split{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.hero{padding:72px 0}.hero-panel{max-width:650px}}
+@media(max-width:650px){.wrap{padding:0 20px}.grid2{grid-template-columns:1fr}.logo img{width:165px}section{padding:66px 0}.actions{flex-direction:column}.btn{width:100%}.step{grid-template-columns:52px 1fr}}
+</style></head><body>
+<header>
+ <div class="wrap header-row">
+  <a class="logo" href="index.html"><img src="assets/logo/3P_Rectangular_Logo.svg" alt="3P Business Optimization"></a>
+  <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">☰</button>
+  <nav class="nav" id="nav">
+   <a href="index.html">Home</a>
+   <a href="on-demand-operations-support.html">On-Demand Support</a>
+   <a href="systems-automation-integration.html">Systems & Automation</a>
+   <a href="problems-we-solve.html">Problems We Solve</a>
+   <a href="how-3p-works.html">How 3P Works</a>
+   <a href="operational-snapshot.html" class="cta">Start Here →</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero"><div class="wrap hero-grid">
+ <div><div class="eyebrow">ON-DEMAND OPERATIONS SUPPORT</div>
+ <h1>Get the work under control without hiring another employee.</h1>
+ <p>When the business has more work than capacity—but not enough need, budget, or time to hire and train another person—3P provides professional operational support with a defined scope, clear ownership, and a visible finish line.</p>
+ <div class="actions"><a class="btn primary" href="operational-snapshot.html">Tell 3P What Needs Help →</a><a class="btn secondary" href="#support-options">See Support Options</a></div></div>
+ <aside class="hero-panel"><div class="tag">THE MIDDLE GROUND</div><h3>More capable than a quick fix. More flexible than a new hire.</h3>
+ <p>3P steps into specific operational work, gets it organized, and helps keep it from falling back onto the owner.</p>
+ <ul class="checklist"><li>Remote delivery</li><li>Defined scope and timeline</li><li>No payroll or long-term hiring commitment</li><li>Built around the way your business actually operates</li></ul></aside>
+</div></section>
+
+<section><div class="wrap split"><div class="copy"><div class="eyebrow">WHO THIS IS FOR</div><h2>You do not need “help with everything.” You need the right work handled correctly.</h2>
+<p>This service is for owners and small teams who are losing time to unfinished administrative work, inconsistent follow-up, overdue setup, scattered information, or projects that keep being postponed.</p></div>
+<div class="callout"><h3>Common starting point</h3><p>“I know what needs to be done. I just do not have the time, staff, or headspace to make it happen.”</p></div></div></section>
+
+<section id="support-options" class="raised"><div class="wrap"><div class="section-head"><div class="eyebrow">WAYS 3P CAN STEP IN</div><h2>Support that produces a visible result.</h2><p>Each engagement is scoped around the business problem and the outcome—not an open-ended promise to “help with whatever comes up.”</p></div>
+<div class="grid2">
+ <article class="card"><div class="tag">DEFINED TASK SUPPORT</div><h3>Get one important operational task finished.</h3><p>Best for a clear project that has been delayed or handled inconsistently.</p><ul><li>Lead or customer tracker setup</li><li>Quote, invoice, or follow-up organization</li><li>Forms, templates, and checklists</li><li>Standard email and response templates</li></ul></article>
+ <article class="card"><div class="tag">CLEANUP SPRINT</div><h3>Clear the backlog and restore control.</h3><p>Best when unfinished work has accumulated and the owner needs a reset.</p><ul><li>Lead and inquiry cleanup</li><li>File and document organization</li><li>Process backlog triage</li><li>CRM, spreadsheet, or contact cleanup</li></ul></article>
+ <article class="card"><div class="tag">IMPLEMENTATION SUPPORT</div><h3>Turn a decision into a working system.</h3><p>Best when software, a process, or a new tool has been selected but never fully implemented.</p><ul><li>Software setup and configuration</li><li>Workflow and template buildout</li><li>Data transfer preparation</li><li>Team instructions and rollout support</li></ul></article>
+ <article class="card"><div class="tag">RECURRING CAPACITY</div><h3>Keep essential work moving each month.</h3><p>Best when the need is ongoing but does not justify another employee.</p><ul><li>Scheduled tracking and reporting</li><li>Follow-up process maintenance</li><li>Recurring workflow support</li><li>Operational coordination within an agreed scope</li></ul></article>
+</div></div></section>
+
+<section><div class="wrap"><div class="section-head"><div class="eyebrow">HOW IT WORKS</div><h2>A practical engagement from problem to completion.</h2></div>
+<div class="steps"><div class="step"><div><h3>Show us what is piling up.</h3><p>Start with the Operational Snapshot or describe the specific work that is delayed, inconsistent, or stuck.</p></div></div>
+<div class="step"><div><h3>3P defines the scope.</h3><p>You receive a clear description of what will be handled, what information is needed, the expected timeline, and the price.</p></div></div>
+<div class="step"><div><h3>We organize and complete the work.</h3><p>3P completes the agreed work, communicates progress, and flags decisions that require the owner.</p></div></div>
+<div class="step"><div><h3>You receive the finished result and next steps.</h3><p>The work is handed back in an organized format with instructions, ownership, and recommendations for preventing the same problem from returning.</p></div></div></div></div></section>
+
+<section class="raised"><div class="wrap split"><div class="copy"><div class="eyebrow">WHAT THIS IS NOT</div><h2>This is not generic virtual-assistant labor.</h2><p>3P does not sell unlimited miscellaneous hours, pretend every task is equal, or add another person who needs constant direction from the owner.</p><p>We apply operational judgment, define the work, build structure around it, and escalate decisions that should remain with you.</p></div>
+<div class="pricing-note"><h3>How pricing works</h3><p>Defined projects are quoted by scope. Cleanup sprints are priced around the volume and condition of the work. Recurring support uses a monthly scope with stated capacity, responsibilities, and limits.</p><p>No unlimited work. No surprise expansion. Additional needs are discussed before they become additional charges.</p></div></div></section>
+
+<section class="faq"><div class="wrap"><div class="section-head"><div class="eyebrow">COMMON QUESTIONS</div><h2>Before you start</h2></div>
+<details><summary>Can 3P replace an employee?</summary><p>3P can absorb defined operational work and recurring responsibilities, but it is not a substitute for every type of employee. The goal is to determine whether the business truly needs a hire, needs temporary capacity, or first needs a better process.</p></details>
+<details><summary>Can we start with one small project?</summary><p>Yes. A focused project is often the best way to establish what the business needs and whether broader support would be useful.</p></details>
+<details><summary>Will I need to buy new software?</summary><p>Not automatically. 3P first looks at what you already use. New technology is recommended only when it solves a defined need and the value justifies the cost.</p></details>
+<details><summary>Do you work remotely?</summary><p>Yes. Most support can be delivered remotely through shared files, video calls, email, and approved access to the systems required for the work.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap"><h2>Take one operational burden off your plate.</h2><p>Start with the work that is costing you time, delaying customers, or keeping you tied to the business after the workday should be over.</p><div class="actions"><a class="btn primary" href="operational-snapshot.html">Start With the Operational Snapshot →</a></div></div></section>
+</main>
+
+<footer><div class="wrap footer-row"><span>© 2026 3P Business Optimization</span><span>People. Process. Product.</span></div></footer>
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.textContent=open?'×':'☰'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
+</script>
+</body></html>

@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Systems, Automation &amp; Integration | 3P Business Optimization</title>
+<meta name="description" content="Process improvement, system integration, automation, practical AI, implementation, and training for small and growing businesses.">
+<link rel="icon" type="image/svg+xml" href="assets/logo/3P_circular_logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#08111f;--navy2:#0d1d30;--navy3:#132a42;--gold:#d4a017;
+  --gold2:#f7d76a;--cream:#fff1a8;--ink:#e7ecf2;--muted:rgba(231,236,242,.68);
+  --faint:rgba(231,236,242,.42);--line:rgba(212,160,23,.26);--soft:rgba(231,236,242,.1);
+  --max:1120px
+}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--ink);font-family:'Source Sans 3',sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}h1,h2,h3{font-family:'Source Serif 4',serif;line-height:1.08;letter-spacing:-.025em}
+.wrap{max-width:var(--max);margin:auto;padding:0 32px}.mono,.eyebrow,.tag{font-family:'IBM Plex Mono',monospace}
+header{position:sticky;top:0;z-index:50;background:rgba(8,17,31,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.header-row{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo img{width:205px;display:block}.nav{display:flex;align-items:center;gap:21px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.035em}
+.nav a{color:var(--muted)}.nav a:hover,.nav a.active{color:var(--gold2)}.nav .cta{background:var(--gold);color:var(--navy);padding:11px 15px}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--gold2);padding:10px 12px;font-size:18px}
+.hero{padding:100px 0 88px;background:radial-gradient(circle at 78% 20%,rgba(212,160,23,.13),transparent 30%),linear-gradient(145deg,var(--navy),var(--navy2))}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.eyebrow{color:var(--gold2);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px}
+.eyebrow:before{content:'';display:inline-block;width:24px;height:1px;background:var(--gold);margin-right:12px;vertical-align:middle}
+h1{font-size:clamp(43px,6vw,76px)}.hero p{margin-top:25px;color:var(--muted);font-size:19px;max-width:660px}
+.actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 23px;font-weight:700;border:1px solid var(--gold);min-height:52px}
+.btn.primary{background:var(--gold);color:var(--navy)}.btn.primary:hover{background:var(--gold2)}.btn.secondary{color:var(--gold2)}.btn.secondary:hover{background:rgba(212,160,23,.1)}
+.hero-panel{border:1px solid var(--line);background:rgba(13,29,48,.78);padding:30px}.hero-panel .tag{font-size:10px;color:var(--gold2);letter-spacing:.13em}.hero-panel h3{font-size:27px;margin:14px 0 13px}.hero-panel p{font-size:15px;margin:0}.checklist{list-style:none;margin-top:20px}.checklist li{padding:11px 0 11px 25px;border-top:1px solid var(--soft);color:var(--muted);position:relative}.checklist li:before{content:'✓';position:absolute;left:0;color:var(--gold2)}
+section{padding:88px 0;border-top:1px solid var(--line)}.raised{background:var(--navy3)}.section-head{max-width:760px;margin-bottom:45px}.section-head h2{font-size:clamp(31px,4vw,49px)}.section-head p{margin-top:18px;color:var(--muted);font-size:17px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--navy2);border:1px solid var(--line);padding:31px}.card .num,.card .tag{color:var(--gold2);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.11em}.card h3{font-size:26px;margin:14px 0}.card p{color:var(--muted)}.card ul{list-style:none;margin-top:18px}.card li{position:relative;padding:9px 0 9px 22px;border-top:1px solid var(--soft);color:var(--muted)}.card li:before{content:'—';position:absolute;left:0;color:var(--gold2)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}.copy h2{font-size:clamp(31px,4vw,48px)}.copy p{color:var(--muted);margin-top:18px;font-size:17px}.callout{border-left:4px solid var(--gold);background:var(--navy2);padding:28px}.callout h3{font-size:27px}.callout p{color:var(--muted);margin-top:12px}
+.steps{counter-reset:step}.step{display:grid;grid-template-columns:74px 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--soft)}.step:before{counter-increment:step;content:"0" counter(step);font-family:'IBM Plex Mono';font-size:25px;color:var(--gold2)}.step h3{font-size:25px}.step p{color:var(--muted);margin-top:8px}
+.problem{padding:30px;border:1px solid var(--line);background:var(--navy2)}.problem h3{font-size:25px}.problem p{color:var(--muted);margin-top:12px}.problem .fix{margin-top:18px;padding-top:16px;border-top:1px solid var(--soft);color:var(--ink)}.problem .fix strong{color:var(--gold2)}
+.pricing-note{max-width:850px;background:var(--navy2);border:1px solid var(--line);padding:34px}.pricing-note h3{font-size:30px}.pricing-note p{color:var(--muted);margin-top:13px}
+.faq details{border-top:1px solid var(--line);padding:21px 0}.faq summary{cursor:pointer;font-weight:700;font-size:18px}.faq p{color:var(--muted);padding-top:12px;max-width:800px}
+.final{text-align:center;background:radial-gradient(circle at center,rgba(212,160,23,.12),transparent 38%),var(--navy2)}.final h2{font-size:clamp(34px,5vw,58px);max-width:800px;margin:auto}.final p{max-width:650px;margin:20px auto 0;color:var(--muted);font-size:18px}.final .actions{justify-content:center}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-size:13px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:880px){.menu{display:block}.nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--navy2);padding:16px 22px;flex-direction:column;align-items:stretch}.nav.open{display:flex}.hero-grid,.split{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.hero{padding:72px 0}.hero-panel{max-width:650px}}
+@media(max-width:650px){.wrap{padding:0 20px}.grid2{grid-template-columns:1fr}.logo img{width:165px}section{padding:66px 0}.actions{flex-direction:column}.btn{width:100%}.step{grid-template-columns:52px 1fr}}
+</style></head><body>
+<header>
+ <div class="wrap header-row">
+  <a class="logo" href="index.html"><img src="assets/logo/3P_Rectangular_Logo.svg" alt="3P Business Optimization"></a>
+  <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">☰</button>
+  <nav class="nav" id="nav">
+   <a href="index.html">Home</a>
+   <a href="on-demand-operations-support.html">On-Demand Support</a>
+   <a href="systems-automation-integration.html">Systems & Automation</a>
+   <a href="problems-we-solve.html">Problems We Solve</a>
+   <a href="how-3p-works.html">How 3P Works</a>
+   <a href="operational-snapshot.html" class="cta">Start Here →</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">SYSTEMS, AUTOMATION & INTEGRATION</div><h1>Fix the process before you automate the problem.</h1>
+<p>3P helps businesses simplify how work moves, connect the tools they already use, and apply automation or AI where it removes real work—not where it creates another platform to maintain.</p>
+<div class="actions"><a class="btn primary" href="operational-snapshot.html">Find the Best Starting Point →</a><a class="btn secondary" href="#capabilities">See What 3P Builds</a></div></div>
+<aside class="hero-panel"><div class="tag">3P OPERATING RULE</div><h3>Streamline first. Automate second.</h3><p>Automation multiplies the process underneath it. A clear process becomes faster. A broken process becomes a faster, harder-to-see mess.</p>
+<ul class="checklist"><li>Start with the actual workflow</li><li>Reduce unnecessary steps</li><li>Define ownership and exceptions</li><li>Automate only after the foundation works</li></ul></aside></div></section>
+
+<section><div class="wrap split"><div class="copy"><div class="eyebrow">THE REAL PROBLEM</div><h2>Most businesses do not need more technology. They need their technology to work together.</h2>
+<p>Leads arrive in one place, quotes live somewhere else, employees communicate through text messages, invoices are delayed, and the owner becomes the connection between every tool and every person.</p><p>3P looks across the whole flow—from inquiry to payment—and designs a system that reduces handoffs, repeat entry, missed steps, and owner dependence.</p></div>
+<div class="callout"><h3>The goal is not “automation.”</h3><p>The goal is fewer dropped leads, faster quotes, cleaner information, clearer ownership, less rework, and more time returned to the people running the business.</p></div></div></section>
+
+<section id="capabilities" class="raised"><div class="wrap"><div class="section-head"><div class="eyebrow">CAPABILITIES</div><h2>From scattered work to one dependable operating flow.</h2></div>
+<div class="grid3">
+<article class="card"><div class="tag">PROCESS DESIGN</div><h3>Workflow review and redesign</h3><p>Map how work really moves, identify delays and failure points, remove unnecessary steps, and define the future process.</p></article>
+<article class="card"><div class="tag">SYSTEM INTEGRATION</div><h3>Connect the tools already in use</h3><p>Reduce duplicate entry and manual handoffs between forms, email, spreadsheets, CRM, scheduling, quoting, invoicing, and reporting tools.</p></article>
+<article class="card"><div class="tag">AUTOMATION</div><h3>Automate repetitive, predictable work</h3><p>Create reminders, routing, notifications, follow-up sequences, status updates, document generation, and other controlled automations.</p></article>
+<article class="card"><div class="tag">PRACTICAL AI</div><h3>Use AI with clear boundaries</h3><p>Apply AI to drafting, classification, research, summarization, knowledge access, and decision support while keeping consequential decisions with people.</p></article>
+<article class="card"><div class="tag">IMPLEMENTATION</div><h3>Build, test, and launch</h3><p>Move beyond recommendations by configuring the system, testing real scenarios, documenting exceptions, and preparing the team.</p></article>
+<article class="card"><div class="tag">ADOPTION</div><h3>Train people and stabilize the change</h3><p>Provide simple instructions, role clarity, training, feedback loops, and follow-up so the new system becomes the normal way of working.</p></article>
+</div></div></section>
+
+<section><div class="wrap"><div class="section-head"><div class="eyebrow">COMMON SYSTEMS 3P CAN IMPROVE</div><h2>The parts of the business where money and time most often leak.</h2></div>
+<div class="grid2">
+<article class="problem"><h3>Lead-to-customer flow</h3><p>Calls, forms, social messages, estimates, and follow-ups are handled in different places.</p><div class="fix"><strong>3P response:</strong> One intake path, defined lead stages, ownership, reminders, and follow-up visibility.</div></article>
+<article class="problem"><h3>Quote-to-cash flow</h3><p>Quotes wait, completed work is invoiced late, and payment follow-up depends on memory.</p><div class="fix"><strong>3P response:</strong> Clear triggers, templates, status tracking, and automated reminders where appropriate.</div></article>
+<article class="problem"><h3>Scheduling and coordination</h3><p>Changes are communicated through calls and texts, creating confusion and missed handoffs.</p><div class="fix"><strong>3P response:</strong> Shared visibility, defined update rules, and exception-based notifications.</div></article>
+<article class="problem"><h3>Owner approvals and decisions</h3><p>Employees bring every decision back to the owner because rules and authority are unclear.</p><div class="fix"><strong>3P response:</strong> Decision standards, escalation rules, role clarity, and accessible operating guidance.</div></article>
+</div></div></section>
+
+<section class="raised"><div class="wrap"><div class="section-head"><div class="eyebrow">THE 3P IMPLEMENTATION PATH</div><h2>Technology follows the business need.</h2></div>
+<div class="steps"><div class="step"><div><h3>Diagnose the operating problem.</h3><p>Define the business outcome, the current symptoms, and what is actually creating delay, rework, risk, or owner dependence.</p></div></div>
+<div class="step"><div><h3>Stabilize and simplify the process.</h3><p>Remove unnecessary steps, define ownership, establish standards, and identify the exceptions the system must handle.</p></div></div>
+<div class="step"><div><h3>Select the simplest workable technology.</h3><p>Use existing tools when they can do the job. Add or replace software only when the business case is clear.</p></div></div>
+<div class="step"><div><h3>Build and test with real work.</h3><p>Configure the system, test normal and failure scenarios, protect access, and verify that information reaches the right person.</p></div></div>
+<div class="step"><div><h3>Train, measure, and improve.</h3><p>Support adoption, track results, address resistance or workarounds, and optimize after the system has real operating data.</p></div></div></div></div></section>
+
+<section class="faq"><div class="wrap"><div class="section-head"><div class="eyebrow">COMMON QUESTIONS</div><h2>Before investing in technology</h2></div>
+<details><summary>Do you only work with specific software?</summary><p>No. 3P evaluates the business need and current toolset first. Recommendations are based on fit, cost, usability, integration options, and the business's ability to maintain the system.</p></details>
+<details><summary>Can you implement what you recommend?</summary><p>Yes, when the work is within scope. 3P is designed to move from diagnosis into practical implementation rather than stopping at a report.</p></details>
+<details><summary>Can AI make decisions for my business?</summary><p>AI can support research, drafting, classification, summaries, and recommendations. Consequential financial, legal, employment, safety, customer, and strategic decisions should remain appropriately supervised by people.</p></details>
+<details><summary>What if our current process is undocumented?</summary><p>That is common. 3P starts by observing and reconstructing how the work actually happens, including the informal steps that live in the owner's head.</p></details></div></section>
+
+<section class="final"><div class="wrap"><h2>Build a business that does not depend on manual rescue.</h2><p>Start by identifying where information, decisions, and work are breaking down.</p><div class="actions"><a class="btn primary" href="operational-snapshot.html">Start the Operational Snapshot →</a></div></div></section>
+</main>
+
+<footer><div class="wrap footer-row"><span>© 2026 3P Business Optimization</span><span>People. Process. Product.</span></div></footer>
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.textContent=open?'×':'☰'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
+</script>
+</body></html>
