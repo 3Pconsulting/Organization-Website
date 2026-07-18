@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>3P Business Fix Intake</title>
+  <link rel="stylesheet" href="assets/css/product-line.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="wordmark" href="index.html" aria-label="3P Business Optimization home">
+      <img src="assets/logo/3P_Rectangular_Logo.svg" alt="3P Business Optimization">
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav">Menu</button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="business-fixes.html">Business Fixes</a>
+      <a href="operational-snapshot.html">Operational Snapshot</a>
+      <a class="button" href="business-fixes.html#offers">See the Fixes</a>
+    </nav>
+  </div>
+</header>
+
+<main class="section cream">
+  <div class="wrap checkout-wrap">
+    <div class="checkout-card">
+      <div class="eyebrow">PRODUCT-SPECIFIC QUESTIONNAIRE</div>
+      <h1 id="intakeOffer" style="font-size:44px;color:var(--navy-900)">3P Business Fix</h1>
+      <p>Complete this after purchase. The delivery clock begins when required information, files, access, and decisions are complete.</p>
+      <form id="intakeForm" method="POST">
+        <input type="hidden" name="offer_slug" id="intakeSlug">
+        <input type="hidden" name="offer" id="intakeOfferInput">
+        <input type="hidden" name="_subject" value="3P Business Fix Intake">
+        <div class="form-grid">
+          <div class="form-field"><label for="clientName">Your name</label><input id="clientName" name="client_name" required></div>
+          <div class="form-field"><label for="clientBusiness">Business name</label><input id="clientBusiness" name="business_name" required></div>
+          <div class="form-field"><label for="clientEmail">Business email</label><input id="clientEmail" type="email" name="email" required></div>
+          <div class="form-field"><label for="employees">Number of employees</label><input id="employees" name="employees" type="number" min="1" max="500"></div>
+          <div class="form-field full"><label for="problem">Describe the problem this purchase must fix.</label><textarea id="problem" name="problem" required></textarea></div>
+          <div class="form-field full"><label for="current">How is this handled today?</label><textarea id="current" name="current_process" required></textarea></div>
+          <div class="form-field full"><label for="tools">Which software, spreadsheets, inboxes, drives, or tools are involved?</label><textarea id="tools" name="tools"></textarea></div>
+          <div class="form-field full"><label for="people">Who owns the work today, and who must approve the final setup?</label><textarea id="people" name="people_and_approver" required></textarea></div>
+          <div class="form-field full"><label for="deadline">Is there a real business deadline or event affecting delivery?</label><textarea id="deadline" name="deadline"></textarea></div>
+          <div class="form-field full"><label for="access">List the files, exports, examples, or access you will provide.</label><textarea id="access" name="files_and_access" required></textarea></div>
+          <div class="form-field full">
+            <label><input type="checkbox" name="scope_acknowledgement" required> I understand that work outside the published product scope will be quoted separately before it begins.</label>
+          </div>
+        </div>
+        <button class="button" type="submit">Submit My Intake</button>
+      </form>
+      <div id="intakeConfigNotice" class="notice hidden">The live Formspree endpoint must be added before this form is deployed.</div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>© 2026 3P BUSINESS OPTIMIZATION</span>
+    <span>PEOPLE · PROCESS · PRODUCT</span>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+
+<script src="assets/js/product-catalog.js"></script>
+<script src="assets/js/checkout-config.js"></script>
+<script src="assets/js/intake.js"></script>
+</body>
+</html>
