@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact 3P Business Optimization</title>
+  <meta name="description" content="Tell us what's going on in your business. A short form — no scheduler, no quiz — and 3P will follow up personally.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/3P_circular_logo.svg">
+  <link rel="stylesheet" href="assets/css/product-line.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="wordmark" href="index.html" aria-label="3P Business Optimization home">
+      <img src="assets/logo/3P_Rectangular_Logo.svg" alt="3P Business Optimization">
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav">Menu</button>
+    <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="business-fixes.html">Business Fixes</a>
+      <a href="on-demand-operations-support.html">On-Demand Support</a>
+      <a href="systems-automation-integration.html">Systems &amp; Automation</a>
+      <a href="problems-we-solve.html">Problems We Solve</a>
+      <a class="button" href="operational-snapshot.html">Start Here</a>
+    </nav>
+  </div>
+</header>
+
+<main class="section cream">
+  <div class="wrap checkout-wrap">
+    <div class="checkout-card">
+      <div class="eyebrow">CONTACT 3P</div>
+      <h1 style="font-size:44px">Tell us what's going on.</h1>
+      <p class="system-note" style="font-size:15px;margin-top:10px">No scheduler, no quiz. Send the short version and 3P will follow up personally — usually within one business day.</p>
+
+      <form id="contactForm" action="https://formspree.io/f/mvzezlzz" method="POST">
+        <input type="hidden" name="_subject" value="3P Website — Quick Contact">
+        <input type="hidden" name="request_type" value="Quick contact form">
+        <div class="form-grid" style="margin-top:28px">
+          <div class="form-field"><label for="name">Your name</label><input id="name" name="name" required></div>
+          <div class="form-field"><label for="business">Business name</label><input id="business" name="business_name" required></div>
+          <div class="form-field"><label for="email">Email</label><input id="email" type="email" name="email" required></div>
+          <div class="form-field"><label for="phone">Phone (optional)</label><input id="phone" type="tel" name="phone"></div>
+          <div class="form-field full">
+            <label for="interest">What's this about?</label>
+            <select id="interest" name="interest">
+              <option>Not sure yet — just want to talk</option>
+              <option>A specific Business Fix (fixed-price product)</option>
+              <option>On-Demand Operations Support</option>
+              <option>Systems, Automation &amp; Integration</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-field full"><label for="message">What's going on?</label><textarea id="message" name="message" required placeholder="A sentence or two is fine — what's slowing you down, and what would you want fixed first?"></textarea></div>
+        </div>
+        <div class="notice">This goes straight to 3P — not a call center, not a scheduler. Expect a reply from a person, not a booking link.</div>
+        <button class="button" type="submit">Send This to 3P</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>© 2026 3P BUSINESS OPTIMIZATION</span>
+    <span><a href="mailto:hello@3pbusinessoptimization.com" style="color:inherit">hello@3pbusinessoptimization.com</a> · PEOPLE · PROCESS · PRODUCT</span>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+
+</body>
+</html>
