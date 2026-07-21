@@ -4,7 +4,7 @@
   const catalog=window.THREE_P_PRODUCT_CATALOG;
   const config=window.THREE_P_CHECKOUT_CONFIG||{formspreeEndpoint:"",paymentLinks:{}};
   const product=catalog.products.find(p=>p.slug===slug)||catalog.products[0];
-  document.title=product.name+" | Purchase | 3P Business Optimization";
+  document.title=product.name+" | Purchase | 3P Help Me";
   document.getElementById('offerName').textContent=product.name;
   document.getElementById('offerHeadline').textContent=product.headline;
   document.getElementById('offerPrice').textContent="$"+product.price.toLocaleString();
@@ -25,7 +25,7 @@
       try{
         const response=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});if(!response.ok)throw new Error();
         form.innerHTML='<div class="notice"><strong>Your request was received.</strong><br>3P will confirm scope and send the secure invoice and post-payment intake instructions.</div><div class="card-actions"><a class="button secondary" href="business-fixes.html">Return to Business Fixes</a><a class="button secondary" href="operational-snapshot.html">Complete the Operational Snapshot</a></div>';
-      }catch(err){submit.disabled=false;submit.textContent=original;let box=form.querySelector('[data-form-error]');if(!box){box=document.createElement('div');box.dataset.formError='true';box.className='notice';form.appendChild(box)}box.textContent='The request did not send. Please try again or email hello@3pbusinessoptimization.com.'}
+      }catch(err){submit.disabled=false;submit.textContent=original;let box=form.querySelector('[data-form-error]');if(!box){box=document.createElement('div');box.dataset.formError='true';box.className='notice';form.appendChild(box)}box.textContent='The request did not send. Please try again or email info@3phelpme.com.'}
     });
   }
   if(!paymentUrl&&!config.formspreeEndpoint)notice.classList.remove('hidden');
