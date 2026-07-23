@@ -3,7 +3,12 @@
   const slug=params.get('offer');
   const catalog=window.THREE_P_PRODUCT_CATALOG;
   const config=window.THREE_P_CHECKOUT_CONFIG||{formspreeEndpoint:"",paymentLinks:{}};
-  const product=catalog.products.find(p=>p.slug===slug)||catalog.products[0];
+  const product=catalog.products.find(p=>p.slug===slug);
+  if(!product){
+    document.title="Fix Not Found | 3P Help Me";
+    document.querySelector('.checkout-card').innerHTML=`<div class="eyebrow">FIX NOT FOUND</div><h1>That fix isn't currently offered.</h1><p>The link may be out of date or the fix has been retired. See the fixes 3P currently offers below.</p><a class="button" href="business-fixes.html">View Current Business Fixes</a>`;
+    return;
+  }
   document.title=product.name+" | Purchase | 3P Help Me";
   document.getElementById('offerName').textContent=product.name;
   document.getElementById('offerHeadline').textContent=product.headline;
