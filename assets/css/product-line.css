@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap');
 
 :root{
-  --navy-950:#071525;
+  --navy-950:#08111f;
   --navy-900:#0b1b2e;
   --navy-800:#122b45;
   --navy-700:#1a3b5d;
   --cream:#f5f0e7;
   --paper:#fffdf8;
-  --gold:#c89b3c;
-  --gold-light:#efd892;
+  --gold:#d4a017;
+  --gold-light:#f7d76a;
   --ink:#132238;
   --muted:#5f6b78;
   --line:#d8d1c5;
@@ -53,7 +53,8 @@ img{max-width:100%}
 .button:hover,.site-nav .button:hover{background:var(--gold-light);border-color:var(--gold-light);color:var(--navy-950)}
 .button.secondary{background:transparent;color:var(--navy-900);border-color:var(--navy-900)}
 .button.secondary:hover{background:var(--navy-900);color:white}
-.button.light{background:var(--cream);border-color:var(--cream);color:var(--navy-950)}
+.button.light{background:transparent;border-color:var(--gold);color:var(--gold-light)}
+.button.light:hover{background:rgba(212,160,23,.10);color:var(--gold-light)}
 .button.disabled{opacity:.55;cursor:not-allowed;pointer-events:none}
 .menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:white;padding:9px 11px;border-radius:4px}
 
@@ -121,7 +122,7 @@ h3{font-size:26px}
 .cta-row{display:flex;align-items:center;justify-content:space-between;gap:30px}
 .cta-row h2{max-width:700px}
 .site-footer{background:var(--navy-950);color:#cdd8e2;padding:34px 0;border-top:1px solid rgba(255,255,255,.1)}
-.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:12px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:"Source Sans 3",sans-serif;font-size:13px}
 .detail-hero{padding:82px 0;background:var(--navy-900);color:white}
 .detail-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:end}
 .detail-hero h1{font-size:clamp(44px,5vw,68px)}
@@ -191,5 +192,5 @@ body{background:radial-gradient(circle at 90% 0%,rgba(212,160,23,.08),transparen
 .section-head p,.product-card .summary,.timeline,.system-note{color:var(--muted)}
 input,textarea,select{background:#071525;color:var(--ink);border-color:rgba(212,160,23,.35)}
 input:focus,textarea:focus,select:focus{outline:2px solid var(--gold-light);outline-offset:2px}
-.notice{background:rgba(212,160,23,.08);color:var(--ink)}.cta-band{background:var(--gold);color:#071525}.site-footer{background:#071525}
+.notice{background:rgba(212,160,23,.08);color:var(--ink)}.cta-band{background:var(--gold);color:#08111f}.site-footer{background:#08111f}
 @media(max-width:1120px){.site-nav{gap:12px;font-size:10px}.wordmark img{width:190px}}
