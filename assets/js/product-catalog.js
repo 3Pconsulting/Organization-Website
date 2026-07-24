@@ -21,7 +21,7 @@ window.THREE_P_PRODUCT_CATALOG = {
     {
       "number": 1,
       "slug": "missed-lead-follow-up-fix",
-      "name": "Missed Lead & Follow-Up Fix",
+      "name": "Missed Leads and Money Leaks",
       "category": "Protect new business",
       "price": 349,
       "timeline": "3 business days",
@@ -34,13 +34,13 @@ window.THREE_P_PRODUCT_CATALOG = {
       "included": ["One business, one lead workflow, and up to three users.", "Tracker customization, templates, basic data import, testing, and walkthrough.", "Plain-language instructions for daily use and weekly review."],
       "not_included": ["Ongoing calling, emailing, appointment setting, or lead management.", "CRM licensing, custom CRM development, API integrations, or multi-system migration.", "Marketing campaigns, lead generation, or guaranteed sales results.", "Cleanup of incomplete, duplicated, or unstructured records beyond the included import."],
       "outcome": "The business has one visible list of active inquiries. Each lead has a clear status, named owner, next action, and follow-up date so opportunities are no longer dependent on memory.",
-      "upgrade": "Invoice & Payment Organization, Business Workflow Cleanup, or ongoing 3P On-Demand Operations Support.",
-      "cta": "Fix My Lead Follow-Up"
+      "upgrade": "Invoice & Payment Optimization, Business Workflow Cleanup, or ongoing 3P On-Demand Operations Support.",
+      "cta": "Stop Losing Money"
     },
     {
       "number": 2,
       "slug": "invoice-payment-organization",
-      "name": "Invoice & Payment Organization",
+      "name": "Invoice & Payment Optimization",
       "category": "Protect cash flow",
       "price": 449,
       "timeline": "4 business days",
@@ -53,8 +53,8 @@ window.THREE_P_PRODUCT_CATALOG = {
       "included": ["One business, one billing workflow, and up to three users.", "Tracker, aging view, handoff steps, reminder templates, import, testing, and walkthrough.", "A weekly invoice and payment review routine."],
       "not_included": ["Bookkeeping, account reconciliation, tax work, legal collections, or financial advice.", "Sending invoices or collecting payment on the client's behalf.", "Accounting software migration, payment processor setup, or custom integrations.", "Correction of inaccurate accounting records or disputed customer balances."],
       "outcome": "The owner can see what is complete but not billed, what has been invoiced, what is due, what is overdue, and who owns the next action.",
-      "upgrade": "Missed Lead & Follow-Up Fix, Business Workflow Cleanup, or ongoing billing administration through a separately scoped 3P support plan.",
-      "cta": "Organize My Billing"
+      "upgrade": "Missed Leads and Money Leaks, Business Workflow Cleanup, or ongoing billing administration through a separately scoped 3P support plan.",
+      "cta": "Collect My Cash"
     },
     {
       "number": 3,
@@ -73,7 +73,7 @@ window.THREE_P_PRODUCT_CATALOG = {
       "not_included": ["Implementation of new software, custom automation, or system integration.", "Additional workflows, multi-location standardization, or department-wide redesign.", "Formal regulatory, legal, safety, engineering, medical, or quality-system certification.", "Ongoing project management or staff supervision."],
       "outcome": "The selected workflow has one clear path, named responsibilities, defined handoffs, visible quality checks, and a usable SOP so the owner is no longer the only person who knows how the work should move.",
       "upgrade": "Owner Capacity Recovery Session, implementation support, additional workflow projects, or 3P Systems & Automation.",
-      "cta": "Clean Up One Workflow"
+      "cta": "Get Seen Today"
     },
     {
       "number": 4,
@@ -81,8 +81,8 @@ window.THREE_P_PRODUCT_CATALOG = {
       "name": "Owner Capacity Recovery Session",
       "category": "Get the owner out of rescue mode",
       "price": 249,
-      "timeline": "90-minute session + 2 business days",
-      "delivery_time": "The 90-minute remote session is followed by a written recovery plan within 2 business days.",
+      "timeline": "60-minute session + 2 business days",
+      "delivery_time": "The 60-minute remote session is followed by a written recovery plan within 2 business days.",
       "headline": "Decide what the owner should keep, delegate, standardize, automate, or stop.",
       "problem": "The owner has become the business's reminder system, approval desk, problem solver, and emergency department. The workload is real, but it is difficult to see which tasks truly require owner judgment and which should be removed from the owner's day.",
       "ideal": "Owners who are overloaded, working after hours, repeatedly rescuing routine work, or considering a hire without first understanding where capacity is being consumed.",
@@ -91,8 +91,27 @@ window.THREE_P_PRODUCT_CATALOG = {
       "included": ["One owner, one business, the pre-work review, 90-minute session, written plan, and follow-up.", "Plain-language priorities tied to actual owner workload.", "Recommendations for the next appropriate fixed-scope service when implementation help is needed."],
       "not_included": ["Ongoing coaching, therapy, personal productivity counseling, or unlimited accountability support.", "Implementation of delegation, hiring, automation, software, or workflow changes.", "Employee mediation, HR services, or legal advice.", "Guaranteed time savings when the client does not implement the agreed actions."],
       "outcome": "The owner leaves with a practical 30-day plan showing which work truly requires owner judgment and which work should be transferred, standardized, automated, combined, delayed, or stopped.",
-      "upgrade": "3P On-Demand Operations Support, Business Workflow Cleanup, Missed Lead & Follow-Up Fix, or a larger operational assessment.",
-      "cta": "Recover My Capacity"
+      "upgrade": "3P On-Demand Operations Support, Business Workflow Cleanup, Missed Leads and Money Leaks, or a larger operational assessment.",
+      "cta": "Reclaim My Time"
+    },
+    {
+      "number": 5,
+      "slug": "owner-capacity-recovery-implementation",
+      "name": "Capacity Recovery + Implementation",
+      "category": "Get the owner out of panic mode",
+      "price": 499,
+      "timeline": "60-minute session + 1-2 week implementation",
+      "delivery_time": "Assessment delivered within 2 business days. Implementation completed in 1-2 weeks depending on the scope confirmed at booking.",
+      "headline": "You do not just get the plan. 3P builds it for you.",
+      "problem": "An overloaded owner rarely has the bandwidth to implement their own recovery plan. This bundle pairs the Capacity Recovery assessment with 3P actually executing the highest-value changes it identifies.",
+      "ideal": "Owners who want the diagnosis and the fix handled in one engagement, without a second round of scoping or a separate purchase later.",
+      "deliverables": ["Everything included in the Capacity Recovery Session.", "3P execution of the top 3-5 highest-value actions identified in the capacity map.", "Set-up of the delegation, automation, or systems those actions require.", "A short handoff walkthrough once implementation is complete."],
+      "client_responsibilities": ["Everything required for the Capacity Recovery Session.", "Timely access to any tools, logins, or team members needed to implement the agreed actions.", "Final approval of each action before 3P implements it."],
+      "included": ["The full Capacity Recovery Session.", "Hands-on implementation of the plan's top priorities, not just a written recommendation.", "One handoff walkthrough so the owner and team know how to run it going forward."],
+      "not_included": ["Work beyond the top 3-5 actions identified in the capacity map, unless agreed in advance.", "Ongoing management or staffing of the new systems after handoff.", "Employee mediation, HR services, tax, or legal advice."],
+      "outcome": "The owner leaves with the highest-value fixes already built and running, not just documented.",
+      "upgrade": "Ongoing 3P On-Demand Operations Support if new capacity gaps appear later.",
+      "cta": "Free Me For Real"
     }
   ]
 };

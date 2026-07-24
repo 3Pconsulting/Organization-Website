@@ -82,6 +82,7 @@ h3{font-size:26px}
 }
 .hero-proof strong{display:block;font-family:"Source Serif 4",serif;font-size:30px;margin-bottom:18px}
 .hero-proof ul{margin:0;padding-left:22px;color:#e7edf3}
+p.hero-proof-close{margin:20px 0 0;font-weight:700;font-size:19px;color:var(--gold-light)}
 .section{padding:88px 0}
 .section.cream{background:var(--cream)}
 .section.navy{background:var(--navy-900);color:white}
@@ -119,6 +120,8 @@ h3{font-size:26px}
 .faq-item h3{font-size:23px;color:var(--navy-900);margin-bottom:10px}
 .guarantee{border-left:6px solid var(--gold);padding:28px 32px;background:white;color:var(--ink);box-shadow:var(--shadow)}
 .cta-band{background:var(--gold);color:var(--navy-950);padding:58px 0}
+.cta-band .button{background:var(--navy-900);border-color:var(--navy-900);color:var(--gold-light)}
+.cta-band .button:hover{background:var(--navy-800);border-color:var(--navy-800);color:var(--gold-light)}
 .cta-row{display:flex;align-items:center;justify-content:space-between;gap:30px}
 .cta-row h2{max-width:700px}
 .site-footer{background:var(--navy-950);color:#cdd8e2;padding:34px 0;border-top:1px solid rgba(255,255,255,.1)}
@@ -129,6 +132,12 @@ h3{font-size:26px}
 .detail-hero p{font-size:20px;color:#d6e0e9;max-width:720px}
 .offer-box{background:white;color:var(--ink);padding:28px;border-top:6px solid var(--gold);box-shadow:var(--shadow)}
 .offer-box .price{font-size:54px}
+.price-note{font-size:13px;color:var(--muted);margin-top:8px;font-style:italic}
+.offer-box .tier-label{font-family:"IBM Plex Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.offer-box .tier-badge{display:inline-block;background:var(--gold);color:var(--navy-950);font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:4px 10px;border-radius:3px;margin-bottom:10px}
+.offer-box .tier-divider{text-align:center;font-family:"IBM Plex Mono",monospace;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:28px 0 18px;padding-top:24px;border-top:1px dashed var(--line)}
+.offer-box .tier-detail{font-size:14px;line-height:1.5;color:var(--ink);margin:14px 0}
+.offer-box .fine-print{font-size:11px;line-height:1.5;color:var(--muted);margin-top:14px}
 .offer-box dl{margin:18px 0 0}
 .offer-box dt{font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;color:var(--muted)}
 .offer-box dd{margin:2px 0 14px;font-weight:700}

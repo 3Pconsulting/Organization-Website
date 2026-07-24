@@ -4,6 +4,7 @@ window.THREE_P_CHECKOUT_CONFIG = {
     "missed-lead-follow-up-fix": "",
     "invoice-payment-organization": "",
     "business-workflow-cleanup": "",
-    "owner-capacity-recovery-session": ""
+    "owner-capacity-recovery-session": "",
+    "owner-capacity-recovery-implementation": ""
   }
 };
