@@ -126,6 +126,8 @@ p.hero-proof-close{margin:20px 0 0;font-weight:700;font-size:19px;color:var(--go
 .cta-row h2{max-width:700px}
 .site-footer{background:var(--navy-950);color:#cdd8e2;padding:34px 0;border-top:1px solid rgba(255,255,255,.1)}
 .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:"Source Sans 3",sans-serif;font-size:13px}
+.detail-graphic{padding:56px 0 0;text-align:center}
+.detail-graphic img{display:inline-block;max-width:900px;width:100%;border-radius:8px;box-shadow:var(--shadow)}
 .detail-hero{padding:82px 0;background:var(--navy-900);color:white}
 .detail-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:end}
 .detail-hero h1{font-size:clamp(44px,5vw,68px)}
