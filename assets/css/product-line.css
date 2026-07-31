@@ -119,9 +119,7 @@ p.hero-proof-close{margin:20px 0 0;font-weight:700;font-size:19px;color:var(--go
 .faq-item{border:1px solid var(--line);background:white;padding:26px}
 .faq-item h3{font-size:23px;color:var(--navy-900);margin-bottom:10px}
 .guarantee{border-left:6px solid var(--gold);padding:28px 32px;background:white;color:var(--ink);box-shadow:var(--shadow)}
-.cta-band{background:var(--gold);color:var(--navy-950);padding:58px 0}
-.cta-band .button{background:var(--navy-900);border-color:var(--navy-900);color:var(--gold-light)}
-.cta-band .button:hover{background:var(--navy-800);border-color:var(--navy-800);color:var(--gold-light)}
+.cta-band{background:var(--navy-950);color:var(--ink);padding:58px 0}
 .cta-row{display:flex;align-items:center;justify-content:space-between;gap:30px}
 .cta-row h2{max-width:700px}
 .site-footer{background:var(--navy-950);color:#cdd8e2;padding:34px 0;border-top:1px solid rgba(255,255,255,.1)}
@@ -203,5 +201,5 @@ body{background:radial-gradient(circle at 90% 0%,rgba(212,160,23,.08),transparen
 .section-head p,.product-card .summary,.timeline,.system-note{color:var(--muted)}
 input,textarea,select{background:#071525;color:var(--ink);border-color:rgba(212,160,23,.35)}
 input:focus,textarea:focus,select:focus{outline:2px solid var(--gold-light);outline-offset:2px}
-.notice{background:rgba(212,160,23,.08);color:var(--ink)}.cta-band{background:var(--gold);color:#08111f}.site-footer{background:#08111f}
+.notice{background:rgba(212,160,23,.08);color:var(--ink)}.cta-band{background:var(--navy-950);color:var(--ink)}.site-footer{background:#08111f}
 @media(max-width:1120px){.site-nav{gap:12px;font-size:10px}.wordmark img{width:190px}}

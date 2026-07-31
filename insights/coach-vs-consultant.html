@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Business Coach vs. Business Consultant: What’s the Difference? | 3P Help Me</title>
-<meta name="description" content="Not sure if you need a coach or a consultant? Here’s the real difference — and how to know which one actually fixes your problem.">
-<link rel="icon" type="image/png" href="../assets/logo/3P_HelpMe_Circle.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<meta content="Not sure if you need a coach or a consultant? Here’s the real difference — and how to know which one actually fixes your problem." name="description"/>
+<link href="../assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --navy:#08111f;--navy2:#0d1d30;--navy3:#132a42;--gold:#d4a017;
@@ -115,24 +116,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap header-row">
-    <a class="logo" href="../index.html"><img src="../assets/logo/3P_HelpMe_Logo.png" alt="3P Help Me"></a>
-    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open navigation">☰</button>
-    <nav class="nav" id="nav">
-      <a href="../index.html">Home</a>
-      <a href="../business-fixes.html">Business Fixes</a>
-      <a href="../on-demand-operations-support.html">On-Demand Support</a>
-      <a href="../systems-automation-integration.html">Systems & Automation</a>
-      <a href="../problems-we-solve.html">Problems We Solve</a>
-      <a href="../how-3p-works.html">How 3P Works</a>
-      <a class="active" href="../operational-insights.html">Operational Insights</a>
-      <a href="../operational-snapshot.html" class="cta">Start Here →</a>
-    </nav>
-  </div>
-</header>
-
+<div id="site-header-mount"></div>
 <main>
 <section class="hero">
 <div class="wrap">
@@ -144,20 +128,15 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </section>
 <div class="wrap layout">
 <article class="article">
-
 <h2>The short answer</h2>
 <p>A coach works on you. A consultant works on the business. Both have real value — they just solve completely different problems, and buying the wrong one is how owners end up frustrated and no closer to fixed.</p>
 <div class="callout"><strong>One question cuts through most of the confusion:</strong> are you looking for someone to help you think differently, or someone to actually fix what’s broken and hand you a working result?</div>
-
 <h2>What a business coach actually does</h2>
 <div class="check"><h3>Mindset, accountability, direction</h3><p>A good coach helps you set goals, think through decisions, stay accountable, and grow as a leader. That work is real and valuable — but it’s about you, and it’s open-ended by design. There’s rarely a defined deliverable or a moment where the engagement is simply “done.”</p></div>
-
 <h2>What a business consultant actually does</h2>
 <div class="check"><h3>Diagnosis, a fix, a result</h3><p>A consultant looks at a specific operational problem — missed leads, late invoices, a process that keeps breaking — and builds and installs an actual fix. There’s a defined scope, a specific deliverable, and a point where the work is finished and something concretely changed.</p></div>
-
 <h2>The test that actually matters</h2>
 <p>Coaching changes how you think. Consulting changes what’s actually happening in the business. If your leads are dying in silence or your invoices go out late, no amount of mindset work fixes that — the process itself has to change, which is consulting work, not coaching work.</p>
-
 <div class="exercise">
 <h3>Three questions to know which one you need</h3>
 <ol>
@@ -166,10 +145,8 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 <li>Would fixing this require changing a process, or changing how you personally approach things?</li>
 </ol>
 </div>
-
 <h2>Where 3P fits</h2>
 <p>3P Help Me is a consultant, not a coach — real Fortune-500-trained operational work, applied to a specific, named problem, with a fixed price and a guaranteed deliverable before you spend a dollar. If you already know what’s broken, that’s exactly what gets fixed. If you’re not sure yet, the free Operational Diagnostic finds it in 60 seconds.</p>
-
 </article>
 <aside class="sidebar">
 <div class="side-card">
@@ -200,22 +177,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </div>
 </section>
 </main>
+<div id="site-footer-mount"></div>
 
-<footer><div class="wrap footer-row"><span>© 2026 3P Help Me</span><span><a href="../contact.html">Contact Us</a> · <a href="mailto:info@3phelpme.com">info@3phelpme.com</a></span><span>People. Process. Product.</span></div></footer>
-<script>
-const menu=document.getElementById('menu'),nav=document.getElementById('nav');
-if(menu&&nav){
-  menu.addEventListener('click',()=>{
-    const open=nav.classList.toggle('open');
-    menu.setAttribute('aria-expanded',String(open));
-    menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
-  });
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('open');
-    menu.setAttribute('aria-expanded','false');
-  }));
-}
-</script>
-
-</body>
+<script defer="defer" src="/assets/js/site-include.js"></script></body>
 </html>

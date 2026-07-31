@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>How Much Does a Business Consultant Actually Cost? | 3P Help Me</title>
-<meta name="description" content="Real numbers on what business consulting costs — hourly, retainer, and fixed-price — so you know what you’re actually comparing.">
-<link rel="icon" type="image/png" href="../assets/logo/3P_HelpMe_Circle.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<meta content="Real numbers on what business consulting costs — hourly, retainer, and fixed-price — so you know what you’re actually comparing." name="description"/>
+<link href="../assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --navy:#08111f;--navy2:#0d1d30;--navy3:#132a42;--gold:#d4a017;
@@ -115,24 +116,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap header-row">
-    <a class="logo" href="../index.html"><img src="../assets/logo/3P_HelpMe_Logo.png" alt="3P Help Me"></a>
-    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open navigation">☰</button>
-    <nav class="nav" id="nav">
-      <a href="../index.html">Home</a>
-      <a href="../business-fixes.html">Business Fixes</a>
-      <a href="../on-demand-operations-support.html">On-Demand Support</a>
-      <a href="../systems-automation-integration.html">Systems & Automation</a>
-      <a href="../problems-we-solve.html">Problems We Solve</a>
-      <a href="../how-3p-works.html">How 3P Works</a>
-      <a class="active" href="../operational-insights.html">Operational Insights</a>
-      <a href="../operational-snapshot.html" class="cta">Start Here →</a>
-    </nav>
-  </div>
-</header>
-
+<div id="site-header-mount"></div>
 <main>
 <section class="hero">
 <div class="wrap">
@@ -144,27 +128,21 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </section>
 <div class="wrap layout">
 <article class="article">
-
 <h2>Most consultants don’t publish pricing. Here’s why that should worry you, not reassure you.</h2>
 <p>If a price isn’t published, it usually means it’s negotiable, variable, or dependent on how the conversation goes — not a sign of premium service. Real numbers, so you’re comparing apples to apples before you ever get on a call.</p>
 <div class="callout"><strong>The short version:</strong> generalist hourly runs $50–150/hr, certified specialists run $150–300+/hr, and typical retainers run $2,500–12,000/month — all before you know how many hours anything actually takes.</div>
-
 <h2>The three ways consultants actually bill</h2>
 <div class="check"><h3>Hourly</h3><p>$50–150/hr for general business consulting; $150–300+/hr for certified specialists (Lean Six Sigma, Master Black Belt-level credentials). The risk: you don’t know the total until it’s over, and the clock keeps running whether or not the fix is actually working.</p></div>
 <div class="check"><h3>Retainer</h3><p>$2,500–12,000/month depending on scope and access level. The risk: you’re paying whether or not there’s active work that month, and it rarely comes with a defined, guaranteed deliverable.</p></div>
 <div class="check"><h3>Fixed-price, defined scope</h3><p>One problem, one price, known before you start. The risk is almost entirely removed — you know exactly what you’re paying and exactly what you’re getting before you commit a dollar.</p></div>
-
 <h2>Why this matters more than it sounds like it should</h2>
 <p>Open-ended hourly billing punishes you for a consultant working slowly, and rewards them for it. A fixed price does the opposite — the incentive is to solve it efficiently, because the price doesn’t change either way.</p>
-
 <h2>What 3P actually charges</h2>
 <p>Four fixed-price fixes — $249 to $649 — each with a defined scope, a set delivery timeline of 3–5 business days, and a guaranteed deliverable before you spend a dollar. No hourly clock. No open-ended retainer. You know the number before you decide anything.</p>
-
 <div class="exercise">
 <h3>The real comparison</h3>
 <p>A single hour of a certified specialist’s time, at market rate, can cost more than an entire 3P fix — delivered, complete, guaranteed. That’s not a discount gimmick. It’s what a defined scope actually makes possible.</p>
 </div>
-
 </article>
 <aside class="sidebar">
 <div class="side-card">
@@ -195,22 +173,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </div>
 </section>
 </main>
+<div id="site-footer-mount"></div>
 
-<footer><div class="wrap footer-row"><span>© 2026 3P Help Me</span><span><a href="../contact.html">Contact Us</a> · <a href="mailto:info@3phelpme.com">info@3phelpme.com</a></span><span>People. Process. Product.</span></div></footer>
-<script>
-const menu=document.getElementById('menu'),nav=document.getElementById('nav');
-if(menu&&nav){
-  menu.addEventListener('click',()=>{
-    const open=nav.classList.toggle('open');
-    menu.setAttribute('aria-expanded',String(open));
-    menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
-  });
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('open');
-    menu.setAttribute('aria-expanded','false');
-  }));
-}
-</script>
-
-</body>
+<script defer="defer" src="/assets/js/site-include.js"></script></body>
 </html>

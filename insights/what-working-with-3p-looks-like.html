@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>What Working With 3P Actually Looks Like | 3P Help Me</title>
-<meta name="description" content="No sales pressure, no jargon, no disappearing after payment. Here’s exactly what to expect as a client, start to finish.">
-<link rel="icon" type="image/png" href="../assets/logo/3P_HelpMe_Circle.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<meta content="No sales pressure, no jargon, no disappearing after payment. Here’s exactly what to expect as a client, start to finish." name="description"/>
+<link href="../assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --navy:#08111f;--navy2:#0d1d30;--navy3:#132a42;--gold:#d4a017;
@@ -115,24 +116,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap header-row">
-    <a class="logo" href="../index.html"><img src="../assets/logo/3P_HelpMe_Logo.png" alt="3P Help Me"></a>
-    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open navigation">☰</button>
-    <nav class="nav" id="nav">
-      <a href="../index.html">Home</a>
-      <a href="../business-fixes.html">Business Fixes</a>
-      <a href="../on-demand-operations-support.html">On-Demand Support</a>
-      <a href="../systems-automation-integration.html">Systems & Automation</a>
-      <a href="../problems-we-solve.html">Problems We Solve</a>
-      <a href="../how-3p-works.html">How 3P Works</a>
-      <a class="active" href="../operational-insights.html">Operational Insights</a>
-      <a href="../operational-snapshot.html" class="cta">Start Here →</a>
-    </nav>
-  </div>
-</header>
-
+<div id="site-header-mount"></div>
 <main>
 <section class="hero">
 <div class="wrap">
@@ -144,25 +128,20 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </section>
 <div class="wrap layout">
 <article class="article">
-
 <h2>No sales pressure. No jargon you need a translator for.</h2>
 <p>You won’t get a 45-minute pitch call before anyone tells you what anything costs. Pricing is public, the scope is written down before you pay, and the language is plain — if a recommendation doesn’t make sense in one read, that’s on the explanation, not on you.</p>
 <div class="callout"><strong>The standard is simple:</strong> if you can’t explain what changed and why to someone else in your business, the work isn’t finished yet.</div>
-
 <h2>What you can actually expect</h2>
 <div class="check"><h3>Direct communication, not a ticket queue</h3><p>You’re working with someone who actually understands operations at a certified level — not a rotating support inbox where you re-explain your business to a new person every time.</p></div>
 <div class="check"><h3>A defined timeline, held to</h3><p>3–5 business days depending on the fix, stated upfront — not “soon” or “when we get to it.”</p></div>
 <div class="check"><h3>No disappearing after payment</h3><p>The Clear Deliverable Guarantee means if something in the agreed scope is missing or doesn’t match what was promised, it gets corrected at no additional charge — not a policy on paper, an actual standard the work is held to.</p></div>
 <div class="check"><h3>Real operational thinking, not a template</h3><p>Every fix is built around certified Lean Six Sigma methodology, applied to your actual business — not a generic worksheet with your business name typed in at the top.</p></div>
-
 <h2>What this isn’t</h2>
 <p>It isn’t a subscription you forget you’re paying for. It isn’t vague advice with no deliverable at the end. It isn’t hourly billing where the incentive runs against you. One problem, one price, one real result — that’s the whole model.</p>
-
 <div class="exercise">
 <h3>Still growing — and that’s worth knowing</h3>
 <p>3P is early. That means direct, personal attention on every engagement right now — not a large firm passing you between account managers. As the client list grows, that’s the standard being built to protect, not one that fades once there are more clients to serve.</p>
 </div>
-
 </article>
 <aside class="sidebar">
 <div class="side-card">
@@ -193,22 +172,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </div>
 </section>
 </main>
+<div id="site-footer-mount"></div>
 
-<footer><div class="wrap footer-row"><span>© 2026 3P Help Me</span><span><a href="../contact.html">Contact Us</a> · <a href="mailto:info@3phelpme.com">info@3phelpme.com</a></span><span>People. Process. Product.</span></div></footer>
-<script>
-const menu=document.getElementById('menu'),nav=document.getElementById('nav');
-if(menu&&nav){
-  menu.addEventListener('click',()=>{
-    const open=nav.classList.toggle('open');
-    menu.setAttribute('aria-expanded',String(open));
-    menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
-  });
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('open');
-    menu.setAttribute('aria-expanded','false');
-  }));
-}
-</script>
-
-</body>
+<script defer="defer" src="/assets/js/site-include.js"></script></body>
 </html>

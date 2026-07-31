@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>If They Can’t Find You, You Don’t Exist | 3P Help Me</title>
-<meta name="description" content="The world searches before it buys — here’s what an invisible or outdated online presence is actually costing you.">
-<link rel="icon" type="image/png" href="../assets/logo/3P_HelpMe_Circle.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<meta content="The world searches before it buys — here’s what an invisible or outdated online presence is actually costing you." name="description"/>
+<link href="../assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --navy:#08111f;--navy2:#0d1d30;--navy3:#132a42;--gold:#d4a017;
@@ -115,28 +116,11 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap header-row">
-    <a class="logo" href="../index.html"><img src="../assets/logo/3P_HelpMe_Logo.png" alt="3P Help Me"></a>
-    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open navigation">☰</button>
-    <nav class="nav" id="nav">
-      <a href="../index.html">Home</a>
-      <a href="../business-fixes.html">Business Fixes</a>
-      <a href="../on-demand-operations-support.html">On-Demand Support</a>
-      <a href="../systems-automation-integration.html">Systems & Automation</a>
-      <a href="../problems-we-solve.html">Problems We Solve</a>
-      <a href="../how-3p-works.html">How 3P Works</a>
-      <a class="active" href="../operational-insights.html">Operational Insights</a>
-      <a href="../operational-snapshot.html" class="cta">Start Here →</a>
-    </nav>
-  </div>
-</header>
-
+<div id="site-header-mount"></div>
 <main>
 <section class="hero">
 <div class="wrap">
-<div class="eyebrow">Online Presence & Social Media Management</div>
+<div class="eyebrow">Online Presence &amp; Social Media Management</div>
 <h1>If They Can’t Find You, You Don’t Exist</h1>
 <p class="lede">The world is going digital whether you like it or not. Every day without a real online presence is a day of customers who searched, found someone else, and never knew you existed.</p>
 <div class="meta">3-minute read · For owners invisible to the customers already looking for them</div>
@@ -144,24 +128,19 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </section>
 <div class="wrap layout">
 <article class="article">
-
 <h2>Almost every buying decision starts with a search now.</h2>
 <p>Before someone calls, books, or walks in, they search first — and what they find (or don’t find) decides whether you’re even in the running. An invisible or outdated presence isn’t a minor gap anymore. It’s customers who never knew you existed.</p>
 <div class="callout"><strong>The cost is invisible by nature</strong> — you don’t see the customer who searched, found nothing useful, and quietly chose someone else.</div>
-
 <h2>What "invisible" actually looks like</h2>
 <div class="check"><h3>What shows up doesn’t match what you offer.</h3><p>An outdated profile, a mismatched description, or no clear way to contact you turns a real search into a dead end.</p></div>
 <div class="check"><h3>Social presence exists, but isn’t working.</h3><p>A page that’s inactive, unclear, or missing a real call to action doesn’t convert a visitor into a customer — it just sits there.</p></div>
 <div class="check"><h3>Nobody’s using the words your customers actually search.</h3><p>Without the right search terms tied to your location and service, you’re invisible to the exact people already looking for you.</p></div>
-
 <h2>What actually changes</h2>
 <p>Get found online, with a profile, page, and contact path built around what you actually offer — real search terms tied to your location and service, and a social presence that’s actually managed, not abandoned. Delivered in 5 business days, fixed at $649.</p>
-
 <div class="exercise">
 <h3>What you get</h3>
 <p>A rebuilt online presence — your profile and page structured around what you offer, search terms your actual customers are typing, and a social media plan built to get found, not just exist.</p>
 </div>
-
 </article>
 <aside class="sidebar">
 <div class="side-card">
@@ -192,22 +171,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </div>
 </section>
 </main>
+<div id="site-footer-mount"></div>
 
-<footer><div class="wrap footer-row"><span>© 2026 3P Help Me</span><span><a href="../contact.html">Contact Us</a> · <a href="mailto:info@3phelpme.com">info@3phelpme.com</a></span><span>People. Process. Product.</span></div></footer>
-<script>
-const menu=document.getElementById('menu'),nav=document.getElementById('nav');
-if(menu&&nav){
-  menu.addEventListener('click',()=>{
-    const open=nav.classList.toggle('open');
-    menu.setAttribute('aria-expanded',String(open));
-    menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
-  });
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('open');
-    menu.setAttribute('aria-expanded','false');
-  }));
-}
-</script>
-
-</body>
+<script defer="defer" src="/assets/js/site-include.js"></script></body>
 </html>

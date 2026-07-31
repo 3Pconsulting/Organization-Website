@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Why Late Invoices Are Costing You More Than You Think | 3P Help Me</title>
-<meta name="description" content="The work is done and the money isn’t in your bank yet — here’s why, and the fixed-price fix that closes the gap.">
-<link rel="icon" type="image/png" href="../assets/logo/3P_HelpMe_Circle.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<meta content="The work is done and the money isn’t in your bank yet — here’s why, and the fixed-price fix that closes the gap." name="description"/>
+<link href="../assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --navy:#08111f;--navy2:#0d1d30;--navy3:#132a42;--gold:#d4a017;
@@ -115,28 +116,11 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap header-row">
-    <a class="logo" href="../index.html"><img src="../assets/logo/3P_HelpMe_Logo.png" alt="3P Help Me"></a>
-    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open navigation">☰</button>
-    <nav class="nav" id="nav">
-      <a href="../index.html">Home</a>
-      <a href="../business-fixes.html">Business Fixes</a>
-      <a href="../on-demand-operations-support.html">On-Demand Support</a>
-      <a href="../systems-automation-integration.html">Systems & Automation</a>
-      <a href="../problems-we-solve.html">Problems We Solve</a>
-      <a href="../how-3p-works.html">How 3P Works</a>
-      <a class="active" href="../operational-insights.html">Operational Insights</a>
-      <a href="../operational-snapshot.html" class="cta">Start Here →</a>
-    </nav>
-  </div>
-</header>
-
+<div id="site-header-mount"></div>
 <main>
 <section class="hero">
 <div class="wrap">
-<div class="eyebrow">Invoice & Payment Optimization</div>
+<div class="eyebrow">Invoice &amp; Payment Optimization</div>
 <h1>The Work Is Done. Why Isn’t the Money in Your Bank Yet?</h1>
 <p class="lede">Revenue you already earned is sitting trapped somewhere between finishing the job and actually getting paid for it — and it’s costing you more than you realize.</p>
 <div class="meta">3-minute read · For owners tired of chasing money they already earned</div>
@@ -144,24 +128,19 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </section>
 <div class="wrap layout">
 <article class="article">
-
 <h2>Money you already earned isn’t the same as money in your account.</h2>
 <p>The job is finished, but billing information arrives late, invoices don’t go out promptly, and outstanding balances get followed up on inconsistently — if at all. The revenue exists on paper. It just hasn’t made it to your bank yet.</p>
 <div class="callout"><strong>Built for:</strong> small service, repair, construction-support, healthcare-adjacent, and professional businesses that need clear visibility from completed work through paid status.</div>
-
 <h2>Where the gap actually opens up</h2>
 <div class="check"><h3>Completed work isn’t flagged as billable.</h3><p>The job’s done in your head, but nothing tells the billing step that it’s time to invoice — so it waits until someone remembers.</p></div>
 <div class="check"><h3>Invoices go out, and then go quiet.</h3><p>Once it’s sent, there’s no visibility into what’s overdue and no consistent follow-up — so late payments just stay late.</p></div>
 <div class="check"><h3>Nobody can answer "what’s actually owed to us right now?"</h3><p>Without a single view of complete-but-unbilled, invoiced, due, and overdue, that answer lives in guesswork.</p></div>
-
 <h2>What actually changes</h2>
 <p>You can see, at a glance, what’s complete but not billed, what’s been invoiced, what’s due, what’s overdue, and who owns the next action. Delivered in 4 business days, fixed at $449.</p>
-
 <div class="exercise">
 <h3>What you get</h3>
 <p>A customized invoice and payment tracker with due-date and aging visibility — status fields for work completion through paid, so cash flow stops depending on memory.</p>
 </div>
-
 </article>
 <aside class="sidebar">
 <div class="side-card">
@@ -192,22 +171,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </div>
 </section>
 </main>
+<div id="site-footer-mount"></div>
 
-<footer><div class="wrap footer-row"><span>© 2026 3P Help Me</span><span><a href="../contact.html">Contact Us</a> · <a href="mailto:info@3phelpme.com">info@3phelpme.com</a></span><span>People. Process. Product.</span></div></footer>
-<script>
-const menu=document.getElementById('menu'),nav=document.getElementById('nav');
-if(menu&&nav){
-  menu.addEventListener('click',()=>{
-    const open=nav.classList.toggle('open');
-    menu.setAttribute('aria-expanded',String(open));
-    menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
-  });
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('open');
-    menu.setAttribute('aria-expanded','false');
-  }));
-}
-</script>
-
-</body>
+<script defer="defer" src="/assets/js/site-include.js"></script></body>
 </html>

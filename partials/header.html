@@ -1,0 +1,51 @@
+<style>
+header.site-header{position:sticky;top:0;z-index:50;padding:8px 0;background:radial-gradient(circle at 14% 0%, rgba(212,160,23,0.13), transparent 34%),linear-gradient(180deg, rgba(22,50,79,0.98) 0%, rgba(11,27,46,0.98) 100%);border-bottom:1px solid rgba(247,215,106,0.48);box-shadow:0 12px 30px rgba(0,0,0,0.28);backdrop-filter:blur(12px);font-family:"Source Sans 3",Arial,sans-serif}
+header.site-header .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+header.site-header .header-row{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+header.site-header .wordmark{display:flex;align-items:center;text-decoration:none;flex-shrink:0}
+header.site-header .wordmark img{width:190px;height:auto;display:block}
+header.site-header .site-nav-primary{display:flex;align-items:center;gap:22px;margin-left:auto}
+header.site-header .site-nav-primary a{color:rgba(231,236,242,.82);text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.01em;white-space:nowrap}
+header.site-header .site-nav-primary a:hover,header.site-header .site-nav-primary a.active{color:#F7D76A}
+header.site-header .menu-wrap{position:relative;flex-shrink:0;margin-left:14px}
+header.site-header .menu-toggle{background:none;border:1px solid rgba(247,215,106,.4);border-radius:4px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+header.site-header .menu-toggle span{display:block;width:18px;height:2px;background:#F7D76A;position:relative;transition:.15s}
+header.site-header .menu-toggle span::before,header.site-header .menu-toggle span::after{content:"";display:block;width:18px;height:2px;background:#F7D76A;position:absolute;left:0;transition:.15s}
+header.site-header .menu-toggle span::before{top:-6px}
+header.site-header .menu-toggle span::after{top:6px}
+header.site-header .site-menu{position:absolute;top:100%;right:0;margin-top:10px;background:#0B1B2E;border:1px solid rgba(247,215,106,.3);border-radius:6px;min-width:230px;padding:8px;display:none;flex-direction:column;box-shadow:0 18px 40px rgba(0,0,0,.4)}
+header.site-header .site-menu.open{display:flex}
+header.site-header .site-menu a{color:rgba(231,236,242,.85);text-decoration:none;font-size:14px;font-weight:500;padding:10px 12px;border-radius:4px}
+header.site-header .site-menu a:hover,header.site-header .site-menu a.active{background:rgba(212,160,23,.12);color:#F7D76A}
+header.site-header .site-menu .mobile-only{display:none}
+@media(max-width:880px){
+  header.site-header .site-nav-primary{display:none}
+  header.site-header .site-menu .mobile-only{display:block}
+}
+</style>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="wordmark" href="/index.html" aria-label="3P Help Me — home">
+      <img src="/assets/logo/3P_HelpMe_Logo.png" alt="3P Help Me">
+    </a>
+    <nav class="site-nav-primary" aria-label="Primary navigation">
+      <a href="/business-fixes.html">Business Fixes</a>
+      <a href="/on-demand-operations-support.html">On-Demand Support</a>
+      <a href="/systems-automation-integration.html">Systems &amp; Automation</a>
+    </nav>
+    <div class="menu-wrap">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteMenu" aria-label="Open menu">
+        <span></span>
+      </button>
+      <nav class="site-menu" id="siteMenu" aria-label="More navigation">
+        <a class="mobile-only" href="/business-fixes.html">Business Fixes</a>
+        <a class="mobile-only" href="/on-demand-operations-support.html">On-Demand Support</a>
+        <a class="mobile-only" href="/systems-automation-integration.html">Systems &amp; Automation</a>
+        <a href="/problems-we-solve.html">Problems We Solve</a>
+        <a href="/how-3p-works.html">How 3P Works</a>
+        <a href="/operational-insights.html">Operational Insights</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>

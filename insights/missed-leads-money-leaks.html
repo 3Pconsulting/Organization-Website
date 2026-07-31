@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Why You’re Losing Leads (And How to Stop It) | 3P Help Me</title>
-<meta name="description" content="Calls, texts, emails, and social messages scattered everywhere — here’s why leads go cold, and the fixed-price fix that stops it.">
-<link rel="icon" type="image/png" href="../assets/logo/3P_HelpMe_Circle.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<meta content="Calls, texts, emails, and social messages scattered everywhere — here’s why leads go cold, and the fixed-price fix that stops it." name="description"/>
+<link href="../assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --navy:#08111f;--navy2:#0d1d30;--navy3:#132a42;--gold:#d4a017;
@@ -115,24 +116,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap header-row">
-    <a class="logo" href="../index.html"><img src="../assets/logo/3P_HelpMe_Logo.png" alt="3P Help Me"></a>
-    <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" aria-label="Open navigation">☰</button>
-    <nav class="nav" id="nav">
-      <a href="../index.html">Home</a>
-      <a href="../business-fixes.html">Business Fixes</a>
-      <a href="../on-demand-operations-support.html">On-Demand Support</a>
-      <a href="../systems-automation-integration.html">Systems & Automation</a>
-      <a href="../problems-we-solve.html">Problems We Solve</a>
-      <a href="../how-3p-works.html">How 3P Works</a>
-      <a class="active" href="../operational-insights.html">Operational Insights</a>
-      <a href="../operational-snapshot.html" class="cta">Start Here →</a>
-    </nav>
-  </div>
-</header>
-
+<div id="site-header-mount"></div>
 <main>
 <section class="hero">
 <div class="wrap">
@@ -144,24 +128,19 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </section>
 <div class="wrap layout">
 <article class="article">
-
 <h2>The lead didn’t go to a competitor. It went to silence.</h2>
 <p>Calls, website requests, emails, texts, and social messages all arrive through different doors. You intend to respond — but the next action lives in memory, a notebook, or a crowded inbox. A good lead cools off simply because no one can quickly see what’s been answered, quoted, scheduled, or lost.</p>
 <div class="callout"><strong>This is built for exactly one situation:</strong> owner-operated businesses with two or more inquiry channels and no dependable shared view of what’s open and what’s been handled.</div>
-
 <h2>What actually happens without a system</h2>
 <div class="check"><h3>A lead arrives, and it’s the only record of itself.</h3><p>A text on your phone, a form submission in an inbox, a voicemail — each one lives wherever it landed, with nothing connecting them into one place you can actually see.</p></div>
 <div class="check"><h3>“I’ll follow up later” has no deadline.</h3><p>Without a visible next-action date, later quietly becomes never — not from carelessness, just from nothing forcing the follow-up to happen.</p></div>
 <div class="check"><h3>Nobody else can pick it up.</h3><p>If the lead only exists in your head, no one on your team can step in — every inquiry depends on you personally remembering it.</p></div>
-
 <h2>What actually changes</h2>
 <p>One visible list of active inquiries. Each lead gets a clear status, a named owner, a next action, and a follow-up date — so opportunities stop depending on memory. Delivered in 3 business days, fixed at $349.</p>
-
 <div class="exercise">
 <h3>What you get</h3>
 <p>A customized lead and follow-up tracker, built in a practical format your business will actually use — lead stages, source tracking, and contact status, so every inquiry has somewhere to live besides your memory.</p>
 </div>
-
 </article>
 <aside class="sidebar">
 <div class="side-card">
@@ -192,22 +171,7 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--faint);font-s
 </div>
 </section>
 </main>
+<div id="site-footer-mount"></div>
 
-<footer><div class="wrap footer-row"><span>© 2026 3P Help Me</span><span><a href="../contact.html">Contact Us</a> · <a href="mailto:info@3phelpme.com">info@3phelpme.com</a></span><span>People. Process. Product.</span></div></footer>
-<script>
-const menu=document.getElementById('menu'),nav=document.getElementById('nav');
-if(menu&&nav){
-  menu.addEventListener('click',()=>{
-    const open=nav.classList.toggle('open');
-    menu.setAttribute('aria-expanded',String(open));
-    menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
-  });
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('open');
-    menu.setAttribute('aria-expanded','false');
-  }));
-}
-</script>
-
-</body>
+<script defer="defer" src="/assets/js/site-include.js"></script></body>
 </html>
