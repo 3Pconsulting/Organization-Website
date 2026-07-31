@@ -762,5 +762,27 @@ h1,h2,h3{font-family:'Source Serif 4',serif;letter-spacing:-.025em;}
 </section>
 <div id="site-footer-mount"></div>
 
+<script>
+  const stickyCta = document.getElementById('stickyCta');
+  const hero = document.querySelector('.hero-v2');
+  const contact = document.getElementById('contact');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.target === hero){ stickyCta.classList.toggle('visible', !e.isIntersecting); } });
+  }, {threshold:0.1});
+  io.observe(hero);
+
+  const stopObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) stickyCta.classList.remove('visible'); });
+  }, {threshold:0.3});
+  stopObserver.observe(contact);
+
+  stickyCta.addEventListener('click', ()=>{ window.location.href='operational-snapshot.html'; });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>revealIO.observe(el));
+</script>
 <script defer="defer" src="/assets/js/site-include.js"></script></body>
 </html>
