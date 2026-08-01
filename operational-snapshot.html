@@ -38,9 +38,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(7,17,31,.94);border-bott
 .form-status.error{color:#f3c1ad}
 .btn:disabled{opacity:.55;cursor:not-allowed}
 @media(max-width:760px){.preview{display:inline-flex;font-size:9px}.header-row{min-height:64px}.logo img{width:165px}}
+body > header:not(.site-header){display:none}
 </style>
 <meta content="A fast, adaptive business assessment that identifies operational visibility gaps, wasted capacity, missed opportunity, and likely improvement areas." name="description"/></head>
 <body>
+<div id="site-header-mount"></div>
 <header><div class="wrap header-row"><a class="logo" href="#top"><img alt="3P Help Me" src="assets/logo/3P_HelpMe_Logo.png"/></a><a class="preview" href="index.html">Back to 3P Website →</a></div></header>
 <section class="intro" id="top"><div class="wrap intro-grid">
 <div><div class="eyebrow">60-Second Operational Snapshot</div><h1>Answer a few simple questions. <em>Watch the opportunity become visible.</em></h1><p>The questions adapt to your business. You only see follow-up questions when they apply, and the live dashboard updates as you answer.</p></div>
@@ -543,5 +545,7 @@ $("snapshotForm").addEventListener("submit", async e => {
 });
 $("restart").addEventListener("click", () => location.reload());
 </script>
+<div id="site-footer-mount"></div>
+<script defer="defer" src="/assets/js/site-include.js"></script>
 </body>
 </html>
