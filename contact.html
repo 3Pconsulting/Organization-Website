@@ -8,6 +8,33 @@
 <meta content="Tell us what's going on in your business. A short form — no scheduler, no quiz — and 3P will follow up personally." name="description"/>
 <link href="assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
 <link href="assets/css/product-line.css" rel="stylesheet"/>
+<style>
+.form-consent{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin:22px 0 18px;
+  padding:16px 18px;
+  border:1px solid rgba(212,160,23,.35);
+  background:#071525;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.45;
+}
+.form-consent input{
+  width:auto;
+  margin-top:3px;
+  accent-color:var(--gold);
+  flex:0 0 auto;
+}
+.form-consent a{
+  color:var(--gold-light);
+  text-decoration:none;
+}
+.form-consent a:hover{
+  text-decoration:underline;
+}
+</style>
 </head>
 <body>
 <div id="site-header-mount"></div>
@@ -38,6 +65,17 @@
 <div class="form-field full"><label for="message">What's going on?</label><textarea id="message" name="message" placeholder="A sentence or two is fine — what's slowing you down, and what would you want fixed first?" required=""></textarea></div>
 </div>
 <div class="notice">This goes straight to 3P — not a call center, not a scheduler. Expect a reply from a person, not a booking link.</div>
+
+<label class="form-consent">
+  <input name="terms_acceptance" required type="checkbox" value="Accepted Terms of Service, Privacy Policy, and Disclaimer"/>
+  <span>
+    I agree to the 3P Help Me
+    <a href="/terms-of-service.html" target="_blank" rel="noopener">Terms of Service</a>,
+    <a href="/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>, and
+    <a href="/disclaimer.html" target="_blank" rel="noopener">Disclaimer</a>.
+  </span>
+</label>
+
 <button class="button" type="submit">Send This to 3P</button>
 </form>
 </div>
