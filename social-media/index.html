@@ -1,0 +1,2295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>3P Social Media Library</title>
+
+
+  <!-- 3P FAVICON -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="../assets/logo/3P_HelpMe_Circle.png"
+  >
+
+
+  <!-- 3P FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* =========================================================
+       3P BRAND
+       ========================================================= */
+
+    :root {
+
+      --navy-deep: #08111F;
+      --navy-raised: #132A42;
+      --navy-panel: #13253B;
+      --navy-card: #0D1D30;
+
+      --gold: #D4A017;
+      --gold-bright: #F7D76A;
+
+      --ink: #E7ECF2;
+      --ink-soft: rgba(231, 236, 242, 0.68);
+
+      --line: rgba(212, 160, 23, 0.34);
+      --line-soft: rgba(231, 236, 242, 0.10);
+
+      --radius: 2px;
+
+      --max-width: 1240px;
+
+    }
+
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    * {
+
+      box-sizing: border-box;
+
+    }
+
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+      margin: 0;
+
+      background: var(--navy-deep);
+
+      color: var(--ink);
+
+      font-family: "Source Sans 3", sans-serif;
+
+      line-height: 1.55;
+
+      -webkit-font-smoothing: antialiased;
+
+    }
+
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+
+    button,
+    select {
+
+      font: inherit;
+
+    }
+
+
+    button {
+
+      cursor: pointer;
+
+    }
+
+
+    img {
+
+      max-width: 100%;
+
+    }
+
+
+    :focus-visible {
+
+      outline: 2px solid var(--gold-bright);
+
+      outline-offset: 3px;
+
+    }
+
+
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .library-header {
+
+      background:
+
+        radial-gradient(
+          circle at 15% 0%,
+          rgba(212, 160, 23, 0.13),
+          transparent 34%
+        ),
+
+        linear-gradient(
+          180deg,
+          rgba(19, 42, 66, 0.98) 0%,
+          rgba(8, 17, 31, 0.98) 100%
+        );
+
+      border-bottom:
+        1px solid rgba(247, 215, 106, 0.45);
+
+      box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.28);
+
+    }
+
+
+    .header-inner {
+
+      width:
+        min(
+          var(--max-width),
+          calc(100% - 40px)
+        );
+
+      min-height: 100px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+    }
+
+
+    .brand-area {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 18px;
+
+    }
+
+
+    .brand-logo {
+
+      width: 76px;
+
+      height: 76px;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(
+          0 5px 16px rgba(0, 0, 0, 0.30)
+        );
+
+    }
+
+
+    .brand-text h1 {
+
+      margin: 0;
+
+      font-family: "Source Serif 4", serif;
+
+      font-size:
+        clamp(1.6rem, 3vw, 2.35rem);
+
+      line-height: 1.05;
+
+      color: var(--ink);
+
+    }
+
+
+    .brand-text p {
+
+      margin: 7px 0 0;
+
+      font-family: "IBM Plex Mono", monospace;
+
+      color: var(--gold-bright);
+
+      font-size: 0.72rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.13em;
+
+    }
+
+
+    .header-badge {
+
+      padding: 11px 15px;
+
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius);
+
+      background:
+        rgba(8, 17, 31, 0.48);
+
+      color: var(--ink-soft);
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.7rem;
+
+      letter-spacing: 0.10em;
+
+      text-transform: uppercase;
+
+    }
+
+
+
+    /* =========================================================
+       PAGE
+       ========================================================= */
+
+    .wrap {
+
+      max-width: var(--max-width);
+
+      margin: 0 auto;
+
+      padding: 55px 32px 100px;
+
+    }
+
+
+
+    /* =========================================================
+       INTRO
+       ========================================================= */
+
+    .intro {
+
+      max-width: 780px;
+
+      margin-bottom: 36px;
+
+    }
+
+
+    .eyebrow {
+
+      margin-bottom: 17px;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.72rem;
+
+      letter-spacing: 0.17em;
+
+      text-transform: uppercase;
+
+      color: var(--gold-bright);
+
+    }
+
+
+    .eyebrow::before {
+
+      content: "";
+
+      width: 26px;
+
+      height: 1px;
+
+      background: var(--gold);
+
+    }
+
+
+    .intro h2 {
+
+      margin: 0;
+
+      font-family: "Source Serif 4", serif;
+
+      font-size:
+        clamp(2rem, 4vw, 3.3rem);
+
+      line-height: 1.08;
+
+    }
+
+
+    .intro p {
+
+      margin: 18px 0 0;
+
+      color: var(--ink-soft);
+
+      font-size: 1.08rem;
+
+    }
+
+
+
+    /* =========================================================
+       INSTRUCTIONS
+       ========================================================= */
+
+    .instructions {
+
+      margin: 0 0 60px;
+
+      padding: 21px 24px;
+
+      border: 1px solid var(--line);
+
+      border-left: 3px solid var(--gold);
+
+      background: var(--navy-card);
+
+      color: var(--ink-soft);
+
+    }
+
+
+    .instructions strong {
+
+      color: var(--gold-bright);
+
+    }
+
+
+
+    /* =========================================================
+       SECTION
+       ========================================================= */
+
+    .section-heading {
+
+      margin: 70px 0 28px;
+
+      padding-bottom: 18px;
+
+      border-bottom: 1px solid var(--line);
+
+    }
+
+
+    .section-label {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.7rem;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+
+      color: var(--gold-bright);
+
+    }
+
+
+    .section-heading h2 {
+
+      margin: 0;
+
+      font-family: "Source Serif 4", serif;
+
+      font-size:
+        clamp(1.7rem, 3vw, 2.45rem);
+
+    }
+
+
+    .section-heading p {
+
+      margin: 8px 0 0;
+
+      color: var(--ink-soft);
+
+    }
+
+
+
+    /* =========================================================
+       GRID
+       ========================================================= */
+
+    .post-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(360px, 1fr)
+        );
+
+      gap: 26px;
+
+      align-items: start;
+
+    }
+
+
+
+    /* =========================================================
+       CARD
+       ========================================================= */
+
+    .post-card {
+
+      overflow: hidden;
+
+      background: var(--navy-card);
+
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius);
+
+      box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.20);
+
+    }
+
+
+    .post-card-header {
+
+      padding: 22px 24px 18px;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          var(--navy-panel),
+          var(--navy-card)
+        );
+
+    }
+
+
+    .category {
+
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: var(--gold-bright);
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.68rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.13em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .post-card h3 {
+
+      margin: 0;
+
+      font-family: "Source Serif 4", serif;
+
+      font-size: 1.55rem;
+
+      line-height: 1.15;
+
+    }
+
+
+
+    /* =========================================================
+       REAL GRAPHIC PREVIEW
+       ========================================================= */
+
+    .image-area {
+
+      padding: 0;
+
+      background: var(--navy-deep);
+
+      border-top: 1px solid var(--line-soft);
+
+      border-bottom: 1px solid var(--line-soft);
+
+    }
+
+
+    .image-area img {
+
+      display: block;
+
+      width: 100%;
+
+      height: auto;
+
+    }
+
+
+
+    /* =========================================================
+       CARD BODY
+       ========================================================= */
+
+    .card-body {
+
+      padding: 24px;
+
+    }
+
+
+    .field-title {
+
+      margin: 22px 0 8px;
+
+      color: var(--gold-bright);
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.68rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.13em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .field-title:first-child {
+
+      margin-top: 0;
+
+    }
+
+
+    .copy-box {
+
+      padding: 16px;
+
+      background: var(--navy-deep);
+
+      border: 1px solid var(--line-soft);
+
+      color: var(--ink);
+
+      white-space: pre-line;
+
+    }
+
+
+    .hashtags {
+
+      color: var(--ink-soft);
+
+      font-size: 0.92rem;
+
+    }
+
+
+
+    /* =========================================================
+       BUTTONS
+       ========================================================= */
+
+    .button-row {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 20px;
+
+    }
+
+
+    .copy-button,
+    .canva-button {
+
+      padding: 11px 15px;
+
+      border-radius: var(--radius);
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.73rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.03em;
+
+    }
+
+
+    .copy-button {
+
+      border: 1px solid var(--gold);
+
+      background: var(--gold);
+
+      color: var(--navy-deep);
+
+    }
+
+
+    .copy-button:hover {
+
+      background: var(--gold-bright);
+
+      border-color: var(--gold-bright);
+
+    }
+
+
+    .canva-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      border: 1px solid var(--gold);
+
+      background: transparent;
+
+      color: var(--gold-bright);
+
+    }
+
+
+    .canva-button:hover {
+
+      background:
+        rgba(212, 160, 23, 0.10);
+
+    }
+
+
+
+    /* =========================================================
+       STATUS
+       ========================================================= */
+
+    .status-row {
+
+      margin-top: 22px;
+
+      padding-top: 18px;
+
+      border-top: 1px solid var(--line-soft);
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+    }
+
+
+    .status-row label {
+
+      color: var(--ink-soft);
+
+      font-family: "IBM Plex Mono", monospace;
+
+      font-size: 0.68rem;
+
+      letter-spacing: 0.08em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    select {
+
+      padding: 8px 10px;
+
+      background: var(--navy-deep);
+
+      color: var(--ink);
+
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius);
+
+    }
+
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+
+      padding: 36px 20px;
+
+      text-align: center;
+
+      border-top: 1px solid var(--line);
+
+      background: var(--navy-card);
+
+      color: var(--ink-soft);
+
+    }
+
+
+    footer strong {
+
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: var(--gold-bright);
+
+      font-family: "Source Serif 4", serif;
+
+      font-size: 1.1rem;
+
+    }
+
+
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 700px) {
+
+      .header-inner {
+
+        width: calc(100% - 30px);
+
+        padding: 14px 0;
+
+      }
+
+
+      .brand-logo {
+
+        width: 58px;
+
+        height: 58px;
+
+      }
+
+
+      .header-badge {
+
+        display: none;
+
+      }
+
+
+      .wrap {
+
+        padding: 40px 18px 70px;
+
+      }
+
+
+      .post-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header class="library-header">
+
+    <div class="header-inner">
+
+      <div class="brand-area">
+
+        <img
+          class="brand-logo"
+          src="../assets/logo/3P_HelpMe_Circle.png"
+          alt="3P Help Me logo"
+        >
+
+        <div class="brand-text">
+
+          <h1>
+            Social Media Library
+          </h1>
+
+          <p>
+            People · Process · Product
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="header-badge">
+        Internal Content Hub
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="wrap">
+
+
+    <!-- =====================================================
+         INTRO
+         ===================================================== -->
+
+    <section class="intro">
+
+      <div class="eyebrow">
+        3P Business Optimization
+      </div>
+
+      <h2>
+        Graphic, caption, hashtags and Canva file—
+        all in one place.
+      </h2>
+
+      <p>
+        Use this library to quickly find a social post,
+        copy its content, open the editable Canva design
+        and publish without searching through old chats.
+      </p>
+
+    </section>
+
+
+
+    <div class="instructions">
+
+      <strong>How to use:</strong>
+
+      Pick a post → review the graphic → copy the caption →
+      copy the hashtags → open Canva if you need to edit →
+      publish.
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ENGAGEMENT POSTS
+         ===================================================== -->
+
+    <section>
+
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Engagement
+        </span>
+
+        <h2>
+          Questions & Conversation Starters
+        </h2>
+
+        <p>
+          Posts designed to generate comments,
+          responses and interaction with business owners.
+        </p>
+
+      </div>
+
+
+
+      <div class="post-grid">
+
+
+        <!-- =================================================
+             A OR B
+             ================================================= -->
+
+        <article class="post-card">
+
+          <div class="post-card-header">
+
+            <span class="category">
+              A or B
+            </span>
+
+            <h3>
+              What Is Harder Right Now?
+            </h3>
+
+          </div>
+
+
+          <div class="image-area">
+
+            <img
+              src="images/ab-what-is-harder-right-now.png"
+              alt="What Is Harder Right Now engagement graphic"
+            >
+
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="field-title">
+              Post Copy
+            </div>
+
+            <div
+              class="copy-box"
+              id="eng-ab"
+            >
+Which is harder in your business right now?
+
+A — Getting customers to contact you
+
+B — Keeping up after they contact you
+
+A lot of owners do not actually have a lead problem.
+
+They have a follow-up capacity problem.
+
+Drop A or B in the comments.
+            </div>
+
+
+            <div class="field-title">
+              Hashtags
+            </div>
+
+            <div
+              class="copy-box hashtags"
+              id="eng-ab-tags"
+            >
+#3PBusinessOptimization #SmallBusinessOwner #OwnerOperator #MissedLeads #LeadFollowUp #CustomerFollowUp #BusinessOperations #SmallBusiness #BusinessSystems
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-ab')"
+              >
+                Copy Post
+              </button>
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-ab-tags')"
+              >
+                Copy Hashtags
+              </button>
+
+              <a
+                class="canva-button"
+                href="https://www.canva.com/d/IoNkshzCFa6neEO"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Canva
+              </a>
+
+            </div>
+
+
+            <div class="status-row">
+
+              <label>
+                Status
+              </label>
+
+              <select>
+
+                <option>Ready</option>
+
+                <option>Scheduled</option>
+
+                <option>Posted</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             SOFTWARE QUESTION
+             ================================================= -->
+
+        <article class="post-card">
+
+          <div class="post-card-header">
+
+            <span class="category">
+              Software Question
+            </span>
+
+            <h3>
+              What Software Are You Paying For?
+            </h3>
+
+          </div>
+
+
+          <div class="image-area">
+
+            <img
+              src="images/software-question.png"
+              alt="Software question engagement graphic"
+            >
+
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="field-title">
+              Post Copy
+            </div>
+
+            <div
+              class="copy-box"
+              id="eng-software"
+            >
+What software are you paying for that still has not made your life easier?
+
+CRM?
+Scheduling app?
+Invoice app?
+Project-management software?
+Automation tool?
+Something else?
+
+A lot of businesses do not need another subscription.
+
+They need the current process to work better.
+
+What are you paying for that still feels like extra work?
+            </div>
+
+
+            <div class="field-title">
+              Hashtags
+            </div>
+
+            <div
+              class="copy-box hashtags"
+              id="eng-software-tags"
+            >
+#3PBusinessOptimization #SoftwareFriction #BusinessAutomation #SoftwareIntegration #SmallBusinessSystems #BusinessOperations #OwnerOperator #SmallBusinessTechnology #ProcessImprovement
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-software')"
+              >
+                Copy Post
+              </button>
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-software-tags')"
+              >
+                Copy Hashtags
+              </button>
+
+              <a
+                class="canva-button"
+                href="https://www.canva.com/d/PLXwsb5rSKNBIkW"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Canva
+              </a>
+
+            </div>
+
+
+            <div class="status-row">
+
+              <label>
+                Status
+              </label>
+
+              <select>
+
+                <option>Ready</option>
+
+                <option>Scheduled</option>
+
+                <option>Posted</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             LATER TONIGHT
+             ================================================= -->
+
+        <article class="post-card">
+
+          <div class="post-card-header">
+
+            <span class="category">
+              Owner Life
+            </span>
+
+            <h3>
+              What Gets Pushed to Later Tonight?
+            </h3>
+
+          </div>
+
+
+          <div class="image-area">
+
+            <img
+              src="images/what-gets-pushed-to-later-tonight.png"
+              alt="What gets pushed to later tonight engagement graphic"
+            >
+
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="field-title">
+              Post Copy
+            </div>
+
+            <div
+              class="copy-box"
+              id="eng-tonight"
+            >
+What part of your business always gets pushed to “later tonight”?
+
+Quotes?
+Invoices?
+Messages?
+Bookkeeping?
+Scheduling?
+Planning?
+
+A lot of owners do paid work during the day and office work after hours.
+
+What keeps waiting until the end of your day?
+            </div>
+
+
+            <div class="field-title">
+              Hashtags
+            </div>
+
+            <div
+              class="copy-box hashtags"
+              id="eng-tonight-tags"
+            >
+#3PBusinessOptimization #OwnerOverload #SmallBusinessOwner #BusinessOperations #TimeManagement #OwnerOperator #ServiceBusiness #OperationalSupport #SmallBusiness
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-tonight')"
+              >
+                Copy Post
+              </button>
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-tonight-tags')"
+              >
+                Copy Hashtags
+              </button>
+
+              <a
+                class="canva-button"
+                href="https://www.canva.com/d/YAuo92_Nr94EJxG"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Canva
+              </a>
+
+            </div>
+
+
+            <div class="status-row">
+
+              <label>
+                Status
+              </label>
+
+              <select>
+
+                <option>Ready</option>
+
+                <option>Scheduled</option>
+
+                <option>Posted</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             WHAT IS MORE FRUSTRATING
+             ================================================= -->
+
+        <article class="post-card">
+
+          <div class="post-card-header">
+
+            <span class="category">
+              1 · 2 · 3 Poll
+            </span>
+
+            <h3>
+              What Is More Frustrating?
+            </h3>
+
+          </div>
+
+
+          <div class="image-area">
+
+            <img
+              src="images/what-is-more-frustrating.png"
+              alt="What is more frustrating business poll graphic"
+            >
+
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="field-title">
+              Post Copy
+            </div>
+
+            <div
+              class="copy-box"
+              id="eng-frustrating"
+            >
+What is more frustrating?
+
+1 — Customers not contacting you
+
+2 — Customers contacting you and the follow-up getting buried
+
+3 — Doing the work and then waiting too long to get paid
+
+Comment 1, 2, or 3.
+            </div>
+
+
+            <div class="field-title">
+              Hashtags
+            </div>
+
+            <div
+              class="copy-box hashtags"
+              id="eng-frustrating-tags"
+            >
+#3PBusinessOptimization #MissedLeads #LeadFollowUp #CashFlow #Invoicing #SmallBusinessOwner #OwnerOperator #BusinessOperations #RevenueCycle
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-frustrating')"
+              >
+                Copy Post
+              </button>
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-frustrating-tags')"
+              >
+                Copy Hashtags
+              </button>
+
+              <a
+                class="canva-button"
+                href="https://www.canva.com/d/HimIPkxL9kX_V4c"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Canva
+              </a>
+
+            </div>
+
+
+            <div class="status-row">
+
+              <label>
+                Status
+              </label>
+
+              <select>
+
+                <option>Ready</option>
+
+                <option>Scheduled</option>
+
+                <option>Posted</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             TRUE OR FALSE
+             ================================================= -->
+
+        <article class="post-card">
+
+          <div class="post-card-header">
+
+            <span class="category">
+              True or False
+            </span>
+
+            <h3>
+              Busy Does Not Always Mean Profitable
+            </h3>
+
+          </div>
+
+
+          <div class="image-area">
+
+            <img
+              src="images/true-or-false-busy-profitable.png"
+              alt="True or false busy and profitable engagement graphic"
+            >
+
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="field-title">
+              Post Copy
+            </div>
+
+            <div
+              class="copy-box"
+              id="eng-true-false"
+            >
+TRUE OR FALSE:
+
+Being busy does not always mean being profitable.
+
+You can be working nonstop and still lose profit through rework, delays, missed follow-up, late invoicing, and owner overload.
+
+How many business owners have felt this one personally?
+
+TRUE or FALSE?
+            </div>
+
+
+            <div class="field-title">
+              Hashtags
+            </div>
+
+            <div
+              class="copy-box hashtags"
+              id="eng-true-false-tags"
+            >
+#3PBusinessOptimization #BusyNotProfitable #SmallBusinessOwner #BusinessOperations #Profitability #OwnerOperator #ProcessImprovement #BusinessSystems
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-true-false')"
+              >
+                Copy Post
+              </button>
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-true-false-tags')"
+              >
+                Copy Hashtags
+              </button>
+
+              <a
+                class="canva-button"
+                href="https://www.canva.com/d/9q9adtSA8T4ewv6"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Canva
+              </a>
+
+            </div>
+
+
+            <div class="status-row">
+
+              <label>
+                Status
+              </label>
+
+              <select>
+
+                <option>Ready</option>
+
+                <option>Scheduled</option>
+
+                <option>Posted</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             HOW MANY PLACES
+             ================================================= -->
+
+        <article class="post-card">
+
+          <div class="post-card-header">
+
+            <span class="category">
+              Quick Self-Check
+            </span>
+
+            <h3>
+              How Many Places?
+            </h3>
+
+          </div>
+
+
+          <div class="image-area">
+
+            <img
+              src="images/how-many-places.png"
+              alt="How many places do you check business engagement graphic"
+            >
+
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="field-title">
+              Post Copy
+            </div>
+
+            <div
+              class="copy-box"
+              id="eng-places"
+            >
+Quick business self-check:
+
+How many places do you have to look to understand what is going on in your business today?
+
+Phone.
+Texts.
+Paper notes.
+Calendar.
+Email.
+Facebook messages.
+Invoice software.
+Spreadsheet.
+Memory.
+
+If the answer is “too many,” that may be part of the problem.
+
+How many are you checking right now?
+
+Drop the number below.
+            </div>
+
+
+            <div class="field-title">
+              Hashtags
+            </div>
+
+            <div
+              class="copy-box hashtags"
+              id="eng-places-tags"
+            >
+#3PBusinessOptimization #OperationalVisibility #BusinessSystems #ProcessImprovement #SmallBusinessOwner #OwnerOperator #BusinessOperations #SmallBusinessSystems
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-places')"
+              >
+                Copy Post
+              </button>
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-places-tags')"
+              >
+                Copy Hashtags
+              </button>
+
+              <a
+                class="canva-button"
+                href="https://www.canva.com/d/wP7W-A8pC-Ool1b"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Canva
+              </a>
+
+            </div>
+
+
+            <div class="status-row">
+
+              <label>
+                Status
+              </label>
+
+              <select>
+
+                <option>Ready</option>
+
+                <option>Scheduled</option>
+
+                <option>Posted</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             ONE WORD ONLY
+             ================================================= -->
+
+        <article class="post-card">
+
+          <div class="post-card-header">
+
+            <span class="category">
+              One Word Only
+            </span>
+
+            <h3>
+              Biggest Business Frustration
+            </h3>
+
+          </div>
+
+
+          <div class="image-area">
+
+            <img
+              src="images/one-word-only.png"
+              alt="One word only business frustration engagement graphic"
+            >
+
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="field-title">
+              Post Copy
+            </div>
+
+            <div
+              class="copy-box"
+              id="eng-one-word"
+            >
+One-word answer only:
+
+What is the most frustrating part of running your business right now?
+
+No polished answer.
+
+Drop it in the comments.
+            </div>
+
+
+            <div class="field-title">
+              Hashtags
+            </div>
+
+            <div
+              class="copy-box hashtags"
+              id="eng-one-word-tags"
+            >
+#3PBusinessOptimization #SmallBusinessOwner #OwnerOperator #BusinessOperations #EntrepreneurLife #SmallBusinessSupport #BusinessProblems
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-one-word')"
+              >
+                Copy Post
+              </button>
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-one-word-tags')"
+              >
+                Copy Hashtags
+              </button>
+
+              <a
+                class="canva-button"
+                href="https://www.canva.com/d/o5ccJhqmayhtvgN"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Canva
+              </a>
+
+            </div>
+
+
+            <div class="status-row">
+
+              <label>
+                Status
+              </label>
+
+              <select>
+
+                <option>Ready</option>
+
+                <option>Scheduled</option>
+
+                <option>Posted</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             HOT TAKE
+             ================================================= -->
+
+        <article class="post-card">
+
+          <div class="post-card-header">
+
+            <span class="category">
+              Hot Take
+            </span>
+
+            <h3>
+              You May Not Need More Leads
+            </h3>
+
+          </div>
+
+
+          <div class="image-area">
+
+            <img
+              src="images/you-may-not-need-more-leads.png"
+              alt="You may not need more leads engagement graphic"
+            >
+
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="field-title">
+              Post Copy
+            </div>
+
+            <div
+              class="copy-box"
+              id="eng-hot-take"
+            >
+Hot take:
+
+A lot of small businesses do not need more leads first.
+
+They need better follow-up, better systems, and better visibility into what is already happening.
+
+Agree or disagree?
+            </div>
+
+
+            <div class="field-title">
+              Hashtags
+            </div>
+
+            <div
+              class="copy-box hashtags"
+              id="eng-hot-take-tags"
+            >
+#3PBusinessOptimization #MissedLeads #BusinessSystems #SmallBusinessOwner #OwnerOperator #BusinessOperations #LeadFollowUp #SmallBusinessGrowth
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-hot-take')"
+              >
+                Copy Post
+              </button>
+
+              <button
+                class="copy-button"
+                onclick="copyText('eng-hot-take-tags')"
+              >
+                Copy Hashtags
+              </button>
+
+              <a
+                class="canva-button"
+                href="https://www.canva.com/d/zc1CfnjhwRrvk7_"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Canva
+              </a>
+
+            </div>
+
+
+            <div class="status-row">
+
+              <label>
+                Status
+              </label>
+
+              <select>
+
+                <option>Ready</option>
+
+                <option>Scheduled</option>
+
+                <option>Posted</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FREE ASSESSMENT
+         ===================================================== -->
+
+    <section>
+
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Free Assessment
+        </span>
+
+        <h2>
+          Operational Snapshot
+        </h2>
+
+        <p>
+          Engagement content that also gives the owner
+          a useful next step.
+        </p>
+
+      </div>
+
+
+
+      <div class="post-grid">
+
+
+        <!-- =================================================
+             OPERATIONAL ASSESSMENT
+             ================================================= -->
+
+        <article class="post-card">
+
+          <div class="post-card-header">
+
+            <span class="category">
+              Free Operational Assessment
+            </span>
+
+            <h3>
+              What Is Slowing Your Business Down?
+            </h3>
+
+          </div>
+
+
+          <div class="image-area">
+
+            <img
+              src="images/free-operational-assessment.png"
+              alt="Free Operational Assessment graphic"
+            >
+
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="field-title">
+              Post Copy
+            </div>
+
+            <div
+              class="copy-box"
+              id="assessment"
+            >
+Not sure what is actually slowing your business down?
+
+That is exactly why we use the Operational Snapshot.
+
+It can help identify whether the real issue may be:
+
+Owner overload
+Missed follow-up
+Software friction
+Capacity problems
+Process breakdowns
+Delayed cash flow
+
+Which one sounds most familiar?
+
+Take the free Operational Snapshot at 3PHelpMe.com.
+            </div>
+
+
+            <div class="field-title">
+              Hashtags
+            </div>
+
+            <div
+              class="copy-box hashtags"
+              id="assessment-tags"
+            >
+#3PBusinessOptimization #OperationalSnapshot #BusinessAssessment #SmallBusinessOwner #OwnerOperator #BusinessOperations #ProcessImprovement #SmallBusinessSupport
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                class="copy-button"
+                onclick="copyText('assessment')"
+              >
+                Copy Post
+              </button>
+
+              <button
+                class="copy-button"
+                onclick="copyText('assessment-tags')"
+              >
+                Copy Hashtags
+              </button>
+
+              <a
+                class="canva-button"
+                href="https://www.canva.com/d/cXnIbsMAn-qwJDO"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Canva
+              </a>
+
+            </div>
+
+
+            <div class="status-row">
+
+              <label>
+                Status
+              </label>
+
+              <select>
+
+                <option>Ready</option>
+
+                <option>Scheduled</option>
+
+                <option>Posted</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         COMMUNITY GROWTH
+         ===================================================== -->
+
+    <section>
+
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Community Growth
+        </span>
+
+        <h2>
+          Like · Share · Tag
+        </h2>
+
+        <p>
+          Posts designed to help existing friends and followers
+          introduce 3P to other small business owners.
+        </p>
+
+      </div>
+
+
+
+      <div class="post-grid">
+
+
+        <!-- =================================================
+             COMMUNITY SUPPORT
+             ================================================= -->
+
+        <article class="post-card">
+
+          <div class="post-card-header">
+
+            <span class="category">
+              Community Support
+            </span>
+
+            <h3>
+              Know a Business Owner?
+            </h3>
+
+          </div>
+
+
+          <div class="image-area">
+
+            <img
+              src="images/community-support.png"
+              alt="Community support like share and tag a business owner graphic"
+            >
+
+          </div>
+
+
+          <div class="card-body">
+
+            <div class="field-title">
+              Post Copy
+            </div>
+
+            <div
+              class="copy-box"
+              id="community-support"
+            >
+Know a small business owner who does everything themselves?
+
+They answer the phone.
+They do the work.
+They handle the paperwork.
+They solve every problem.
+
+That is exactly who 3P is built to help.
+
+If you know a business owner carrying too much alone:
+
+Like our page.
+Share this post.
+Tag a business owner who should see this.
+
+Help us reach the owners who need this.
+            </div>
+
+
+            <div class="field-title">
+              Hashtags
+            </div>
+
+            <div
+              class="copy-box hashtags"
+              id="community-support-tags"
+            >
+#3PBusinessOptimization #SmallBusinessOwner #OwnerOperator #SupportSmallBusiness #LocalBusiness #SmallBusinessSupport #BusinessOperations #EntrepreneurLife
+            </div>
+
+
+            <div class="button-row">
+
+              <button
+                class="copy-button"
+                onclick="copyText('community-support')"
+              >
+                Copy Post
+              </button>
+
+              <button
+                class="copy-button"
+                onclick="copyText('community-support-tags')"
+              >
+                Copy Hashtags
+              </button>
+
+              <a
+                class="canva-button"
+                href="https://www.canva.com/d/aeCKUlwdJwu-6ip"
+                target="_blank"
+                rel="noopener"
+              >
+                Open Canva
+              </a>
+
+            </div>
+
+
+            <div class="status-row">
+
+              <label>
+                Status
+              </label>
+
+              <select>
+
+                <option>Ready</option>
+
+                <option>Scheduled</option>
+
+                <option>Posted</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+
+    <strong>
+      3P Business Optimization
+    </strong>
+
+    People · Process · Product
+
+  </footer>
+
+
+
+  <!-- =======================================================
+       COPY BUTTONS
+       ======================================================= -->
+
+  <script>
+
+    function copyText(id) {
+
+      const element =
+        document.getElementById(id);
+
+      if (!element) {
+
+        alert("Copy field not found.");
+
+        return;
+
+      }
+
+      const text =
+        element.innerText.trim();
+
+
+      navigator.clipboard
+        .writeText(text)
+
+        .then(() => {
+
+          alert("Copied.");
+
+        })
+
+        .catch(() => {
+
+          alert(
+            "Automatic copy did not work. Highlight the text and copy it manually."
+          );
+
+        });
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
