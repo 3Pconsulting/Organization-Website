@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /checkout.html
+Disallow: /product-intake.html
+Disallow: /social-media/
+
+Sitemap: https://3phelpme.com/sitemap.xml
