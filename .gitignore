@@ -1,0 +1,7 @@
+# Local-only automation config — contains a filesystem path to a credential
+# file and should never be committed.
+marketing/scripts/config.local.json
+
+# Never commit actual credential files if one ever ends up under the repo.
+*.serviceaccount.json
+*credentials*.json

@@ -20,6 +20,16 @@ There are **two local clones** of this repo on this machine. Only one is current
   ```
 - Site is served via GitHub Pages behind a Fastly CDN with a ~10 minute cache (`Cache-Control: max-age=600` on `3phelpme.com`). A push can take a few minutes to show up on the live domain even though it's already on GitHub — check `raw.githubusercontent.com` or the GitHub Contents API (not the live domain) if you need to confirm a change landed immediately.
 
+## Daily analytics check
+
+Google Analytics (GA4) and social media (Facebook/Instagram) get checked
+**daily** and logged in `marketing/insights-analysis.md` — read that file
+before proposing marketing or content changes, and add a new Snapshot entry
+after checking GA4/Search Console/Meta Insights for the day. Don't draw a
+conclusion from a single day's numbers; the file has the exact rule for when
+a pattern is real. This feeds `C:\Users\rebel\Command Center\` the same way
+the equivalent Rebel Ranch tracker file does.
+
 ## AI attribution
 
 Commits made by an AI agent should say so — include a `Co-Authored-By:` trailer naming the agent/session.
