@@ -192,3 +192,10 @@ Status: Needs review
   `marketing/social-media/insights-analysis.md`, adapted to add the website
   (GA4/Search Console) side since 3P didn't have that tracking until this
   week. See that file for the pattern this one is built on.
+- **Meta (Facebook/Instagram) automation is blocked as of 2026-08-19**,
+  pending phone verification on the Meta Developer app — the owner's only
+  available number is on Tello (an MVNO), which isn't delivering Meta's SMS
+  verification code (suspected A2P delivery issue, not a typo/wrong-number
+  problem — normal texts work fine on the same line). Owner is following up
+  with Tello support. Social fields stay manual until this clears; GA4
+  automation is unaffected and already running nightly.
