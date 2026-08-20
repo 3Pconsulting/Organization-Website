@@ -63,16 +63,25 @@ footer.site-footer .footer-social svg{
 footer.site-footer .footer-social a:hover svg{
   fill:#F7D76A;
 }
+@media(max-width:700px){
+  footer.site-footer{padding:22px 0}
+  footer.site-footer .footer-row{flex-direction:column;align-items:center;text-align:center;gap:16px}
+  footer.site-footer .footer-contact{align-items:center;gap:8px}
+  footer.site-footer .footer-tagline{order:1;font-size:10px;letter-spacing:.1em}
+  footer.site-footer .footer-contact{order:2}
+  footer.site-footer .contact-cta{display:none}
+  footer.site-footer .footer-social{order:3}
+  footer.site-footer .footer-copyright{order:4;font-size:11px;color:#8A99A9}
+}
 </style>
 
 <footer class="site-footer">
   <div class="wrap footer-row">
-    <span>© 2026 3P HELP ME</span>
+    <span class="footer-copyright">© 2026 3P HELP ME</span>
 
     <div class="footer-contact">
       <span>
-        <a href="/contact.html">Contact Us</a> ·
-        <a href="mailto:info@3phelpme.com">info@3phelpme.com</a> ·
+        <span class="contact-cta"><a href="/contact.html">Contact Us</a> · </span><a href="mailto:info@3phelpme.com">info@3phelpme.com</a> ·
         <a href="tel:+13522460551">352-246-0551</a>
       </span>
 
@@ -92,6 +101,6 @@ footer.site-footer .footer-social a:hover svg{
       </a>
     </span>
 
-    <span>PEOPLE · PROCESS · PRODUCT</span>
+    <span class="footer-tagline">PEOPLE · PROCESS · PRODUCT</span>
   </div>
 </footer>
