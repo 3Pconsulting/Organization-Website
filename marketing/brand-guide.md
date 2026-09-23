@@ -135,6 +135,10 @@ don't invent a different icon language for the brand.
 
 ## Where to find existing examples
 
+- `marketing/operational-snapshot-facebook-campaign.md` — locked campaign
+  concept, pain-point library, approved phrases, calls to action, Facebook post
+  copy, and campaign sequence for the Operational Snapshot. Read this before
+  creating or revising Snapshot marketing.
 - `social-media/index.html` — library of already-built social graphics with
   captions and hashtags, useful as a bank of "what good looks like" examples.
 - `assets/images/marketing-graphics/` — graphics used directly on the site.
