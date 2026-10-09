@@ -42,783 +42,184 @@
 <link href="assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet"/>
-<style>
-  :root{
-    --navy-deep:#08111F;
-    --navy-raised:#132A42;
-    --navy-panel:#13253B;
-    --navy-card:#0D1D30;
-    --gold:#D4A017;
-    --gold-bright:#F7D76A;
-    --gold-champagne:#FFF1A8;
-    --gold-deep:#8B5E00;
-    --ink:#E7ECF2;
-    --ink-soft:rgba(231,236,242,0.62);
-    --ink-faint:rgba(231,236,242,0.38);
-    --line:rgba(212,160,23,0.26);
-    --line-soft:rgba(231,236,242,0.1);
-    --radius:2px;
-    --max:1120px;
-  }
-
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
-  }
-
-  body{
-    background:var(--navy-deep);
-    color:var(--ink);
-    font-family:'Inter', sans-serif;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-
-  h1,h2,h3{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:600;
-    letter-spacing:-0.01em;
-    line-height:1.08;
-  }
-  .mono{ font-family:'IBM Plex Mono', monospace; }
-  a{color:inherit; text-decoration:none;}
-  :focus-visible{ outline:2px solid var(--gold-bright); outline-offset:3px; }
-
-  .wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
-  @media(max-width:600px){ .wrap{ padding:0 20px; } }
-
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--gold-bright);
-    display:flex; align-items:center; gap:12px;
-    margin-bottom:22px;
-  }
-  .eyebrow::before{ content:''; width:24px; height:1px; background:var(--gold); display:inline-block; }
-
-  section{ padding:96px 0; position:relative; }
-  @media(max-width:700px){ section{ padding:64px 0; } }
-  section + section{ border-top:1px solid var(--line); }
-  .tier-raised{ background:var(--navy-raised); }
-
-  .section-head{ max-width:640px; margin-bottom:56px; }
-  .section-head h2{ font-size:clamp(26px,3.4vw,38px); }
-  .section-head p{ margin-top:18px; color:var(--ink-soft); font-size:16px; max-width:540px; }
-  .section-cta{ margin-top:48px; text-align:center; }
-
-  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
-  .reveal.in{ opacity:1; transform:translateY(0); }
-
-  .sticky-cta{
-    position:fixed; right:24px; bottom:24px; z-index:50;
-    background:var(--gold); color:var(--navy-deep);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px; font-weight:600; letter-spacing:0.03em;
-    padding:14px 22px; border-radius:var(--radius);
-    box-shadow:0 8px 24px rgba(0,0,0,0.4);
-    opacity:0; transform:translateY(12px);
-    transition:opacity .35s ease, transform .35s ease, background .2s ease;
-    pointer-events:none; cursor:pointer; border:none;
-  }
-  .sticky-cta.visible{ opacity:1; transform:translateY(0); pointer-events:auto; }
-  .sticky-cta:hover{ background:var(--gold-bright); }
-  @media(max-width:600px){ .sticky-cta{ right:16px; bottom:16px; padding:12px 18px; font-size:12px; } }
-
-header{
-  position:sticky;
-  top:0;
-  z-index:40;
-  padding:8px 0;
-  background:
-    radial-gradient(circle at 14% 0%, rgba(212,160,23,0.13), transparent 34%),
-    linear-gradient(180deg, rgba(22,50,79,0.98) 0%, rgba(11,27,46,0.98) 100%);
-  border-bottom:1px solid rgba(247,215,106,0.48);
-  box-shadow:0 12px 30px rgba(0,0,0,0.28);
-  backdrop-filter:blur(12px);
-}
-.header-row{
-  min-height:56px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
-.wordmark{ display:flex; align-items:center; flex:0 1 auto; }
-.wordmark img{
-  width:clamp(165px, 18vw, 210px);
-  height:auto;
-  display:block;
-  filter:drop-shadow(0 5px 16px rgba(0,0,0,0.24));
-}
-.site-nav{
-  display:flex;
-  align-items:center;
-  gap:22px;
-  font-family:'IBM Plex Mono', monospace;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-}
-.site-nav a{
-  color:var(--ink-soft);
-  transition:color .2s ease, border-color .2s ease, background .2s ease;
-}
-.site-nav a:hover{ color:var(--gold-bright); }
-.site-nav .nav-cta{
-  color:var(--navy-deep);
-  background:var(--gold);
-  border:1px solid var(--gold);
-  padding:11px 15px;
-  border-radius:var(--radius);
-}
-.site-nav .nav-cta:hover{
-  color:var(--navy-deep);
-  background:var(--gold-bright);
-  border-color:var(--gold-bright);
-}
-.menu-toggle{
-  display:none;
-  width:44px;
-  height:42px;
-  border:1px solid var(--line);
-  background:rgba(8,17,31,0.42);
-  color:var(--gold-bright);
-  border-radius:var(--radius);
-  cursor:pointer;
-  align-items:center;
-  justify-content:center;
-}
-.menu-toggle span,
-.menu-toggle span::before,
-.menu-toggle span::after{
-  content:'';
-  display:block;
-  width:20px;
-  height:2px;
-  background:currentColor;
-  position:relative;
-  transition:transform .2s ease, opacity .2s ease;
-}
-.menu-toggle span::before{ position:absolute; top:-6px; }
-.menu-toggle span::after{ position:absolute; top:6px; }
-.menu-toggle[aria-expanded="true"] span{ background:transparent; }
-.menu-toggle[aria-expanded="true"] span::before{ top:0; transform:rotate(45deg); }
-.menu-toggle[aria-expanded="true"] span::after{ top:0; transform:rotate(-45deg); }
-
-@media(max-width:860px){
-  header{ padding:7px 0; }
-  .header-row{ min-height:52px; gap:14px; }
-  .wordmark img{ width:min(165px, 52vw); }
-  .menu-toggle{ display:flex; }
-  .site-nav{
-    position:absolute;
-    left:0;
-    right:0;
-    top:100%;
-    display:none;
-    flex-direction:column;
-    align-items:stretch;
-    gap:0;
-    padding:12px 20px 20px;
-    background:#0B1B2E;
-    border-bottom:1px solid var(--line);
-    box-shadow:0 18px 30px rgba(0,0,0,.34);
-  }
-  .site-nav.open{ display:flex; }
-  .site-nav a{
-    padding:14px 2px;
-    border-bottom:1px solid var(--line-soft);
-  }
-  .site-nav .nav-cta{
-    margin-top:12px;
-    padding:13px 15px;
-    text-align:center;
-    border-bottom:none;
-  }
-}
-
-  /* ---------- HERO: text + live "Common Problems" panel ---------- */
-  .hero{ position:relative; padding:72px 0 64px; }
-  @media(max-width:700px){ .hero{ padding:48px 0 44px; } }
-  .hero-grid{ display:grid; grid-template-columns:1.05fr 1fr; gap:56px; align-items:stretch; width:100%; }
-  @media(max-width:900px){
-    .hero-grid{ grid-template-columns:1fr; gap:36px; }
-    .hero-text{ order:1; }
-    .problems-panel{ order:2; }
-  }
-
-  .hero-text h1{ font-size:clamp(34px,4.2vw,52px); margin:18px 0; }
-  .hero-lede{ font-size:17px; line-height:1.55; color:var(--ink-soft); max-width:46ch; margin:0 0 32px; }
-  .hero-actions{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
-  .hero-microcopy{ font-size:13px; color:var(--ink-faint); }
-  .hero-stats{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); margin-top:56px; }
-  .hero-stat{ background:var(--navy-deep); padding:22px 24px; }
-  .hero-stat .num{ font-family:'IBM Plex Mono', monospace; font-size:30px; font-weight:600; color:var(--gold-bright); }
-  .hero-stat .label{ font-size:13px; color:var(--ink-soft); max-width:20ch; margin-top:6px; }
-  .hl{ color:var(--gold-bright); font-weight:700; text-decoration:underline; text-decoration-color:rgba(247,215,106,0.42); text-decoration-thickness:1px; text-underline-offset:4px; }
-
-  .problems-panel{ display:flex; flex-direction:column; min-width:0; }
-  .problems-panel-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
-  .problems-tag{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-bright); border:1px solid var(--line); padding:6px 12px; border-radius:var(--radius); white-space:nowrap; }
-  .problems-counter{ background:none; border:none; cursor:pointer; font-family:'IBM Plex Mono', monospace; font-size:24px; font-weight:600; color:var(--gold-bright); line-height:1; padding:4px; }
-  .problems-counter .of08{ font-size:13px; color:var(--ink-faint); font-weight:400; }
-  .problems-kicker{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px; }
-  .problems-dots{ display:flex; gap:4px; margin-bottom:20px; }
-  .problems-dots span{ height:4px; border-radius:2px; transition:all .4s ease; cursor:pointer; }
-  .problems-card{ position:relative; overflow:hidden; padding:40px 28px; background:var(--navy-card); border:1px solid var(--line); border-radius:3px; flex:1; display:flex; flex-direction:column; justify-content:center; min-height:220px; }
-  .problems-card-bgicon{ position:absolute; right:-18px; bottom:-26px; width:200px; height:200px; opacity:.05; color:var(--ink); pointer-events:none; }
-  .problems-card-top{ display:flex; align-items:center; gap:18px; margin-bottom:18px; position:relative; }
-  .problems-icon{ width:58px; height:58px; border-radius:3px; background:var(--navy-raised); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:rgba(231,236,242,.5); transition:color .4s ease; }
-  .problems-label{ font-family:'Space Grotesk', sans-serif; font-size:28px; font-weight:600; color:var(--ink); line-height:1.15; }
-  .problems-cause{ padding-left:76px; margin-bottom:14px; position:relative; opacity:0; transform:translateY(8px); transition:all .5s cubic-bezier(.16,1,.3,1); }
-  .problems-cause .cause-lead{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--gold-bright); font-weight:500; }
-  .problems-cause .cause-text{ font-size:14.5px; color:var(--ink-soft); line-height:1.5; }
-  .problems-fix{ position:relative; margin-top:8px; padding:16px 0 0; border-top:1px solid var(--line); opacity:0; transform:translateY(16px) scale(.96); transition:all .55s cubic-bezier(.16,1,.3,1); }
-  .problems-fix .fix-head{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
-  .problems-fix .fix-lead{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--gold-bright); font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
-  .problems-fix .fix-text{ font-size:16px; color:var(--ink); line-height:1.5; margin-bottom:10px; }
-  .problems-fix .fix-tag{ display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:.05em; text-transform:uppercase; color:var(--gold-bright); border:1px solid rgba(212,160,23,.4); padding:4px 10px; border-radius:var(--radius); }
-  .problems-cta{ margin-top:22px; align-self:flex-start; }
-
-  .btn-primary{
-    background:var(--gold); color:var(--navy-deep);
-    font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:14px; letter-spacing:0.02em;
-    padding:16px 28px; border-radius:var(--radius); border:none; cursor:pointer;
-    transition:background .2s ease, transform .2s ease;
-    display:inline-flex; align-items:center; gap:10px;
-  }
-  .btn-primary:hover{ background:var(--gold-bright); transform:translateY(-1px); }
-  .btn-primary:disabled{ opacity:0.5; cursor:not-allowed; transform:none; }
-  @media(max-width:500px){ .btn-primary{ width:100%; justify-content:center; } }
-
-  .thesis-section{ text-align:center; padding-top:96px; padding-bottom:96px; }
-  .thesis-section .eyebrow{ justify-content:center; }
-  .thesis-section h1{ font-size:clamp(30px, 4.6vw, 52px); max-width:820px; margin:0 auto; }
-  .thesis-section h1 em{ font-style:normal; color:var(--gold-bright); }
-  .thesis-section p.lede{ margin:24px auto 0; max-width:560px; font-size:clamp(15.5px,1.6vw,18px); color:var(--ink-soft); }
-  .thesis-graphic{ display:block; margin:56px auto 0; max-width:900px; width:100%; border-radius:8px; box-shadow:0 30px 70px rgba(0,0,0,.35); }
-
-  .stat-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); }
-  .stat-card{ background:var(--navy-deep); padding:30px 26px; position:relative; transition:background .25s ease; }
-  .stat-card:hover{ background:var(--navy-panel); }
-  .stat-card .num{ font-family:'IBM Plex Mono', monospace; font-size:clamp(30px,4vw,42px); font-weight:600; color:var(--gold-bright); line-height:1; }
-  .stat-card .label{ margin-top:14px; font-size:14.5px; color:var(--ink-soft); }
-  .stat-card .label .emphasis{
-    color:var(--gold-bright);
-    font-style:normal;
-    font-weight:700;
-    text-decoration:underline;
-    text-decoration-color:rgba(247,215,106,0.42);
-    text-decoration-thickness:1px;
-    text-underline-offset:4px;
-  }
-  .stat-card .src{
-    margin-top:16px; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--ink-faint); letter-spacing:0.03em;
-    opacity:0; max-height:0; overflow:hidden; transition:opacity .25s ease, max-height .25s ease;
-  }
-  .stat-card:hover .src{ opacity:1; max-height:60px; }
-
-  .compare{ display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line-soft); }
-  @media(max-width:760px){ .compare{ grid-template-columns:1fr; } }
-  .compare-col{ padding:36px 30px; }
-  .compare-col:first-child{ border-right:1px solid var(--line-soft); background:rgba(255,255,255,0.02); }
-  @media(max-width:760px){ .compare-col:first-child{ border-right:none; border-bottom:1px solid var(--line-soft);} }
-  .compare-col .tag{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
-    padding:5px 10px; border-radius:var(--radius); display:inline-block; margin-bottom:20px;
-  }
-  .compare-col.bad .tag{ color:#E29B7A; background:rgba(226,155,122,0.1); }
-  .compare-col.good .tag{ color:var(--gold-bright); background:rgba(212,160,23,0.12); }
-  .compare-col h3{ font-size:20px; margin-bottom:14px; }
-  .compare-col ul{ list-style:none; margin-top:16px; }
-  .compare-col li{ font-size:14.5px; color:var(--ink-soft); padding:10px 0 10px 22px; border-top:1px solid var(--line-soft); position:relative; }
-  .compare-col li:first-child{ border-top:none; }
-  .compare-col.bad li::before{ content:'×'; position:absolute; left:0; color:#E29B7A; font-weight:600; }
-  .compare-col.good li::before{ content:'✓'; position:absolute; left:0; color:var(--gold-bright); font-weight:600; }
-
-  .local-flag{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
-    color:var(--gold-bright); border:1px solid var(--line); padding:6px 12px; border-radius:var(--radius); margin-bottom:22px;
-  }
-  .local-flag .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold-bright); }
-  .local-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:52px; align-items:start; }
-  @media(max-width:860px){ .local-grid{ grid-template-columns:1fr; gap:36px; } }
-  .local-stats{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); }
-  @media(max-width:480px){ .local-stats{ grid-template-columns:1fr; } }
-  .local-stat{ background:var(--navy-deep); padding:24px; transition:background .25s ease; }
-  .local-stat:hover{ background:var(--navy-panel); }
-  .local-stat .num{ font-family:'IBM Plex Mono', monospace; font-size:clamp(26px,3.2vw,34px); color:var(--gold-bright); font-weight:600; }
-  .local-stat .label{ margin-top:8px; font-size:13.5px; color:var(--ink-soft); }
-  .local-copy p{ color:var(--ink-soft); margin-bottom:15px; font-size:15.5px; }
-  .local-copy strong{ color:var(--ink); font-weight:600; }
-
-  .framework-divider{
-    height:3px;
-    background:linear-gradient(90deg, transparent, var(--gold) 15%, var(--gold-bright) 50%, var(--gold) 85%, transparent);
-  }
-  .framework-section{ padding-top:80px; }
-  .framework-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); margin-top:8px; }
-  @media(max-width:760px){ .framework-grid{ grid-template-columns:1fr; } }
-  .framework-card{ background:var(--navy-card); padding:36px 28px; }
-  .framework-card .icon{ width:38px; height:38px; margin-bottom:24px; }
-  .framework-card h3{
-    font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
-    font-family:'IBM Plex Mono', monospace; color:var(--gold-bright); margin-bottom:12px;
-  }
-  .framework-subhead{
-    font-family:'Space Grotesk', sans-serif;
-    font-size:18px;
-    font-weight:600;
-    line-height:1.25;
-    color:var(--ink);
-    margin-bottom:16px;
-  }
-  .framework-card p{ font-size:15px; color:var(--ink-soft); line-height:1.6; }
-
-  .assessment-panel{ border:1px solid var(--line); background:var(--navy-panel); padding:44px; }
-  @media(max-width:700px){ .assessment-panel{ padding:28px 22px; } }
-
-  .step-label{
-    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--gold-bright); margin-bottom:26px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;
-  }
-  .step-label .time{ color:var(--ink-faint); }
-
-  .assess-step{ display:none; }
-  .assess-step.active{ display:block; }
-
-  .step1-grid{ display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center; }
-  @media(max-width:800px){ .step1-grid{ grid-template-columns:1fr; gap:32px; } }
-
-  .calc-input label{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--ink-soft); display:block; margin-bottom:12px;
-  }
-  .calc-input .field{
-    display:flex; align-items:center; border:1px solid var(--line); border-radius:var(--radius);
-    padding:14px 18px; background:rgba(0,0,0,0.2);
-  }
-  .calc-input .field span{ font-family:'IBM Plex Mono', monospace; color:var(--ink-faint); margin-right:8px; }
-  .calc-input input[type="number"]{
-    background:none; border:none; outline:none; color:var(--ink);
-    font-family:'IBM Plex Mono', monospace; font-size:18px; width:100%;
-  }
-  .calc-input input[type="range"]{ width:100%; margin-top:18px; accent-color:var(--gold); height:28px; }
-  .calc-note{ margin-top:16px; font-size:12px; color:var(--ink-faint); line-height:1.5; }
-
-  .calc-output .out-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:10px; }
-  .calc-output .range{ font-family:'IBM Plex Mono', monospace; font-size:clamp(24px,3.4vw,36px); color:var(--gold-bright); font-weight:600; line-height:1.1; }
-  .calc-output .sub{ margin-top:10px; font-size:13.5px; color:var(--ink-soft); }
-  .calc-output .btn-primary{ margin-top:24px; }
-
-  .step2-intro{ margin-bottom:28px; }
-  .step2-intro .num-recap{ font-family:'IBM Plex Mono', monospace; color:var(--gold-bright); font-size:21px; font-weight:600; }
-  .step2-intro p{ margin-top:10px; color:var(--ink-soft); font-size:15px; max-width:520px; }
-
-  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-  @media(max-width:600px){ .form-grid{ grid-template-columns:1fr; } }
-  .form-field{ display:flex; flex-direction:column; gap:8px; }
-  .form-field.full{ grid-column:1 / -1; }
-  .form-field label{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft); }
-  .form-field input{
-    background:rgba(0,0,0,0.2); border:1px solid var(--line); border-radius:var(--radius);
-    padding:14px 16px; color:var(--ink); font-family:'Inter', sans-serif; font-size:16px; outline:none;
-    transition:border-color .2s ease; min-height:48px;
-  }
-  .form-field input:focus{ border-color:var(--gold); }
-  .form-actions{ margin-top:28px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
-  .form-back{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--ink-faint); cursor:pointer; background:none; border:none; padding:10px 4px; }
-  .form-back:hover{ color:var(--ink-soft); }
-  .form-status{ margin-top:16px; font-size:13.5px; color:var(--ink-soft); }
-  .form-status.success{ color:var(--gold-bright); }
-
-  .snapshot-launch-grid{ display:grid; grid-template-columns:1.08fr .92fr; gap:36px; align-items:center; }
-  .snapshot-launch-copy h3{ font-size:clamp(24px,3.2vw,34px); }
-  .snapshot-launch-copy p{ margin-top:16px; color:var(--ink-soft); font-size:15px; max-width:590px; }
-  .snapshot-points{ margin-top:22px; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  .snapshot-point{ border:1px solid var(--line-soft); background:rgba(0,0,0,.16); padding:14px; color:var(--ink-soft); font-size:13px; }
-  .snapshot-point strong{ display:block; color:var(--gold-bright); font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.07em; text-transform:uppercase; margin-bottom:6px; }
-  .snapshot-launch-result{ border:1px solid var(--line); background:rgba(8,17,31,.48); padding:28px; }
-  .snapshot-launch-result .label{ color:var(--gold-bright); font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
-  .snapshot-launch-result h3{ margin-top:13px; font-size:27px; }
-  .snapshot-launch-result p{ margin-top:12px; color:var(--ink-soft); font-size:14px; }
-  .snapshot-launch-result .btn-primary{ margin-top:24px; }
-  @media(max-width:820px){ .snapshot-launch-grid{ grid-template-columns:1fr; } .snapshot-points{ grid-template-columns:1fr; } }
-
-.insights-preview{ background:var(--navy-deep); }
-.insights-preview .section-head{ max-width:720px; }
-.insights-preview-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:1px;
-  background:var(--line-soft);
-  border:1px solid var(--line-soft);
-}
-.insight-link-card{
-  display:block;
-  min-height:250px;
-  padding:32px 28px;
-  background:var(--navy-card);
-  transition:background .22s ease, transform .22s ease;
-}
-.insight-link-card:hover{
-  background:var(--navy-panel);
-  transform:translateY(-2px);
-}
-.insight-link-card .insight-number{
-  font-family:'IBM Plex Mono', monospace;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.12em;
-  color:var(--gold-bright);
-}
-.insight-link-card h3{ margin-top:22px; font-size:22px; }
-.insight-link-card p{
-  margin-top:15px;
-  color:var(--ink-soft);
-  font-size:15px;
-  line-height:1.58;
-}
-.insight-link-card .insight-action{
-  display:block;
-  margin-top:24px;
-  color:var(--gold-bright);
-  font-family:'IBM Plex Mono', monospace;
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:.05em;
-}
-.insights-all{
-  margin-top:34px;
-  display:flex;
-  justify-content:center;
-}
-@media(max-width:820px){
-  .insights-preview-grid{ grid-template-columns:1fr; }
-  .insight-link-card{ min-height:auto; }
-}
-
-  .contact-section{ text-align:center; padding:104px 0; }
-  @media(max-width:700px){ .contact-section{ padding:72px 0; } }
-  .contact-section h2{ font-size:clamp(26px,4vw,44px); max-width:700px; margin:0 auto; }
-  .contact-section p{ margin:20px auto 0; color:var(--ink-soft); max-width:480px; font-size:16px; }
-  .contact-actions{ margin-top:36px; display:flex; justify-content:center; flex-wrap:wrap; gap:16px; }
-  .contact-detail{
-    margin-top:32px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    color:var(--ink-faint);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:6px;
-  }
-
-  footer{ padding:32px 0; }
-  .footer-row{
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
-    font-family:'Source Sans 3', sans-serif; font-size:12.5px; color:var(--ink-faint);
-  }
-
-/* ===== 3P PHASE 1: COMPLETE TOP-OF-HOMEPAGE IMPLEMENTATION ===== */
-body{font-family:'Source Sans 3',sans-serif;}
-h1,h2,h3{font-family:'Source Serif 4',serif;letter-spacing:-.025em;}
-.problems-label,.framework-subhead{font-family:'Source Serif 4',serif;}
-.site-nav{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;letter-spacing:.035em;}
-
-.btn-secondary{
-  display:inline-flex;align-items:center;justify-content:center;min-height:52px;
-  padding:14px 4px;border-bottom:1px solid rgba(247,215,106,.62);
-  color:var(--ink);font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;
-  transition:color .2s ease,border-color .2s ease;
-}
-.btn-secondary:hover{color:var(--gold-bright);border-color:var(--gold-bright);}
-
-.hero-v2{
-  position:relative;min-height:clamp(610px,78vh,820px);display:flex;align-items:center;
-  overflow:hidden;padding:92px 0 82px;isolation:isolate;
-}
-.hero-v2-media,.hero-v2-overlay{position:absolute;inset:0;}
-.hero-v2-media{z-index:-3;background:var(--navy-card);}
-.hero-v2-media img{
-  width:100%;height:100%;display:block;object-fit:cover;object-position:center;
-}
-.hero-v2-overlay{
-  z-index:-2;
-  background:
-    linear-gradient(90deg,rgba(8,17,31,.99) 0%,rgba(8,17,31,.95) 36%,rgba(8,17,31,.60) 67%,rgba(8,17,31,.30) 100%),
-    linear-gradient(180deg,rgba(8,17,31,.10) 0%,rgba(8,17,31,.56) 100%);
-}
-.hero-v2-inner{width:100%;}
-.hero-v2-copy{max-width:690px;}
-.hero-v2-copy .eyebrow{margin-bottom:24px;}
-.hero-v2-copy h1{
-  max-width:760px;font-size:clamp(48px,7.2vw,88px);line-height:.98;margin:0;color:#fff;text-wrap:balance;
-}
-.hero-v2-lede{
-  max-width:630px;margin-top:28px;color:rgba(255,255,255,.84);
-  font-size:clamp(17px,1.8vw,20px);line-height:1.62;
-}
-.hero-v2 .hero-actions{margin-top:34px;}
-.hero-v2-note{margin-top:18px;color:rgba(255,255,255,.58);font-size:14px;}
-
-.service-paths{
-  background:radial-gradient(circle at 50% 0%,rgba(212,160,23,.08),transparent 38%),var(--navy-deep);
-  padding:88px 0 96px;
-}
-.service-paths-intro{max-width:790px;margin-bottom:46px;}
-.service-paths-intro h2{font-size:clamp(31px,4.4vw,50px);line-height:1.08;}
-.service-paths-intro>p{
-  max-width:680px;margin-top:20px;color:var(--ink-soft);font-size:18px;line-height:1.62;
-}
-.service-paths-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
-.service-path-card{
-  position:relative;min-height:100%;padding:clamp(30px,4vw,46px);border:1px solid var(--line);
-  background:linear-gradient(145deg,rgba(255,255,255,.025),transparent 42%),var(--navy-card);
-  box-shadow:0 22px 48px rgba(0,0,0,.18);
-}
-.service-path-card::before{
-  content:'';position:absolute;left:0;top:0;width:4px;height:100%;
-  background:linear-gradient(180deg,var(--gold-bright),var(--gold-deep));
-}
-.service-path-label{
-  color:var(--gold-bright);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.13em;
-}
-.service-path-card h3{margin-top:17px;font-size:clamp(27px,3.1vw,37px);line-height:1.08;}
-.service-path-card>p{margin-top:20px;color:var(--ink-soft);font-size:16px;line-height:1.65;}
-.service-path-card ul{list-style:none;margin-top:26px;}
-.service-path-card li{
-  position:relative;padding:11px 0 11px 25px;border-top:1px solid var(--line-soft);
-  color:rgba(231,236,242,.78);font-size:15px;
-}
-.service-path-card li::before{content:'✓';position:absolute;left:0;color:var(--gold-bright);font-weight:700;}
-.service-path-link{
-  display:inline-block;margin-top:28px;color:var(--gold-bright);
-  border-bottom:1px solid rgba(247,215,106,.42);padding-bottom:5px;font-weight:700;
-}
-.service-path-link:hover{color:var(--gold-champagne);border-color:var(--gold-champagne);}
-
-@media(max-width:820px){
-  .hero-v2{min-height:660px;}
-  .hero-v2-overlay{
-    background:linear-gradient(90deg,rgba(8,17,31,.97),rgba(8,17,31,.74)),
-               linear-gradient(180deg,transparent 0%,rgba(8,17,31,.78) 100%);
-  }
-  .service-paths-grid{grid-template-columns:1fr;}
-}
-@media(max-width:600px){
-  .hero-v2{min-height:620px;padding:72px 0 66px;}
-  .hero-v2-media img{object-position:62% center;}
-  .hero-v2-copy h1{font-size:clamp(43px,14vw,62px);}
-  .hero-v2-lede{font-size:17px;line-height:1.55;}
-  .hero-v2 .hero-actions{align-items:stretch;flex-direction:column;gap:12px;}
-  .btn-secondary{width:100%;}
-  .service-paths{padding:66px 0 72px;}
-  .service-path-card{padding:30px 24px;}
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="/assets/css/3p-style.css" rel="stylesheet"/>
 </head>
-<body>
-<button class="sticky-cta mono" id="stickyCta">GET MY FREE SNAPSHOT →</button>
+<body class="has-float-cta">
 <div id="site-header-mount"></div>
-<section class="hero-v2">
-<div aria-hidden="true" class="hero-v2-media">
-<img alt="" height="1536" src="assets/images/3p-owner-overload-hero.png" width="1536"/>
-</div>
-<div class="hero-v2-overlay"></div>
-<div class="wrap hero-v2-inner">
-<div class="hero-v2-copy">
-<div class="eyebrow">YOUR BUSINESS SHOULD WORK FOR YOU</div>
-<h1>Do you own your business, or does your business own you?</h1>
-<p class="hero-v2-lede">
-        You started this business for more freedom — more control, more time, more of
-        your own decisions. Instead, you're working longer hours than you ever did as
-        an employee, with no guaranteed paycheck, no paid vacation, no sick leave, and
-        no one to step in when you need a break.<br>
-        It's time the business started giving something back.
-      </p>
-<div class="hero-actions">
-<a class="btn-primary" href="operational-snapshot.html">Find Where I Need Help →</a>
-<a class="btn-secondary" href="#how-3p-helps">See How 3P Helps</a>
-</div>
-<p class="hero-v2-note">Practical answers. Clear next steps. No run around.</p>
-</div>
-</div>
+<main>
+
+<!-- Hero: photo clear, then title + one button (STD-004 HER.1-4) -->
+<section class="hero" aria-labelledby="hero-title">
+  <img class="hero-photo" src="assets/images/3p-owner-overload-hero.png" alt="A business owner at his desk late at night, head in his hands, surrounded by stacks of paperwork." width="1264" height="1264" fetchpriority="high"/>
+  <div class="sec sec--light">
+    <div class="wrap stack-32">
+      <h1 id="hero-title">Do you own your business, or does your business own you?</h1>
+      <a class="btn" href="#offers">Find Where I Need Help <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
 </section>
-<section class="service-paths" id="how-3p-helps">
-<div class="wrap">
-<div class="service-paths-intro">
-<div class="eyebrow">START HERE</div>
-<h2>Do you already know what's costing you—or do you need help finding it?</h2>
-<p>
-        Most of the time, we know what is causing our bad day. Sometimes,
-        we feel it but we can't quite put our finger on it.
-        That's where 3P comes in: helping you create a business that runs,
-        without you pulling your hair out everyday.
-      </p>
-</div>
-<div class="service-paths-grid">
-<article class="service-path-card">
-<div class="service-path-label">I KNOW THE PROBLEM</div>
-<h3>Fix It Now</h3>
-<p>
-          Solutions at a fixed price for your specific problems,
-          the ones already costing you money, time, and energy.
-        </p>
-<ul>
-<li>Fixed price, from $249</li>
-<li>Delivered in 5–7 business days</li>
-<li>Clear deliverable guarantee</li>
-<li>Start today, no call required</li>
-</ul>
-<a class="service-path-link" href="business-fixes.html">See the Fixes →</a>
-</article>
-<article class="service-path-card">
-<div class="service-path-label">NOT SURE YET</div>
-<h3>Find It First</h3>
-<p>
-         You know when something is not right. Take our 60-second
-           adaptive assessment shows you where the time, money, and resources are actually leaking.
-        </p>
-<ul>
-<li>Free, 60 seconds to get your results</li>
-<li>Live opportunity dashboard as you answer</li>
-<li>No pitch, no obligation</li>
-<li>Tells you which fix—if any—you may need</li>
-</ul>
-<a class="service-path-link" href="operational-snapshot.html">Start My Free Snapshot →</a>
-</article>
-</div>
-<p style="text-align:center;margin-top:36px;color:var(--muted);font-size:15px">
-      Not sure what actually happens after you buy? <a href="insights/what-working-with-3p-looks-like.html" style="color:var(--gold2);font-weight:700">See what working with 3P actually looks like →</a>
-</p>
-</div>
+
+<!-- Offers -->
+<section class="sec sec--dark" id="offers" aria-labelledby="offers-title">
+  <div class="wrap stack-32">
+    <div class="stack-8">
+      <span class="label">Fixed price · done in a week</span>
+      <h2 id="offers-title">What's costing you the most right now?</h2>
+    </div>
+    <div class="cards cards--2">
+<a class="card" href="business-fixes/owner-capacity-recovery-session.html">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="34" cy="34" r="16"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M34 25v9l6 4"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M12 30a22 22 0 0 1 12-16"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M24 14l-7 0M24 14l-2 7"/></svg></span>
+  <span class="card__body">
+    <span class="card__line">Get your evenings and weekends back.</span><br>
+    <span class="card__title">Give Me Back My Time</span><br>
+    <span class="card__price">$249</span>
+  </span>
+  <span class="card__go"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+</a>
+<a class="card" href="business-fixes/missed-lead-follow-up-fix.html">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="20" y="8" width="24" height="48" rx="4"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M29 50h6"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 16l11 7M16 23h-6M16 23l-2-6M59 16l-11 7M48 23h6M48 23l2-6M5 46l11-6M16 40h-6M16 40l-3 5M59 46l-11-6M48 40h6M48 40l3 5"/></svg></span>
+  <span class="card__body">
+    <span class="card__line">Keep New Money Flowing</span><br>
+    <span class="card__title">Missed Leads and Money Leaks</span><br>
+    <span class="card__price">$349</span>
+  </span>
+  <span class="card__go"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+</a>
+<a class="card" href="business-fixes/invoice-payment-organization.html">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="8" y="14" width="40" height="38" rx="3"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M8 24h40M18 9v9M38 9v9"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M30.5 34.5c-1-1-2.2-1.4-3.4-1.2-1.6.3-2.4 1.5-2 2.6.6 1.6 5.4 1.2 5.8 3.4.3 1.5-1 2.6-2.8 2.6-1.4 0-2.6-.6-3.4-1.6M28 32v12"/><circle fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="50" cy="46" r="9"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M47 42v8M53 42v8"/></svg></span>
+  <span class="card__body">
+    <span class="card__line">Keep the lights on</span><br>
+    <span class="card__title">Invoice &amp; Payment Optimization</span><br>
+    <span class="card__price">$449</span>
+  </span>
+  <span class="card__go"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+</a>
+<a class="card" href="business-fixes/business-workflow-cleanup.html">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M10 26h8l22-12v36L18 38h-8z"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M18 38l4 14h7l-3-13"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M46 24a10 10 0 0 1 0 16M51 18a18 18 0 0 1 0 28"/></svg></span>
+  <span class="card__body">
+    <span class="card__line">If they don't see you, you don't exist</span><br>
+    <span class="card__title">Online Presence &amp; Social Media Management</span><br>
+    <span class="card__price">$649</span>
+  </span>
+  <span class="card__go"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+</a>
+    </div>
+  </div>
 </section>
-<!-- THESIS -->
-<section class="thesis-section" id="problems">
-<div class="wrap">
-<div class="eyebrow">STOP LOSING MONEY</div>
-<h1>Nothing's broken. There's <em>profit hiding</em> in your process.</h1>
-<p class="lede">3P Help Me applies certified Lean Six Sigma methodology to find exactly where your operation is losing time and money — and fixes it before you spend another dollar on tools or automation that won't stick.</p>
-<div class="section-cta reveal"><a class="btn-primary" href="operational-snapshot.html">See Where It's Hiding →</a></div>
-<img alt="From frustrated to in control — 3P helps small business owners reduce chaos, streamline operations, and get their time back." class="thesis-graphic reveal" loading="lazy" src="assets/images/marketing-graphics/before-and-after-3p.png"/>
-</div>
+
+<!-- Numbers -->
+<section class="sec sec--light" aria-labelledby="numbers-title">
+  <div class="wrap stack-32">
+    <div class="stack-8">
+      <span class="label">It's not just you</span>
+      <h2 id="numbers-title">Owners are working harder for less</h2>
+    </div>
+    <ul class="icon-list cards--2">
+<li class="icon-row">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M10 52h46"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M16 46V30M28 46V24M40 46V30M52 46V36"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M12 14l14 8 12-2 14 10M52 30h-6M52 30l-2-6"/></svg></span>
+  <span class="icon-row__text"><span class="stat__num">47%</span><br><span class="soft">of small businesses report operations stayed flat or got less efficient over the past year.</span></span>
+</li>
+<li class="icon-row">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="6" y="18" width="44" height="26" rx="3"/><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="28" cy="31" r="7"/><g transform="translate(28 31) scale(0.7)"><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:3.6" d="M2.5 -3.5c-1-1-2.2-1.4-3.4-1.2-1.6.3-2.4 1.5-2 2.6.6 1.6 5.4 1.2 5.8 3.4.3 1.5-1 2.6-2.8 2.6-1.4 0-2.6-.6-3.4-1.6M0 -6v12"/></g><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M11 23h3M42 39h3"/><circle fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="47" cy="10" r="4"/><circle fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="57" cy="18" r="4"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M44 13L28 52M54 20L22 46"/></svg></span>
+  <span class="icon-row__text"><span class="stat__num">42%</span><br><span class="soft">say their top priority this year is cutting costs to protect margin — not growth.</span></span>
+</li>
+<li class="icon-row">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="30" r="8"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M18 58V48a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v10"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M18 46L10 34V22M46 46l8-12V22"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M24 4l-3 7h5l-3 7M34 2l-3 8h5l-3 8M44 6l-3 6h4l-2 6"/></svg></span>
+  <span class="icon-row__text"><span class="stat__num">78%</span><br><span class="soft">of owners say paperwork and admin cost them money.</span></span>
+</li>
+<li class="icon-row">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="translate(32 32) scale(1.5)"><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:2.2" d="M2.5 -3.5c-1-1-2.2-1.4-3.4-1.2-1.6.3-2.4 1.5-2 2.6.6 1.6 5.4 1.2 5.8 3.4.3 1.5-1 2.6-2.8 2.6-1.4 0-2.6-.6-3.4-1.6M0 -7v14"/></g><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M12 26a21 21 0 0 1 36-11"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M48 6v9h-9"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M52 38a21 21 0 0 1-36 11"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M16 58v-9h9"/></svg></span>
+  <span class="icon-row__text"><span class="stat__num">72%</span><br><span class="soft">say internal operational issues make cash flow harder to predict, month to month.</span></span>
+</li>
+    </ul>
+  </div>
 </section>
-<!-- NATIONAL READOUT -->
-<section id="diagnostic">
-<div class="wrap">
-<div class="section-head reveal">
-<div class="eyebrow">IT'S NOT JUST YOU</div>
-<h2>Across All Industries Nationwide</h2>
-<p>Across America, the pattern is the same: owners are working harder inside the business, but they are not seeing the reward. It's showing up directly in cash flow and margin.</p>
-</div>
-<div class="stat-grid reveal">
-<div class="stat-card">
-<div class="num">47%</div>
-<div class="label">of small businesses report operations stayed flat or got <span class="emphasis">less efficient</span> over the past year.</div>
-<div class="src">2026 Small Business Resiliency Study, 1,155 owners nationwide</div>
-</div>
-<div class="stat-card">
-<div class="num">42%</div>
-<div class="label">say their top priority this year is <span class="emphasis">cutting costs</span> to protect margin — not growth.</div>
-<div class="src">SoFi State of Small Business, 2026</div>
-</div>
-<div class="stat-card">
-<div class="num">78%</div>
-<div class="label">of owners with <span class="emphasis">back-office friction</span> say it creates direct personal financial stress.</div>
-<div class="src">2026 Small Business Resiliency Study</div>
-</div>
-<div class="stat-card">
-<div class="num">72%</div>
-<div class="label">say <span class="emphasis">internal operational issues</span> make cash flow harder to predict, month to month.</div>
-<div class="src">2026 Small Business Resiliency Study</div>
-</div>
-</div>
-<div class="section-cta reveal">
-<a class="btn-primary" href="operational-snapshot.html">Show Me Where I'm Losing Money →</a>
-</div>
-</div>
+
+<!-- Why 3P -->
+<section class="sec sec--dark" aria-labelledby="why-title">
+  <div class="wrap stack-32">
+    <div class="stack-8">
+      <span class="label">Why 3P</span>
+      <h2 id="why-title">Fortune 500 experience, working for you.</h2>
+    </div>
+    <ul class="icon-list cards--3">
+<li class="icon-row">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="24" r="14"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M24 36l-5 20 13-6 13 6-5-20"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M32 16l2.4 5 5.4.7-4 3.7 1 5.4-4.8-2.6-4.8 2.6 1-5.4-4-3.7 5.4-.7z"/></svg></span>
+  <span class="icon-row__text"><span class="card__title">Master Black Belt</span><br><span class="soft">Certified Lean Six Sigma</span></span>
+</li>
+<li class="icon-row">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="8" y="22" width="48" height="32" rx="4"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M24 22v-6h16v6M8 36h48"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="28" y="32" width="8" height="8" rx="1"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(52 12) scale(1)" d="M0 -7l2 4.3 4.7.6-3.4 3.3.8 4.7L0 2.6l-4.2 2.3.8-4.7-3.4-3.3 4.7-.6z"/></svg></span>
+  <span class="icon-row__text"><span class="card__title">10+ years, Fortune 500</span><br><span class="soft">Operations leadership</span></span>
+</li>
+<li class="icon-row">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M6 56V30l12 8v-8l12 8v-8l12 8V14h10v42z"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M6 56h52"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M14 48h6M26 48h6M38 48h6"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M46 8c2-2 4-2 6 0"/></svg></span>
+  <span class="icon-row__text"><span class="card__title">9 industries</span><br><span class="soft">Aerospace to auto repair</span></span>
+</li>
+    </ul>
+  </div>
 </section>
-<!-- AUTOMATION TRAP -->
-<section class="tier-raised" id="ai-trap">
-<div class="wrap">
-<div class="section-head reveal">
-<div class="eyebrow">AI CAN'T SAVE YOU</div>
-<h2>Automation doesn't fix a broken process. It drastically increases the damage.</h2>
-<p>Most consultants will sell you software first. That's backwards — and the data backs it up.</p>
-</div>
-<div class="compare reveal">
-<div class="compare-col bad">
-<span class="tag">Tools bolted on</span>
-<h3>Automate, then pray</h3>
-<ul>
-<li>56% of CEOs report zero measurable ROI from AI layered onto existing workflows</li>
-<li>70–85% of AI initiatives fail to hit expected outcomes</li>
-<li>Only 14% of small businesses have AI actually embedded in core operations</li>
-<li>The broken step just runs faster — and the mess is harder to trace</li>
-</ul>
-</div>
-<div class="compare-col good">
-<span class="tag">3P method</span>
-<h3>Streamline, then automate</h3>
-<ul>
-<li>Map the process first — find where time, money, and quality actually leak</li>
-<li>Remove the waste with Lean Six Sigma methods before touching a single tool</li>
-<li>Automate what remains—so technology compounds productivity instead of waste and cost</li>
-<li>Create lasting efficiency because the fix is structural, not cosmetic</li>
-</ul>
-</div>
-</div>
-<div class="section-cta reveal">
-<a class="btn-primary" href="operational-snapshot.html">Find My Profit Leaks →</a>
-</div>
-</div>
+
+<!-- Bigger work -->
+<section class="sec sec--light" aria-labelledby="bigger-title">
+  <div class="wrap stack-32">
+    <div class="stack-8">
+      <span class="label">Need more than a fix?</span>
+      <h2 id="bigger-title">A professional on your side for larger projects.</h2>
+    </div>
+    <div class="cards cards--3">
+<a class="card" href="beyond-the-fix.html">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="32" r="22"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M32 10v5M32 49v5M10 32h5M49 32h5"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M40 24l-5 11-11 5 5-11z"/><circle fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="32" r="1.5"/></svg></span>
+  <span class="card__body">
+    <span class="card__title">Beyond the Fix</span><br>
+    <span class="card__line"><span class="pending">[waiting on answer A]</span></span>
+  </span>
+  <span class="card__go"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+</a>
+<a class="card" href="on-demand-operations-support.html">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="32" r="20"/><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="32" r="9"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M18 18l8 8M46 18l-8 8M18 46l8-8M46 46l-8-8"/></svg></span>
+  <span class="card__body">
+    <span class="card__title">On-Demand Support</span><br>
+    <span class="card__line"><span class="pending">[waiting on answer A]</span></span>
+  </span>
+  <span class="card__go"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+</a>
+<a class="card" href="systems-automation-integration.html">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="24" y="8" width="16" height="12" rx="2"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="8" y="44" width="16" height="12" rx="2"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="40" y="44" width="16" height="12" rx="2"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M32 20v12M16 44V32h32v12"/><circle fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="32" r="2.5"/></svg></span>
+  <span class="card__body">
+    <span class="card__title">Systems &amp; Automation</span><br>
+    <span class="card__line"><span class="pending">[waiting on answer A]</span></span>
+  </span>
+  <span class="card__go"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+</a>
+    </div>
+  </div>
 </section>
-<!-- CONTACT / START HERE -->
-<section class="tier-raised contact-section" id="contact">
-<div class="wrap">
-<div class="eyebrow" style="justify-content:center;">START HERE</div>
-<h2>Let's Identify Where We Can Help</h2>
-<p>60 seconds. We'll walk through your operation and tell you plainly where the waste is—before you spend a dollar fixing it.</p>
-<div class="contact-actions">
-<a class="btn-primary" href="operational-snapshot.html">Start My Operational Snapshot →</a>
-</div>
-<div class="contact-detail"><span>SERVING SMALL &amp; GROWING BUSINESSES NATIONWIDE</span></div>
-</div>
+
+<!-- Closer -->
+<section class="sec sec--dark" aria-labelledby="closer-title">
+  <div class="wrap stack-24 center">
+    <span class="badge" style="margin:0 auto"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="6" y="12" width="32" height="46" rx="4"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="12" y="22" width="6" height="6" rx="1"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M22 25h10"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="12" y="34" width="6" height="6" rx="1"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M22 37h10"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="12" y="46" width="6" height="6" rx="1"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M22 49h10"/><path fill="#0A1929" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M46 6a14 14 0 1 1-9 25l-6 3 2-6a14 14 0 0 1 13-22z"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M42 16a4 4 0 1 1 5 4c-1 .5-1 1.5-1 2.5M46 26.5v.5"/></svg></span>
+    <span class="label">Not sure where to start?</span>
+    <h2 id="closer-title">Get your free Business Health Check in 60 seconds.</h2>
+    <a class="btn" href="operational-snapshot.html">Get My Free Health Check <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+  </div>
 </section>
+
+</main>
+<a class="btn float-cta" id="floatCta" href="operational-snapshot.html">Get My Free Health Check <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
 <div id="site-footer-mount"></div>
-
 <script>
-  const stickyCta = document.getElementById('stickyCta');
-  const hero = document.querySelector('.hero-v2');
-  const contact = document.getElementById('contact');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.target === hero){ stickyCta.classList.toggle('visible', !e.isIntersecting); } });
-  }, {threshold:0.1});
-  io.observe(hero);
-
-  const stopObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting) stickyCta.classList.remove('visible'); });
-  }, {threshold:0.3});
-  stopObserver.observe(contact);
-
-  stickyCta.addEventListener('click', ()=>{ window.location.href='operational-snapshot.html'; });
-
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealIO = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target); } });
-  }, {threshold:0.15});
-  revealEls.forEach(el=>revealIO.observe(el));
+(function(){
+  var cta=document.getElementById('floatCta');
+  var hero=document.querySelector('.hero');
+  var closer=document.getElementById('closer-title');
+  if(!cta||!hero||!('IntersectionObserver' in window)) return;
+  var heroVisible=true, closerVisible=false;
+  function update(){ cta.classList.toggle('is-visible', !heroVisible && !closerVisible); }
+  new IntersectionObserver(function(e){ heroVisible=e[0].isIntersecting; update(); },{threshold:0}).observe(hero);
+  new IntersectionObserver(function(e){ closerVisible=e[0].isIntersecting; update(); },{threshold:0}).observe(closer.parentNode);
+})();
 </script>
 <script defer="defer" src="/assets/js/site-include.js"></script></body>
 </html>
