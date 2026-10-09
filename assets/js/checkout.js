@@ -29,7 +29,7 @@
       const data=new FormData(form);data.append('request_type','3P Business Fix secure invoice request');data.append('product_price',"$"+product.price.toLocaleString());data.append('product_timeline',product.timeline);
       try{
         const response=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});if(!response.ok)throw new Error();
-        form.innerHTML='<div class="notice"><strong>Your request was received.</strong><br>3P will confirm scope and send the secure invoice and post-payment intake instructions.</div><div class="card-actions"><a class="button secondary" href="business-fixes.html">Return to Business Fixes</a><a class="button secondary" href="operational-snapshot.html">Complete the Operational Snapshot</a></div>';
+        form.innerHTML='<div class="notice"><strong>Your request was received.</strong><br>3P will confirm scope and send the secure invoice and post-payment intake instructions.</div><div class="card-actions"><a class="button secondary" href="business-fixes.html">Return to Business Fixes</a><a class="button secondary" href="free-business-health-check.html">Complete the Free Business Health Check</a></div>';
       }catch(err){submit.disabled=false;submit.textContent=original;let box=form.querySelector('[data-form-error]');if(!box){box=document.createElement('div');box.dataset.formError='true';box.className='notice';form.appendChild(box)}box.textContent='The request did not send. Please try again or email info@3phelpme.com.'}
     });
   }

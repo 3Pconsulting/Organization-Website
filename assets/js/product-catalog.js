@@ -15,7 +15,7 @@ window.THREE_P_PRODUCT_CATALOG = {
     "software_rule": "Third-party software, subscriptions, transaction fees, messaging fees, and licenses are not included unless expressly stated.",
     "guarantee_title": "Clear Deliverable Guarantee",
     "guarantee": "3P guarantees delivery of the written deliverables listed in the agreed scope. If an included deliverable is missing or does not match the approved scope, 3P will correct it at no additional charge. The guarantee does not promise revenue, sales, savings, employee performance, or results controlled by the client or a third party.",
-    "funnel": ["Social media or direct outreach", "3P Business Fixes landing page", "Individual product page", "Purchase", "Product-specific questionnaire", "Remote delivery and walkthrough", "Operational Snapshot", "Strategy call", "Larger implementation project"]
+    "funnel": ["Social media or direct outreach", "3P Business Fixes landing page", "Individual product page", "Purchase", "Product-specific questionnaire", "Remote delivery and walkthrough", "Free Business Health Check", "Strategy call", "Larger implementation project"]
   },
   "products": [
     {

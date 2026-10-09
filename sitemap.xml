@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://3phelpme.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://3phelpme.com/business-fixes.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://3phelpme.com/problems-we-solve.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://3phelpme.com/operational-snapshot.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://3phelpme.com/how-3p-works.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://3phelpme.com/free-business-health-check.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://3phelpme.com/on-demand-operations-support.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://3phelpme.com/systems-automation-integration.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://3phelpme.com/beyond-the-fix.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>

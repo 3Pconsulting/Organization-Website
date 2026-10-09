@@ -227,3 +227,14 @@ body.has-float-cta{padding-bottom:85px}
 
 /* Temporary: marks a spot still waiting on an owner answer (removed before merge) */
 .pending{font-style:italic;color:var(--text-soft)}
+
+/* Offer pages (WF-05) */
+.badge--num{font-size:var(--fs-h3);font-weight:800;color:var(--gold-bright);line-height:1}
+ol.icon-list{list-style:none}
+.value-line{font-weight:700;color:var(--gold-bright)}
+.closer .price{margin-left:auto;margin-right:auto}
+.card .card__body .card__line{display:inline-block;margin-top:8px}
+/* Offer pages: price and buy button on the first screen (WF-05), so the opening photo is shorter here */
+.offer-page .hero-photo{aspect-ratio:16/9;max-height:40vh;width:100%}
+.offer-page .photo-slot{aspect-ratio:16/9;max-height:40vh}
+.offer-page .hero .sec{padding:48px 0}
