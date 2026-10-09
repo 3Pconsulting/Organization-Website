@@ -238,3 +238,16 @@ ol.icon-list{list-style:none}
 .offer-page .hero-photo{aspect-ratio:16/9;max-height:40vh;width:100%}
 .offer-page .photo-slot{aspect-ratio:16/9;max-height:40vh}
 .offer-page .hero .sec{padding:48px 0}
+
+/* A sourced number shown on its own under a list, the same way on every page */
+.stat-callout{display:flex;align-items:center;gap:16px;padding:var(--box-pad);border:1px solid var(--divider);border-radius:4px}
+.sec--light .stat-callout{background:var(--card-on-light)}
+.sec--dark .stat-callout{background:var(--card-on-dark)}
+
+/* Feature icon: the single icon that leads a centered closer. Sized to the section, not the list size */
+.badge--feature{margin:0 auto;width:112px;height:112px;border-width:2px}
+.badge--feature svg{width:72px;height:72px}
+@media (min-width:768px){
+  .badge--feature{width:136px;height:136px}
+  .badge--feature svg{width:88px;height:88px}
+}

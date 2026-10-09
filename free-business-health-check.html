@@ -526,10 +526,19 @@ h1,h2,h3,h4{font-family:"Source Sans 3",Arial,sans-serif;font-weight:650;letter-
   .exposure-card .exposure-value{font-size:clamp(18px,5.8vw,25px);overflow-wrap:anywhere}
 }
 </style>
-<meta content="A fast, adaptive business assessment that identifies operational visibility gaps, wasted capacity, missed opportunity, and likely improvement areas." name="description"/></head>
+<meta content="A fast, adaptive business assessment that identifies operational visibility gaps, wasted capacity, missed opportunity, and likely improvement areas." name="description"/><style id="std004-layer">
+/* 3P Style Standard layer for the Health Check: one font (FNT.1), no glows or shadows (GLW.1), except the current step (GLW.4) */
+body,body *:not(svg):not(path):not(circle){font-family:"Source Sans 3",Arial,sans-serif !important}
+main.snapshot *,section.intro *,.snapshot-divider *{box-shadow:none !important;text-shadow:none !important}
+.step-chip.active .journey-number{box-shadow:0 0 0 2px rgb(10,25,41),0 0 0 4px rgb(247,215,106),0 0 14px 9px rgba(247,215,106,0.55) !important}
+.hc-back{display:inline-block;margin-bottom:16px;font-size:16px;color:rgb(231,236,242);text-decoration:underline}
+h1 em{font-style:normal;color:rgb(247,215,106)}
+</style>
+</head>
 <body>
+<div id="site-header-mount"></div>
 <section class="intro" id="top"><div class="wrap intro-grid">
-<div class="intro-copy"><div class="eyebrow">Your Free Business Health Check</div><h1>What is your <em>business</em> costing you?</h1><p>Get a clear picture of what’s working, what’s not, and where you may be losing time, money, and opportunity.</p><div class="hero-benefits">
+<div class="intro-copy"><a class="hc-back" href="/">&larr; Back to 3P Help Me home</a><div class="eyebrow">Your Free Business Health Check</div><h1>What is your <em>business</em> costing you?</h1><p>Get a clear picture of what’s working, what’s not, and where you may be losing time, money, and opportunity.</p><div class="hero-benefits">
 <div><span class="benefit-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><span>Recover owner time</span></div>
 <div><span class="benefit-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 19h16M6 16v-4M11 16V7M16 16V4M21 16v-7"/></svg></span><span>Keep more of what you earn</span></div>
 <div><span class="benefit-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 20c0-4 2-7 6-7s6 3 6 7M14 14c4 0 7 2 7 6"/></svg></span><span>Reduce how much depends on you</span></div>
