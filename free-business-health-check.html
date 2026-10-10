@@ -55,10 +55,11 @@ fbq('track', 'PageView');
 @media (min-width:768px){.hc-benefits{grid-template-columns:1fr 1fr;gap:24px}}
 .hc-card{max-width:760px;margin:0 auto;padding:var(--box-pad);border:1px solid var(--divider);border-radius:4px;background:var(--card-on-dark)}
 .hc-dots{list-style:none;margin:0 0 16px;padding:0;display:flex;justify-content:space-between;gap:8px}
-.hc-dot{flex:0 0 auto;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--fs-label);font-weight:700;border:2px solid var(--divider);color:var(--text-soft);background:var(--dark)}
+.hc-dot{flex:0 0 auto;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--fs-label);font-weight:700;border:2px solid var(--divider);color:var(--text-soft);background:var(--dark)}
 .hc-dot.is-done{border-color:var(--gold);background:var(--gold);color:var(--btn-text)}
 /* The page's one glow (STD-004 GLW.4 + the one glow style §5): the current question */
 .hc-dot.is-current{border-color:var(--dark);color:var(--gold-bright);box-shadow:0 0 0 2px rgb(247,215,106),0 0 14px 9px rgba(247,215,106,0.55)}
+@media (min-width:768px){.hc-dot{width:40px;height:40px}}
 .hc-count{color:var(--text-soft);font-size:var(--fs-label);font-weight:700;text-transform:uppercase;letter-spacing:0.12em}
 .hc-q{border:0;margin:0;padding:0;min-width:0}
 .hc-q__title{font-size:var(--fs-h3)}
