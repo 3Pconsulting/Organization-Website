@@ -302,3 +302,13 @@ ol.icon-list{list-style:none}
 .form-consent{display:flex;align-items:flex-start;gap:16px;color:var(--text-soft);font-size:16px;line-height:1.5;cursor:pointer}
 .form-consent input{flex:0 0 22px;width:22px;height:22px;margin:2px 0 0;accent-color:var(--gold)}
 .form-consent a{color:var(--text);text-decoration:underline}
+
+/* Checkout + intake (reuse the Forms block). checkout.js and intake.js show/hide with .hidden. */
+.hidden{display:none!important}
+.buy-summary{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 24px}
+.buy-time{font-weight:700;color:var(--text)}
+.sec--light .form-note{background:var(--card-on-light);color:var(--text)}
+.checkout-card .form-card>.btn{margin-left:auto;margin-right:auto}
+.form-card code{font-size:15px;color:var(--gold-bright)}
+.form-card.form-note{max-width:760px;margin-left:auto;margin-right:auto;border-left:3px solid var(--gold)}
+.checkout-card .form-card>.hidden+*{margin-top:0}

@@ -14,40 +14,60 @@
   gtag('js', new Date());
   gtag('config', 'G-T33MLE0MJM');
 </script>
-<link href="assets/css/product-line.css" rel="stylesheet"/>
+<link href="assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="/assets/css/3p-style.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="site-header-mount"></div>
-<main class="section cream">
-<div class="wrap checkout-wrap">
-<div class="checkout-card">
-<div class="eyebrow">PRODUCT-SPECIFIC QUESTIONNAIRE</div>
-<h1 id="intakeOffer" style="font-size:44px">3P Business Fix</h1>
-<p>Complete this after purchase. The delivery clock begins when required information, files, access, and decisions are complete.</p>
-<form id="intakeForm" method="POST">
-<input id="intakeSlug" name="offer_slug" type="hidden"/>
-<input id="intakeOfferInput" name="offer" type="hidden"/>
-<input name="_subject" type="hidden" value="3P Business Fix Intake"/>
-<div class="form-grid">
-<div class="form-field"><label for="clientName">Your name</label><input id="clientName" name="client_name" required=""/></div>
-<div class="form-field"><label for="clientBusiness">Business name</label><input id="clientBusiness" name="business_name" required=""/></div>
-<div class="form-field"><label for="clientEmail">Business email</label><input id="clientEmail" name="email" required="" type="email"/></div>
-<div class="form-field"><label for="employees">Number of employees</label><input id="employees" max="500" min="1" name="employees" type="number"/></div>
-<div class="form-field full"><label for="problem">Describe the problem this purchase must fix.</label><textarea id="problem" name="problem" required=""></textarea></div>
-<div class="form-field full"><label for="current">How is this handled today?</label><textarea id="current" name="current_process" required=""></textarea></div>
-<div class="form-field full"><label for="tools">Which software, spreadsheets, inboxes, drives, or tools are involved?</label><textarea id="tools" name="tools"></textarea></div>
-<div class="form-field full"><label for="people">Who owns the work today, and who must approve the final setup?</label><textarea id="people" name="people_and_approver" required=""></textarea></div>
-<div class="form-field full"><label for="deadline">Is there a real business deadline or event affecting delivery?</label><textarea id="deadline" name="deadline"></textarea></div>
-<div class="form-field full"><label for="access">List the files, exports, examples, or access you will provide.</label><textarea id="access" name="files_and_access" required=""></textarea></div>
-<div class="form-field full">
-<label><input name="scope_acknowledgement" required="" type="checkbox"/> I understand that work outside the published product scope will be quoted separately before it begins.</label>
-</div>
-</div>
-<button class="button" type="submit">Submit My Intake</button>
-</form>
-<div class="notice hidden" id="intakeConfigNotice">The live Formspree endpoint must be added before this form is deployed.</div>
-</div>
-</div>
+<main>
+<!-- Restyle only: same element ids, same form fields and names, same scripts (intake.js fills the product and sends the form). -->
+
+<!-- 1 Opening -->
+<section class="sec sec--light" aria-labelledby="intakeOffer">
+  <div class="wrap stack-24">
+    <span class="label">Product-specific questionnaire</span>
+    <h1 id="intakeOffer">3P Business Fix</h1>
+    <p class="soft">Complete this after purchase. The delivery clock begins when required information, files, access, and decisions are complete.</p>
+  </div>
+</section>
+
+<!-- 2 Intake form -->
+<section class="sec sec--dark" aria-label="Intake form">
+  <div class="wrap stack-32">
+    <form class="form-card stack-32" id="intakeForm" method="POST">
+      <input id="intakeSlug" name="offer_slug" type="hidden"/>
+      <input id="intakeOfferInput" name="offer" type="hidden"/>
+      <input name="_subject" type="hidden" value="3P Business Fix Intake"/>
+      <div class="form-grid">
+        <div class="field"><label for="clientName">Your name</label><input id="clientName" name="client_name" autocomplete="name" required=""/></div>
+        <div class="field"><label for="clientBusiness">Business name</label><input id="clientBusiness" name="business_name" autocomplete="organization" required=""/></div>
+        <div class="field"><label for="clientEmail">Business email</label><input id="clientEmail" name="email" autocomplete="email" required="" type="email"/></div>
+        <div class="field"><label for="employees">Number of employees</label><input id="employees" max="500" min="1" name="employees" type="number"/></div>
+        <div class="field field--full"><label for="problem">Describe the problem this purchase must fix.</label><textarea id="problem" name="problem" required=""></textarea></div>
+        <div class="field field--full"><label for="current">How is this handled today?</label><textarea id="current" name="current_process" required=""></textarea></div>
+        <div class="field field--full"><label for="tools">Which software, spreadsheets, inboxes, drives, or tools are involved?</label><textarea id="tools" name="tools"></textarea></div>
+        <div class="field field--full"><label for="people">Who owns the work today, and who must approve the final setup?</label><textarea id="people" name="people_and_approver" required=""></textarea></div>
+        <div class="field field--full"><label for="deadline">Is there a real business deadline or event affecting delivery?</label><textarea id="deadline" name="deadline"></textarea></div>
+        <div class="field field--full"><label for="access">List the files, exports, examples, or access you will provide.</label><textarea id="access" name="files_and_access" required=""></textarea></div>
+      </div>
+      <label class="form-consent"><input name="scope_acknowledgement" required="" type="checkbox"/> <span>I understand that work outside the published product scope will be quoted separately before it begins.</span></label>
+      <button class="btn" type="submit">Submit My Intake <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+    </form>
+    <div class="form-card form-note hidden" id="intakeConfigNotice">The live Formspree endpoint must be added before this form is deployed.</div>
+  </div>
+</section>
+
+<!-- 3 Closer -->
+<section class="sec sec--light closer" aria-labelledby="closer-title">
+  <div class="wrap stack-24 center">
+    <h2 id="closer-title">Stuck on a question?</h2>
+    <p>Send 3P a short note and a person will help you finish the intake.</p>
+    <a class="btn" href="contact.html">Talk to Us <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
 </main>
 <div id="site-footer-mount"></div>
 
