@@ -14,45 +14,68 @@
   gtag('js', new Date());
   gtag('config', 'G-T33MLE0MJM');
 </script>
-<link href="assets/css/product-line.css" rel="stylesheet"/>
+<link href="assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="/assets/css/3p-style.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="site-header-mount"></div>
-<main class="section cream">
-<div class="wrap checkout-wrap">
+<main>
+<!-- Restyle only: same element ids, same form fields and names, same scripts (checkout.js fills the product and sends the form). -->
 <div class="checkout-card">
-<div class="eyebrow">PURCHASE A BUSINESS FIX</div>
-<div class="checkout-summary">
-<div>
-<h1 id="offerName">3P Business Fix</h1>
-<p id="offerHeadline"></p>
-<p class="system-note">Delivery begins after payment, complete intake, required files, access, and decisions are received.</p>
-</div>
-<div>
-<div class="price" id="offerPrice"></div>
-<div class="timeline" id="offerTimeline"></div>
-</div>
-</div>
-<a class="button hidden" href="business-fixes.html" id="payButton">Purchase Securely</a>
-<form class="hidden" id="invoiceForm" method="POST">
-<input id="offerSlug" name="offer_slug" type="hidden"/>
-<input id="offerDisplay" name="offer" type="hidden"/>
-<input name="_subject" type="hidden" value="3P Business Fix Purchase Request"/>
-<div class="form-grid">
-<div class="form-field"><label for="name">Your name</label><input id="name" name="name" required=""/></div>
-<div class="form-field"><label for="business">Business name</label><input id="business" name="business" required=""/></div>
-<div class="form-field"><label for="email">Business email</label><input id="email" name="email" required="" type="email"/></div>
-<div class="form-field"><label for="phone">Business phone</label><input id="phone" name="phone"/></div>
-<div class="form-field full"><label for="notes">Anything 3P should know before sending the secure invoice?</label><textarea id="notes" name="notes"></textarea></div>
-</div>
-<div class="notice">Submitting this request does not expand the published scope. 3P will send the secure payment link and product-specific intake instructions.</div>
-<button class="button" type="submit">Request Secure Invoice</button>
-</form>
-<div class="notice hidden" id="configNotice">
+
+<!-- 1 Opening: the fix being bought -->
+<section class="sec sec--light" aria-labelledby="offerName">
+  <div class="wrap stack-24">
+    <span class="label">Purchase a Business Fix</span>
+    <h1 id="offerName">3P Business Fix</h1>
+    <p class="soft" id="offerHeadline"></p>
+    <div class="buy-summary">
+      <p class="price" id="offerPrice"></p>
+      <p class="buy-time" id="offerTimeline"></p>
+    </div>
+    <p class="form-note system-note">Delivery begins after payment, complete intake, required files, access, and decisions are received.</p>
+  </div>
+</section>
+
+<!-- 2 Pay or request the secure invoice -->
+<section class="sec sec--dark" aria-label="Purchase">
+  <div class="wrap">
+    <div class="form-card stack-32">
+      <a class="btn hidden" href="/#offers" id="payButton">Purchase Securely <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+      <form class="hidden stack-32" id="invoiceForm" method="POST">
+        <input id="offerSlug" name="offer_slug" type="hidden"/>
+        <input id="offerDisplay" name="offer" type="hidden"/>
+        <input name="_subject" type="hidden" value="3P Business Fix Purchase Request"/>
+        <div class="form-grid">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required=""/></div>
+          <div class="field"><label for="business">Business name</label><input id="business" name="business" autocomplete="organization" required=""/></div>
+          <div class="field"><label for="email">Business email</label><input id="email" name="email" autocomplete="email" required="" type="email"/></div>
+          <div class="field"><label for="phone">Business phone</label><input id="phone" name="phone" autocomplete="tel" type="tel"/></div>
+          <div class="field field--full"><label for="notes">Anything 3P should know before sending the secure invoice?</label><textarea id="notes" name="notes"></textarea></div>
+        </div>
+        <p class="form-note notice">Submitting this request does not expand the published scope. 3P will send the secure payment link and product-specific intake instructions.</p>
+        <button class="btn" type="submit">Request Secure Invoice <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+      </form>
+      <div class="form-note notice hidden" id="configNotice">
         Checkout is intentionally disabled in this build until the live PayPal payment link or Formspree endpoint is added to <code>assets/js/checkout-config.js</code>. No payment destination was invented.
       </div>
+    </div>
+  </div>
+</section>
+
 </div>
-</div>
+
+<!-- 3 Closer -->
+<section class="sec sec--light closer" aria-labelledby="closer-title">
+  <div class="wrap stack-24 center">
+    <h2 id="closer-title">Questions before you buy?</h2>
+    <p>Send a short note and a person at 3P will answer before you pay anything.</p>
+    <a class="btn" href="contact.html">Talk to Us <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
 </main>
 <div id="site-footer-mount"></div>
 

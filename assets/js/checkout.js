@@ -6,7 +6,7 @@
   const product=catalog.products.find(p=>p.slug===slug);
   if(!product){
     document.title="Fix Not Found | 3P Help Me";
-    document.querySelector('.checkout-card').innerHTML=`<div class="eyebrow">FIX NOT FOUND</div><h1>That fix isn't currently offered.</h1><p>The link may be out of date or the fix has been retired. See the fixes 3P currently offers below.</p><a class="button" href="business-fixes.html">View Current Business Fixes</a>`;
+    document.querySelector('.checkout-card').innerHTML=`<section class="sec sec--dark"><div class="wrap stack-24"><span class="label">Fix not found</span><h1>That fix isn't currently offered.</h1><p class="soft">The link may be out of date or the fix has been retired. See the fixes 3P currently offers below.</p><a class="btn" href="/#offers">See the Business Fixes <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div></section>`;
     return;
   }
   document.title=product.name+" | Purchase | 3P Help Me";
@@ -29,8 +29,8 @@
       const data=new FormData(form);data.append('request_type','3P Business Fix secure invoice request');data.append('product_price',"$"+product.price.toLocaleString());data.append('product_timeline',product.timeline);
       try{
         const response=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});if(!response.ok)throw new Error();
-        form.innerHTML='<div class="notice"><strong>Your request was received.</strong><br>3P will confirm scope and send the secure invoice and post-payment intake instructions.</div><div class="card-actions"><a class="button secondary" href="business-fixes.html">Return to Business Fixes</a><a class="button secondary" href="operational-snapshot.html">Complete the Operational Snapshot</a></div>';
-      }catch(err){submit.disabled=false;submit.textContent=original;let box=form.querySelector('[data-form-error]');if(!box){box=document.createElement('div');box.dataset.formError='true';box.className='notice';form.appendChild(box)}box.textContent='The request did not send. Please try again or email info@3phelpme.com.'}
+        form.innerHTML='<div class="form-note"><strong>Your request was received.</strong><br>3P will confirm scope and send the secure invoice and post-payment intake instructions.</div><div class="stack-16"><a class="btn btn--2" href="/#offers">Return to Business Fixes <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a><a class="btn btn--2" href="free-business-health-check.html">Get My Free Health Check <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>';
+      }catch(err){submit.disabled=false;submit.textContent=original;let box=form.querySelector('[data-form-error]');if(!box){box=document.createElement('div');box.dataset.formError='true';box.className='form-note';form.appendChild(box)}box.textContent='The request did not send. Please try again or email info@3phelpme.com.'}
     });
   }
   if(!paymentUrl&&!config.formspreeEndpoint)notice.classList.remove('hidden');

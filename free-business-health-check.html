@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Free Business Health Check | 3P Help Me</title>
+<meta name="description" content="Six quick questions, about 60 seconds. See where your business is losing time and money, and which fix fits.">
+<link rel="canonical" href="https://3phelpme.com/free-business-health-check.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="3P Help Me">
+<meta property="og:title" content="Free Business Health Check | 3P Help Me">
+<meta property="og:description" content="Six quick questions, about 60 seconds. See where your business is losing time and money, and which fix fits.">
+<meta property="og:url" content="https://3phelpme.com/free-business-health-check.html">
+<meta property="og:image" content="https://3phelpme.com/assets/images/3p-owner-overload-hero.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T33MLE0MJM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-T33MLE0MJM');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){
+  if(f.fbq)return;
+  n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;
+  n.push=n;
+  n.loaded=!0;
+  n.version='2.0';
+  n.queue=[];
+  t=b.createElement(e);
+  t.async=!0;
+  t.src=v;
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)
+}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2250258719107286');
+fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2250258719107286&ev=PageView&noscript=1" alt="">
+</noscript>
+<!-- End Meta Pixel Code -->
+<link href="assets/logo/3P_HelpMe_Circle.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="/assets/css/3p-style.css" rel="stylesheet"/>
+<style>
+/* Free Business Health Check: page parts only. Everything else comes from 3p-style.css (STD-004). */
+.hc-benefits{grid-template-columns:1fr;margin-top:32px !important}
+@media (min-width:768px){.hc-benefits{grid-template-columns:1fr 1fr;gap:24px}}
+.hc-card{max-width:760px;margin:0 auto;padding:var(--box-pad);border:1px solid var(--divider);border-radius:4px;background:var(--card-on-dark)}
+.hc-dots{list-style:none;margin:0 0 16px;padding:0;display:flex;justify-content:space-between;gap:8px}
+.hc-dot{flex:0 0 auto;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--fs-label);font-weight:700;border:2px solid var(--divider);color:var(--text-soft);background:var(--dark)}
+.hc-dot.is-done{border-color:var(--gold);background:var(--gold);color:var(--btn-text)}
+/* The page's one glow (STD-004 GLW.4 + the one glow style §5): the current question */
+.hc-dot.is-current{border-color:var(--dark);color:var(--gold-bright);box-shadow:0 0 0 2px rgb(247,215,106),0 0 14px 9px rgba(247,215,106,0.55)}
+@media (min-width:768px){.hc-dot{width:40px;height:40px}}
+.hc-count{color:var(--text-soft);font-size:var(--fs-label);font-weight:700;text-transform:uppercase;letter-spacing:0.12em}
+.hc-q{border:0;margin:0;padding:0;min-width:0}
+.hc-q__title{font-size:var(--fs-h3)}
+.hc-q__title:focus{outline:none}
+.hc-opts{display:grid;gap:16px;margin-top:24px !important}
+@media (min-width:768px){.hc-opts{grid-template-columns:1fr 1fr}}
+.hc-opt{display:flex;align-items:center;min-height:53px;width:100%;padding:16px 24px;border:2px solid var(--divider);border-radius:4px;background:var(--dark);color:var(--text);font-family:"Source Sans 3",Arial,sans-serif;font-size:var(--fs-p);font-weight:700;line-height:1.3;text-align:left;cursor:pointer}
+.hc-opt:hover,.hc-opt[aria-pressed="true"]{border-color:var(--gold)}
+.hc-opt[aria-pressed="true"]{color:var(--gold-bright)}
+.hc-back-btn{background:none;border:0;padding:0;cursor:pointer}
+.hc-form{display:grid;gap:16px}
+.hc-form label{display:block;font-size:var(--fs-label);font-weight:700;margin-bottom:8px}
+.hc-form input{width:100%;height:53px;padding:0 16px;border:1px solid var(--text-soft);border-radius:4px;background:var(--dark);color:var(--text);font-family:"Source Sans 3",Arial,sans-serif;font-size:var(--fs-p)}
+.hc-status{color:var(--text-soft)}
+.hc-status.is-ok{color:var(--gold-bright);font-weight:700}
+#hcFindings{margin-top:32px !important}
+[hidden]{display:none !important}
+</style>
+</head>
+<body class="hc-page">
+<div id="site-header-mount"></div>
+<main>
+
+<!-- 1 Opening: what the owner gets, one button -->
+<section class="sec sec--light" aria-labelledby="hc-title">
+  <div class="wrap stack-32">
+    <div class="stack-24">
+      <p><a class="text-link" href="/">&larr; Back to 3P Help Me home</a></p>
+      <span class="label">Free Business Health Check</span>
+      <h1 id="hc-title">What is your business costing you?</h1>
+      <p>Answer six quick questions. See where you may be losing time and money, and which fix fits your business.</p>
+    </div>
+    <ul class="icon-list hc-benefits">
+      <li class="icon-row"><span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="34" cy="34" r="16"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M34 25v9l6 4"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M12 30a22 22 0 0 1 12-16"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M24 14l-7 0M24 14l-2 7"/></svg></span><span class="icon-row__text">Recover owner time</span></li>
+      <li class="icon-row"><span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M12 36c0-10 9-16 20-16s20 6 20 15c0 6-3 10-7 12v7h-6v-4h-14v4h-6v-7c-4-2-7-5-7-11z"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M38 21l5-7 3 9"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M52 32h4v8h-4"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M12 34c-3 0-5-2-5-4"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M24 27h10"/><circle fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="29" cy="10" r="6"/></svg></span><span class="icon-row__text">Keep more of what you earn</span></li>
+      <li class="icon-row"><span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="16" r="6"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M22 36a10 10 0 0 1 20 0"/><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="12" cy="42" r="5"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M4 58a8 8 0 0 1 16 0"/><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="52" cy="42" r="5"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M44 58a8 8 0 0 1 16 0"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M25 41l-7-0M18 41l3-3M18 41l3 3"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M39 41h7M46 41l-3-3M46 41l-3 3"/></svg></span><span class="icon-row__text">Make the business depend less on you</span></li>
+      <li class="icon-row"><span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="24" y="10" width="34" height="12" rx="3"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="24" y="28" width="34" height="10" rx="3"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="24" y="44" width="34" height="10" rx="3"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M6 16h12M13 11l5 5-5 5"/></svg></span><span class="icon-row__text">Know what to fix first</span></li>
+    </ul>
+    <div class="stack-16">
+      <a class="btn" href="#quiz">Start the Health Check <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+      <p class="soft">About 60 seconds. Free. Your result shows right away.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 The six questions, then the result -->
+<section class="sec sec--dark" id="quiz" aria-label="Your Health Check">
+  <div class="wrap">
+    <div class="hc-card stack-32" id="hcQuiz">
+      <div class="stack-16">
+        <p class="hc-count" id="hcCount" aria-live="polite">Question 1 of 6</p>
+        <ol class="hc-dots" aria-hidden="true"><li class="hc-dot is-current" data-dot="1"><span class="sr-only">Question </span>1</li><li class="hc-dot" data-dot="2"><span class="sr-only">Question </span>2</li><li class="hc-dot" data-dot="3"><span class="sr-only">Question </span>3</li><li class="hc-dot" data-dot="4"><span class="sr-only">Question </span>4</li><li class="hc-dot" data-dot="5"><span class="sr-only">Question </span>5</li><li class="hc-dot" data-dot="6"><span class="sr-only">Question </span>6</li></ol>
+      </div>
+      <div class="hc-q stack-16" role="group" aria-labelledby="hcQ1" data-q="1">
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M12 28v28h40V28"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M27 56V42h10v14"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="40" y="36" width="7" height="7" rx="1"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M8 18l4-10h40l4 10c0 5-4 8-8 8s-8-3-8-8c0 5-4 8-8 8s-8-3-8-8c0 5-4 8-8 8s-8-3-8-8z"/></svg></span>
+  <h2 class="hc-q__title" id="hcQ1" tabindex="-1">How does your business run today?</h2>
+  <div class="hc-opts"><button class="hc-opt" type="button" data-key="business_mode" data-value="Solo owner">I work alone</button><button class="hc-opt" type="button" data-key="business_mode" data-value="Occasional help">I have occasional help</button><button class="hc-opt" type="button" data-key="business_mode" data-value="1–5 employees">I have 1–5 employees</button><button class="hc-opt" type="button" data-key="business_mode" data-value="6+ employees">I have 6 or more employees</button></div>
+</div><div class="hc-q stack-16" role="group" aria-labelledby="hcQ2" data-q="2" hidden>
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="36" r="20"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M27 8h10M32 8v8M48 18l4-4"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M37 29c-1-2-3-3-5-3-3 0-5 2-5 4s2 3 5 4 5 2 5 4-2 4-5 4c-2 0-4-1-5-3M32 23v3M32 42v3"/></svg></span>
+  <h2 class="hc-q__title" id="hcQ2" tabindex="-1">How many hours a week do you work?</h2>
+  <div class="hc-opts"><button class="hc-opt" type="button" data-key="work_hours" data-value="40">40 or fewer</button><button class="hc-opt" type="button" data-key="work_hours" data-value="50">41–50</button><button class="hc-opt" type="button" data-key="work_hours" data-value="60">51–60</button><button class="hc-opt" type="button" data-key="work_hours" data-value="61">More than 60</button></div>
+</div><div class="hc-q stack-16" role="group" aria-labelledby="hcQ3" data-q="3" hidden>
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="16" r="6"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M22 36a10 10 0 0 1 20 0"/><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="12" cy="42" r="5"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M4 58a8 8 0 0 1 16 0"/><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="52" cy="42" r="5"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M44 58a8 8 0 0 1 16 0"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M25 41l-7-0M18 41l3-3M18 41l3 3"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M39 41h7M46 41l-3-3M46 41l-3 3"/></svg></span>
+  <h2 class="hc-q__title" id="hcQ3" tabindex="-1">If you could not work for one week, what would happen?</h2>
+  <div class="hc-opts"><button class="hc-opt" type="button" data-key="absence_impact" data-value="Continue normally">The business would run as normal</button><button class="hc-opt" type="button" data-key="absence_impact" data-value="Some work slows">Some things would slow down</button><button class="hc-opt" type="button" data-key="absence_impact" data-value="Important work stops">Important work would stop</button><button class="hc-opt" type="button" data-key="absence_impact" data-value="Nearly everything stops">Nearly everything would stop</button></div>
+</div><div class="hc-q stack-16" role="group" aria-labelledby="hcQ4" data-q="4" hidden>
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="24" y="10" width="34" height="12" rx="3"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="24" y="28" width="34" height="10" rx="3"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="24" y="44" width="34" height="10" rx="3"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M6 16h12M13 11l5 5-5 5"/></svg></span>
+  <h2 class="hc-q__title" id="hcQ4" tabindex="-1">Which is most true right now?</h2>
+  <div class="hc-opts"><button class="hc-opt" type="button" data-key="business_need" data-value="Not enough awareness">Not enough people know my business exists</button><button class="hc-opt" type="button" data-key="business_need" data-value="Leads not converting">People contact us, but too many never become customers</button><button class="hc-opt" type="button" data-key="business_need" data-value="Underpriced or unprofitable">We have enough work, but we are not making enough from it</button><button class="hc-opt" type="button" data-key="business_need" data-value="Payments delayed">We make sales, but payment reaches us too slowly</button><button class="hc-opt" type="button" data-key="business_need" data-value="Waste consumes money">We stay busy, but costs and wasted time eat the money</button><button class="hc-opt" type="button" data-key="business_need" data-value="Too much work">We have more work than we can handle</button><button class="hc-opt" type="button" data-key="business_need" data-value="Unsure">I cannot tell where the money is going</button></div>
+</div><div class="hc-q stack-16" role="group" aria-labelledby="hcQ5" data-q="5" hidden>
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="30" r="8"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M18 58V48a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v10"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M18 46L10 34V22M46 46l8-12V22"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M24 4l-3 7h5l-3 7M34 2l-3 8h5l-3 8M44 6l-3 6h4l-2 6"/></svg></span>
+  <h2 class="hc-q__title" id="hcQ5" tabindex="-1">How many hours a week go to paperwork, scheduling, invoices and follow-up?</h2>
+  <div class="hc-opts"><button class="hc-opt" type="button" data-key="admin_hours" data-value="5">5 or fewer</button><button class="hc-opt" type="button" data-key="admin_hours" data-value="10">6–10</button><button class="hc-opt" type="button" data-key="admin_hours" data-value="20">11–20</button><button class="hc-opt" type="button" data-key="admin_hours" data-value="21">More than 20</button></div>
+</div><div class="hc-q stack-16" role="group" aria-labelledby="hcQ6" data-q="6" hidden>
+  <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="8" y="8" width="21" height="21" rx="3"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="35" y="8" width="21" height="21" rx="3"/><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="8" y="35" width="21" height="21" rx="3"/><rect fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 5" x="35" y="35" width="21" height="21" rx="3"/></svg></span>
+  <h2 class="hc-q__title" id="hcQ6" tabindex="-1">Where do you keep track of customers and jobs?</h2>
+  <div class="hc-opts"><button class="hc-opt" type="button" data-key="tracking_method" data-value="Business software">One business app</button><button class="hc-opt" type="button" data-key="tracking_method" data-value="Spreadsheets">Spreadsheets</button><button class="hc-opt" type="button" data-key="tracking_method" data-value="Paper, calendar, messages or email">Paper, calendar, texts or email</button><button class="hc-opt" type="button" data-key="tracking_method" data-value="Multiple disconnected systems">Several apps that do not talk to each other</button><button class="hc-opt" type="button" data-key="tracking_method" data-value="No consistent method">No set way</button></div>
+</div>
+      <p><button class="text-link hc-back-btn" type="button" id="hcBack" hidden>&larr; Back</button></p>
+    </div>
+
+    <div class="hc-card stack-32" id="hcResult" hidden>
+      <div class="stack-16">
+        <span class="badge"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" x="12" y="10" width="40" height="48" rx="4"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M24 6h16v8H24z"/><path fill="none" stroke="#D4A017" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M22 50V40M32 50V32M42 50V36"/><path fill="none" stroke="#E7ECF2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M21 25l4 4 8-8"/></svg></span>
+        <span class="label">Your result</span>
+        <h2 id="hcResultTitle" tabindex="-1">Here is what your answers show</h2>
+      </div>
+      <ul class="icon-list" id="hcFindings"></ul>
+      <div class="stack-16">
+        <span class="label">Your best next step</span>
+        <div id="hcFit"></div>
+      </div>
+      <form class="hc-form stack-16" id="hcForm" action="https://formspree.io/f/mvzezlzz" method="POST" novalidate>
+        <div class="stack-8">
+          <h3>Want a real person to look at this?</h3>
+          <p class="soft">Send your answers to 3P. We will reply within one business day with what we would fix first.</p>
+        </div>
+        <div><label for="hcName">Your name</label><input id="hcName" name="name" autocomplete="name" required></div>
+        <div><label for="hcEmail">Email</label><input id="hcEmail" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="hcPhone">Phone (optional)</label><input id="hcPhone" name="phone" type="tel" autocomplete="tel"></div>
+        <input type="hidden" name="lead_source" value="3P Business Health Check">
+        <button class="btn btn--2" type="submit" id="hcSend">Send My Answers to 3P <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+        <p class="hc-status" id="hcStatus" aria-live="polite"></p>
+      </form>
+      <p><button class="text-link hc-back-btn" type="button" id="hcRestart">Start over</button></p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 Closer -->
+<section class="sec sec--light closer" aria-labelledby="closer-title">
+  <div class="wrap stack-24 center">
+    <h2 id="closer-title">Rather talk it through?</h2>
+    <p>Tell us what is going on in your business and we will point you to the right fix.</p>
+    <a class="btn" href="contact.html">Talk to Us <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+</main>
+<div id="site-footer-mount"></div>
+<script>
+(function(){
+  // Each answer moves to the next question. The result names the matching fix (same match as before: question "Which is most true right now?").
+  var FITS={
+    "Too much work":{name:"Give Me Back My Time",price:"$249",line:"Get your evenings and weekends back.",href:"business-fixes/owner-capacity-recovery-session.html"},
+    "Leads not converting":{name:"Missed Leads and Money Leaks",price:"$349",line:"Every lead gets a next step.",href:"business-fixes/missed-lead-follow-up-fix.html"},
+    "Payments delayed":{name:"Invoice & Payment Optimization",price:"$449",line:"Get paid for the work you already did.",href:"business-fixes/invoice-payment-organization.html"},
+    "Not enough awareness":{name:"Online Presence & Social Media Management",price:"$649",line:"Get found by the customers looking for you.",href:"business-fixes/business-workflow-cleanup.html"}
+  };
+  var ARROW="<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg>";
+  var GO='<svg class="card__go" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>';
+  var ICON={time:"<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><circle fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"32\" cy=\"36\" r=\"20\"/><path fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M27 8h10M32 8v8M48 18l4-4\"/><path fill=\"none\" stroke=\"#E7ECF2\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M37 29c-1-2-3-3-5-3-3 0-5 2-5 4s2 3 5 4 5 2 5 4-2 4-5 4c-2 0-4-1-5-3M32 23v3M32 42v3\"/></svg>",depends:"<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><circle fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"32\" cy=\"16\" r=\"6\"/><path fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M22 36a10 10 0 0 1 20 0\"/><circle fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"42\" r=\"5\"/><path fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 58a8 8 0 0 1 16 0\"/><circle fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"52\" cy=\"42\" r=\"5\"/><path fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M44 58a8 8 0 0 1 16 0\"/><path fill=\"none\" stroke=\"#E7ECF2\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M25 41l-7-0M18 41l3-3M18 41l3 3\"/><path fill=\"none\" stroke=\"#E7ECF2\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M39 41h7M46 41l-3-3M46 41l-3 3\"/></svg>",paper:"<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><circle fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"32\" cy=\"30\" r=\"8\"/><path fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M18 58V48a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v10\"/><path fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M18 46L10 34V22M46 46l8-12V22\"/><path fill=\"none\" stroke=\"#E7ECF2\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M24 4l-3 7h5l-3 7M34 2l-3 8h5l-3 8M44 6l-3 6h4l-2 6\"/></svg>",missing:"<svg aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\"><rect fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"8\" y=\"8\" width=\"21\" height=\"21\" rx=\"3\"/><rect fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"35\" y=\"8\" width=\"21\" height=\"21\" rx=\"3\"/><rect fill=\"none\" stroke=\"#D4A017\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"8\" y=\"35\" width=\"21\" height=\"21\" rx=\"3\"/><rect fill=\"none\" stroke=\"#E7ECF2\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-dasharray=\"4 5\" x=\"35\" y=\"35\" width=\"21\" height=\"21\" rx=\"3\"/></svg>"};
+  var TOTAL=6, cur=1, ans={};
+  var qs=document.querySelectorAll('.hc-q'), dots=document.querySelectorAll('.hc-dot');
+  function $(id){return document.getElementById(id);}
+  function show(n){
+    cur=n;
+    qs.forEach(function(q){q.hidden=Number(q.dataset.q)!==n;});
+    dots.forEach(function(d){var k=Number(d.dataset.dot);d.classList.toggle('is-current',k===n);d.classList.toggle('is-done',k<n);});
+    $('hcCount').textContent='Question '+n+' of '+TOTAL;
+    $('hcBack').hidden=(n===1);
+  }
+  function focusTitle(el){try{el.focus({preventScroll:true});}catch(e){}}
+  function scrollToQuiz(){var t=$('quiz').getBoundingClientRect().top;if(t<0||t>window.innerHeight*0.5)$('quiz').scrollIntoView({behavior:'smooth',block:'start'});}
+  function row(icon,text){return '<li class="icon-row"><span class="badge">'+icon+'</span><span class="icon-row__text">'+text+'</span></li>';}
+  function findings(){
+    var out=[], h=Number(ans.work_hours), a=Number(ans.admin_hours);
+    if(h===50) out.push(row(ICON.time,'You work up to 10 hours a week past a 40-hour week. That is up to <strong>520 hours a year</strong>.'));
+    else if(h===60) out.push(row(ICON.time,'You work up to 20 hours a week past a 40-hour week. That is up to <strong>1,040 hours a year</strong>.'));
+    else if(h>60) out.push(row(ICON.time,'You work more than 20 hours a week past a 40-hour week. That is <strong>over 1,040 hours a year</strong>.'));
+    if(a===5) out.push(row(ICON.paper,'Paperwork and admin take up to <strong>260 hours a year</strong> of your time.'));
+    else if(a===10) out.push(row(ICON.paper,'Paperwork and admin take <strong>310 to 520 hours a year</strong> of your time.'));
+    else if(a===20) out.push(row(ICON.paper,'Paperwork and admin take <strong>570 to 1,040 hours a year</strong> of your time.'));
+    else if(a>20) out.push(row(ICON.paper,'Paperwork and admin take <strong>over 1,040 hours a year</strong> of your time.'));
+    if(ans.absence_impact==='Important work stops'||ans.absence_impact==='Nearly everything stops') out.push(row(ICON.depends,'If you stop for one week, important work stops. The business depends on you.'));
+    else if(ans.absence_impact==='Some work slows') out.push(row(ICON.depends,'If you stop for one week, some work slows down.'));
+    if(ans.tracking_method&&ans.tracking_method!=='Business software') out.push(row(ICON.missing,'Customer and job details are not in one place, so calls, quotes and payments are easy to miss.'));
+    if(!out.length) out.push(row(ICON.missing,'Your answers show a business that runs without you on most days. A review can show where the next gain is.'));
+    return out.join('');
+  }
+  function fit(){
+    var f=FITS[ans.business_need];
+    if(f) return '<a class="card" href="'+f.href+'"><span class="card__body"><span class="card__title">'+f.name+'</span><br><span class="card__price">'+f.price+'</span><br><span class="card__line">'+f.line+'</span></span>'+GO+'</a>';
+    return '<a class="card" href="contact.html"><span class="card__body"><span class="card__title">Talk to us</span><br><span class="card__line">Your answers do not point to one fixed-price fix. Tell us what is going on and we will point you the right way.</span></span>'+GO+'</a>';
+  }
+  function result(){
+    $('hcQuiz').hidden=true; $('hcResult').hidden=false;
+    $('hcFindings').innerHTML=findings(); $('hcFit').innerHTML=fit();
+    $('hcResult').dataset.fit=FITS[ans.business_need]?FITS[ans.business_need].name:'Contact';
+    scrollToQuiz(); focusTitle($('hcResultTitle'));
+    if(typeof gtag==='function') gtag('event','health_check_complete',{fit:$('hcResult').dataset.fit});
+  }
+  document.querySelectorAll('.hc-opt').forEach(function(b){
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',function(){
+      var key=b.dataset.key; ans[key]=b.dataset.value;
+      b.parentNode.querySelectorAll('.hc-opt').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      if(cur<TOTAL){show(cur+1);scrollToQuiz();focusTitle(qs[cur-1].querySelector('.hc-q__title'));} else result();
+    });
+  });
+  $('hcBack').addEventListener('click',function(){if(cur>1){show(cur-1);focusTitle(qs[cur-1].querySelector('.hc-q__title'));}});
+  $('hcRestart').addEventListener('click',function(){
+    ans={}; document.querySelectorAll('.hc-opt').forEach(function(x){x.setAttribute('aria-pressed','false');});
+    $('hcResult').hidden=true; $('hcQuiz').hidden=false; $('hcStatus').textContent=''; $('hcStatus').className='hc-status';
+    $('hcSend').disabled=false; show(1); scrollToQuiz(); focusTitle(qs[0].querySelector('.hc-q__title'));
+  });
+  $('hcForm').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var form=e.target, st=$('hcStatus'), name=$('hcName'), email=$('hcEmail');
+    st.className='hc-status';
+    if(!name.value.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())){st.textContent='Please add your name and a working email.';(name.value.trim()?email:name).focus();return;}
+    var data=new FormData(form);
+    var labels={business_mode:'How the business runs',work_hours:'Hours worked per week (answer)',absence_impact:'One week away',business_need:'Most true right now',admin_hours:'Admin hours per week (answer)',tracking_method:'Where customers and jobs are tracked'};
+    Object.keys(labels).forEach(function(k){var btn=document.querySelector('.hc-opt[data-key="'+k+'"][aria-pressed="true"]');data.append(labels[k],btn?btn.textContent:'');});
+    data.append('current_business_need',ans.business_need||'');
+    data.append('best_next_step_shown',$('hcResult').dataset.fit||'');
+    data.append('_subject','New Free Business Health Check');
+    var send=$('hcSend'); send.disabled=true; st.textContent='Sending...';
+    try{
+      var r=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});
+      if(!r.ok) throw new Error('fail');
+      if(typeof fbq==='function') fbq('track','Lead');
+      st.textContent='Got it. We will reply within one business day.'; st.className='hc-status is-ok';
+    }catch(err){
+      st.textContent='That did not go through. Please try again or email info@3phelpme.com.'; send.disabled=false;
+    }
+  });
+  show(1);
+})();
+</script>
+<script defer="defer" src="/assets/js/site-include.js"></script>
+</body>
+</html>
