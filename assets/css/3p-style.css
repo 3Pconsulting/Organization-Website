@@ -159,6 +159,11 @@ a{color:inherit}
 .card__price{font-size:var(--fs-h3);font-weight:800;color:var(--gold-bright)}
 .card__go{flex:0 0 24px;width:24px;height:24px;color:var(--gold-bright)}
 .cards{display:grid;gap:16px}
+/* WEB-004: 320px cards need a fixed available column; the whole card remains a link. */
+@media (max-width:359px){
+  .cards--3{grid-template-columns:minmax(0,1fr)}
+  .cards--3 .card__go{display:none}
+}
 @media (min-width:768px){
   .cards--2{grid-template-columns:1fr 1fr;gap:24px}
   .cards--3{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
