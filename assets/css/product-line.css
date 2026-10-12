@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Source+Sans+3:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap');
 
 :root{
   --navy-950:#08111f;
@@ -221,4 +221,49 @@ input:focus,textarea:focus,select:focus{outline:2px solid var(--gold-light);outl
   }
   .section:has(.legal-page) .checkout-card{padding:32px}
   .section:has(.legal-page) .notice{padding:32px}
+}
+
+/* WEB-004: legal-only typography and spacing, STD-004 FNT.1-4 + SPC.1. */
+.section:has(.legal-page) .legal-page{
+  font-family:"Source Sans 3",Arial,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+}
+.section:has(.legal-page) .legal-page :is(h1,h2,h3,p,li,.eyebrow,.legal-meta,.legal-callout){
+  font-family:"Source Sans 3",Arial,sans-serif;
+}
+.section:has(.legal-page) .legal-page h1{
+  font-size:36px;
+  font-weight:800;
+  line-height:1.15;
+  margin:0;
+}
+.section:has(.legal-page) .legal-page h2{
+  font-size:28px;
+  font-weight:800;
+  line-height:1.2;
+  margin:32px 0 16px;
+}
+.section:has(.legal-page) .legal-page :is(p,li,.legal-callout){font-size:17px}
+.section:has(.legal-page) .legal-page p{margin:16px 0}
+.section:has(.legal-page) .legal-page .eyebrow{
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.12em;
+  margin:0 0 16px;
+}
+.section:has(.legal-page) .legal-page .legal-meta{
+  font-size:14px;
+  font-weight:700;
+  margin:8px 0 24px;
+}
+.section:has(.legal-page) .legal-page .legal-callout{margin:24px 0}
+.section:has(.legal-page) .legal-page ul{
+  padding-left:24px;
+  margin:16px 0 24px;
+}
+.section:has(.legal-page) .legal-page li{margin:8px 0}
+@media(min-width:768px){
+  .section:has(.legal-page) .legal-page h1{font-size:56px}
+  .section:has(.legal-page) .legal-page h2{font-size:40px}
 }
