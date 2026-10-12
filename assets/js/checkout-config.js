@@ -5,6 +5,6 @@ window.THREE_P_CHECKOUT_CONFIG = {
     "invoice-payment-organization": "",
     "business-workflow-cleanup": "",
     "owner-capacity-recovery-session": "",
-    "owner-capacity-recovery-implementation": ""
+    "7-day-system-build": ""
   }
 };
