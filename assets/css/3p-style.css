@@ -312,3 +312,8 @@ ol.icon-list{list-style:none}
 .form-card code{font-size:15px;color:var(--gold-bright)}
 .form-card.form-note{max-width:760px;margin-left:auto;margin-right:auto;border-left:3px solid var(--gold)}
 .checkout-card .form-card>.hidden+*{margin-top:0}
+
+/* Unified light-circle icons, owner direction 2026-10-12. */
+.badge{background:transparent;border:0}
+.badge svg,.badge--feature svg{width:100%;height:100%}
+.badge--num{background:#F6F5EF;color:#05233E;border:2.2px solid #F6B519}
