@@ -174,10 +174,8 @@ a{color:inherit}
 .stat__src{font-size:var(--fs-label);color:var(--text-soft)}
 
 /* Hero with a real photo: photo clear, full width; title + one button below */
-.hero-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 50%;border:0;border-radius:0}
-@media (min-width:768px){
-  .hero-photo{aspect-ratio:16/9}
-}
+/* WEB-002: source-ratio hero across all screen sizes; no enforced viewport crop. */
+.hero-photo{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;object-position:center;border:0;border-radius:0}
 .photo-slot{
   width:100%;aspect-ratio:4/3;
   display:flex;align-items:center;justify-content:center;
@@ -235,7 +233,8 @@ ol.icon-list{list-style:none}
 .closer .price{margin-left:auto;margin-right:auto}
 .card .card__body .card__line{display:inline-block;margin-top:8px}
 /* Offer pages: price and buy button on the first screen (WF-05), so the opening photo is shorter here */
-.offer-page .hero-photo{aspect-ratio:16/9;max-height:40vh;width:100%}
+/* Offer heroes inherit the global non-cropping hero rule. */
+.offer-page .hero-photo{width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain}
 .offer-page .photo-slot{aspect-ratio:16/9;max-height:40vh}
 .offer-page .hero .sec{padding:48px 0}
 
