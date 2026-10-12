@@ -203,3 +203,22 @@ input,textarea,select{background:#071525;color:var(--ink);border-color:rgba(212,
 input:focus,textarea:focus,select:focus{outline:2px solid var(--gold-light);outline-offset:2px}
 .notice{background:rgba(212,160,23,.08);color:var(--ink)}.cta-band{background:var(--navy-950);color:var(--ink)}.site-footer{background:#08111f}
 @media(max-width:1120px){.site-nav{gap:12px;font-size:10px}.wordmark img{width:190px}}
+
+
+/* WEB-004: legal pages only. Keep all other product-line consumers unchanged.
+   STD-004 SPC.2/3/4: 64/96 section, 20/32 page edges, 24/32 box padding.
+   :has() scopes to the three pages whose section contains article.legal-page. */
+.section:has(.legal-page){padding-block:64px}
+.section:has(.legal-page) > .wrap{
+  width:min(var(--max),calc(100% - 40px));
+}
+.section:has(.legal-page) .checkout-card{padding:24px}
+.section:has(.legal-page) .notice{padding:24px}
+@media(min-width:768px){
+  .section:has(.legal-page){padding-block:96px}
+  .section:has(.legal-page) > .wrap{
+    width:min(var(--max),calc(100% - 64px));
+  }
+  .section:has(.legal-page) .checkout-card{padding:32px}
+  .section:has(.legal-page) .notice{padding:32px}
+}
