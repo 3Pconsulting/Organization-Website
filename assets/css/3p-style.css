@@ -166,7 +166,8 @@ a{color:inherit}
 
 /* Icon list rows: badge + one line */
 .icon-list{list-style:none;margin:0;padding:0;display:grid;gap:16px}
-.icon-row{display:flex;align-items:center;gap:16px}
+/* WEB-004: align each marker with the start of its text, even when lines wrap. */
+.icon-row{display:flex;align-items:flex-start;gap:16px}
 .icon-row__text{min-width:0}
 
 /* Numbers */
@@ -232,9 +233,7 @@ ol.icon-list{list-style:none}
 .value-line{font-weight:700;color:var(--gold-bright)}
 .closer .price{margin-left:auto;margin-right:auto}
 .card .card__body .card__line{display:inline-block;margin-top:8px}
-/* Offer pages: price and buy button on the first screen (WF-05), so the opening photo is shorter here */
-/* Offer heroes inherit the global non-cropping hero rule. */
-.offer-page .hero-photo{width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain}
+/* All real hero photos use the one global .hero-photo rule; no offer-specific crop. */
 .offer-page .photo-slot{aspect-ratio:16/9;max-height:40vh}
 .offer-page .hero .sec{padding:48px 0}
 
