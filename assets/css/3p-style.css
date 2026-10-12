@@ -161,7 +161,10 @@ a{color:inherit}
 .cards{display:grid;gap:16px}
 @media (min-width:768px){
   .cards--2{grid-template-columns:1fr 1fr;gap:24px}
-  .cards--3{grid-template-columns:repeat(3,1fr);gap:24px}
+  .cards--3{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+}
+@media (min-width:1280px){
+  .cards--3{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 
 /* Icon list rows: badge + one line */
@@ -235,7 +238,7 @@ ol.icon-list{list-style:none}
 .card .card__body .card__line{display:inline-block;margin-top:8px}
 /* All real hero photos use the one global .hero-photo rule; no offer-specific crop. */
 .offer-page .photo-slot{aspect-ratio:16/9;max-height:40vh}
-.offer-page .hero .sec{padding:48px 0}
+/* Offer hero text section follows the shared .sec rhythm (64px phone, 96px tablet+). */
 
 /* A sourced number shown on its own under a list, the same way on every page */
 .stat-callout{display:flex;align-items:center;gap:16px;padding:var(--box-pad);border:1px solid var(--divider);border-radius:4px}
