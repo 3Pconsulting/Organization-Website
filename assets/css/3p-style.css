@@ -153,19 +153,21 @@ a{color:inherit}
 }
 .sec--light .card{background:var(--card-on-light)}
 .sec--dark .card{background:var(--card-on-dark)}
-.card__body{flex:1 1 auto;min-width:0}
+.card__body{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
 .card__line{color:var(--text-soft)}
 .card__title{font-size:var(--fs-h3);font-weight:800;line-height:1.2}
 .card__price{font-size:var(--fs-h3);font-weight:800;color:var(--gold-bright)}
 .card__go{flex:0 0 24px;width:24px;height:24px;color:var(--gold-bright)}
 .cards{display:grid;gap:16px}
+/* WEB-004: prevent long card labels from enlarging grid tracks on phones. */
+.cards--2{grid-template-columns:minmax(0,1fr)}
 /* WEB-004: 320px cards need a fixed available column; the whole card remains a link. */
 @media (max-width:359px){
   .cards--3{grid-template-columns:minmax(0,1fr)}
   .cards--3 .card__go{display:none}
 }
 @media (min-width:768px){
-  .cards--2{grid-template-columns:1fr 1fr;gap:24px}
+  .cards--2{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
   .cards--3{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 }
 @media (min-width:1280px){
