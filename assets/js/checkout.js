@@ -1,6 +1,8 @@
 (function(){
   const params=new URLSearchParams(location.search);
   const slug=params.get('offer');
+  if(slug==='7-day-system-build'||slug==='systems-design-improvement'){location.replace('/systems-automation-integration.html');return;}
+
   const catalog=window.THREE_P_PRODUCT_CATALOG;
   const config=window.THREE_P_CHECKOUT_CONFIG||{formspreeEndpoint:"",paymentLinks:{}};
   const product=catalog.products.find(p=>p.slug===slug);
