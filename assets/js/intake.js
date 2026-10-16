@@ -1,5 +1,7 @@
 (function(){
-  const params=new URLSearchParams(location.search);const slug=params.get('offer');const catalog=window.THREE_P_PRODUCT_CATALOG;const config=window.THREE_P_CHECKOUT_CONFIG||{};
+  const params=new URLSearchParams(location.search);const slug=params.get('offer');
+  if(slug==='7-day-system-build'||slug==='systems-design-improvement'){location.replace('/systems-automation-integration.html');return;}
+const catalog=window.THREE_P_PRODUCT_CATALOG;const config=window.THREE_P_CHECKOUT_CONFIG||{};
   const product=catalog.products.find(p=>p.slug===slug)||catalog.products[0];
   document.title=product.name+" | Intake | 3P Help Me";
   document.getElementById('intakeOffer').textContent=product.name;document.getElementById('intakeOfferInput').value=product.name;document.getElementById('intakeSlug').value=product.slug;
