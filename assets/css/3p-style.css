@@ -317,3 +317,42 @@ ol.icon-list{list-style:none}
 .badge{background:transparent;border:0}
 .badge svg,.badge--feature svg{width:100%;height:100%}
 .badge--num{background:#F6F5EF;color:#05233E;border:2.2px solid #F6B519}
+
+/* Shared offer sections; edit templates through scripts/sync-shared-sections.cjs. */
+.why-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}.why-grid .card.why-card{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:var(--box-pad);border:1px solid var(--divider);border-radius:4px}.why-grid .badge{width:64px;height:64px;flex:0 0 64px}.why-grid .why-card .card__title{font-size:22px;margin:0 0 8px}.why-grid .card__line{margin:0}.why-grid .card__body{width:100%;min-width:0}.why-experience{margin-top:16px;border-top:1px solid var(--divider)}.why-experience summary{cursor:pointer;padding:16px 0;font-weight:700;min-height:53px}.why-experience ul{padding-left:24px;margin:0 0 16px}.why-experience li{margin-bottom:8px}.why-experience p{margin-bottom:0}.why-statement{border-left:3px solid var(--gold);padding-left:24px}@media(min-width:768px){.why-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+.fl-summary{display:grid;gap:16px}.fl-summary>div{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:var(--box-pad);border:1px solid var(--divider);border-radius:4px;background:var(--card-on-dark)}.fl-summary .badge{width:64px;height:64px;flex:0 0 64px}.fl-blueprint{list-style:none;padding:0;display:grid;gap:16px;margin:8px 0 24px}.fl-blueprint li{min-width:0;padding:var(--box-pad);border:1px solid var(--divider);border-radius:4px;background:var(--card-on-dark)}.fl-blueprint h3{font-size:20px;color:var(--gold-bright);margin:0 0 8px}.fl-blueprint p{margin:0}.fl-journey ol{list-style:none;padding:0;display:grid;gap:16px;margin:24px 0 0}.fl-journey li{display:flex;align-items:center;gap:16px;font-weight:700}.fl-journey li>.badge{width:64px;height:64px;flex:0 0 64px}#design-title~details>summary{cursor:pointer;padding:16px 0;font-weight:700;min-height:53px}
+@media(min-width:768px){.fl-summary{grid-template-columns:repeat(3,minmax(0,1fr))}.fl-blueprint{grid-template-columns:repeat(2,minmax(0,1fr))}.fl-journey ol{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+a.card--recommended{position:relative;border:2px solid rgb(247,215,106);outline:2px solid rgb(247,215,106);outline-offset:4px;box-shadow:0 0 14px 9px rgba(247,215,106,.55)}a.card--recommended:focus-visible{outline:3px dashed var(--text);outline-offset:8px}
+
+/* Shared choice cards: phone icon top left, full-width reading area, arrow lower right. */
+#offers .cards{grid-template-columns:minmax(0,1fr)}
+a.card{position:relative;min-width:0}
+a.card>.card__go{align-self:flex-end}
+a.card>.card__body{min-width:0;overflow-wrap:normal}
+@media(max-width:767px){
+ a.card{display:grid;grid-template-columns:minmax(0,1fr);align-items:start}
+ a.card>.badge{justify-self:start}
+ a.card>.card__go{position:absolute;right:var(--box-pad);bottom:var(--box-pad)}
+ a.card>.card__body{width:100%}
+ a.card>.card__body>:last-child{padding-right:40px}
+}
+/* Narrow three-column campaign cards use the same stacked presentation. */
+.fl-plans>a.card{display:grid;grid-template-columns:minmax(0,1fr);align-content:start;align-items:start;padding:var(--box-pad)}
+.fl-plans>a.card>.badge{justify-self:start}
+.fl-plans>a.card>.card__body{width:100%;padding-bottom:32px}
+.fl-plans>a.card>.card__go{position:absolute;right:var(--box-pad);bottom:var(--box-pad)}
+@media(min-width:768px){#offers .cards--2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.shared-why-article .art-layout>*{min-width:0}
+.shared-why-article .sidebar .btn{white-space:normal;text-align:center}
+#implementation{scroll-margin-top:112px}
+
+.fl-photo{position:relative;width:100%;margin:0;line-height:0}.fl-photo img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;border-radius:0;box-shadow:none}.hero-map{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:hidden}.hero-map .map-tile{filter:url(#tile-shadow)}.hero-map .map-symbol{color:#263a4f;fill:none;stroke:currentColor;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.hero-map .map-symbol--light{color:#f6f5ef}@media(max-width:600px){.hero-map .map-secondary{display:none}.hero-map .map-symbol{stroke-width:5.5}.hero-map .map-routes{stroke-width:9}}
+
+:root{--regular-icon-size:48px}
+@media(min-width:768px){:root{--regular-icon-size:64px}}
+body .badge:not(.badge--feature){width:var(--regular-icon-size);height:var(--regular-icon-size);flex:0 0 var(--regular-icon-size)}
+
+/* Hero opening has a closer relationship to its photo than separate sections. */
+body .hero-intro,.fl-page .fl-hero .hero-intro{padding-top:24px}
+@media(min-width:768px){body .hero-intro,.fl-page .fl-hero .hero-intro{padding-top:32px}}

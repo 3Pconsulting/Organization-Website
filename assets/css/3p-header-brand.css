@@ -1,0 +1,13 @@
+/* Shared header identity, including pages that do not load the main site CSS. */
+header.site-header,header.lp-top,header.library-header{
+  background:linear-gradient(90deg,rgb(13,32,52),rgb(26,69,104));
+  border-bottom:1px solid rgba(212,160,23,.26);
+  box-shadow:none;
+}
+header .wordmark{display:inline-flex;align-items:center;gap:12px;text-decoration:none;white-space:nowrap;flex-shrink:0;min-height:44px}
+header .brand-copy{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+header .wordmark .brand-name,header .brand-text .brand-name{font-family:"Source Sans 3",Arial,sans-serif;font-size:24px;font-weight:800;line-height:1.15;color:rgb(212,160,23);letter-spacing:0}
+header .wordmark .brand-tagline,header .brand-text .brand-tagline{display:block;font-family:"Source Sans 3",Arial,sans-serif;font-size:12px;font-weight:600;line-height:1.2;letter-spacing:0;text-transform:none;color:rgb(231,236,242);margin:0}
+header .wordmark img{display:block;object-fit:contain;width:40px;height:40px;flex:0 0 40px}
+header.library-header .brand-logo{width:40px;height:40px;object-fit:contain;flex:0 0 40px}
+@media(min-width:768px){header .wordmark .brand-name,header .brand-text .brand-name{font-size:26px}header .wordmark .brand-tagline,header .brand-text .brand-tagline{font-size:14px}}

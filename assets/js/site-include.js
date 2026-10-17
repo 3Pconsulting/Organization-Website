@@ -8,7 +8,7 @@
     }).catch(function(){});
   }
 
-  inject('site-header-mount', '/partials/header.html', function(){
+  inject('site-header-mount', '/partials/header.html?v=web001-uniform-brand-darkgold-20261016', function(){
     var toggle = document.getElementById('menuToggle');
     var menu = document.getElementById('siteMenu');
     if(toggle && menu){
@@ -30,5 +30,5 @@
     });
   });
 
-  inject('site-footer-mount', '/partials/footer.html');
+  inject('site-footer-mount', '/partials/footer.html?v=web001-profit-footer-20261016');
 })();
